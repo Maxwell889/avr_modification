@@ -1,0 +1,7 @@
+	(property: all (0 assertions))
+	(unable to fetch property, exiting)
+vwn: vwn.cpp:1176: void connect_all_instances(): Assertion `0' failed.
+	(abstraction: sa+uf)
+reach_y2bt: avr_util.h:196: bool access_file(F&, std::string, bool) [with F = std::basic_ifstream<char>; std::string = std::__cxx11::basic_string<char>]: Assertion `0' failed.
+Could not access file: /workspaces/avr_modification/experiment/avr_output/work_eq_sdp_v5_spec/data/wn.dump
+

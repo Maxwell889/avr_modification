@@ -1,0 +1,55 @@
+(benchmark) eq_sdp_v3_eq_sdp_v3
+
+(#0)		!(((\im.p2_m == \s2) && (\s2 == 8'd0) && (\s3$next == \s3$next_rhs) && (\im.p3_n$next == \im.p3_n$next_rhs) && (\im.p2_c == \s2) && (\s3$next != \im.p3_n$next)))
+	(id)	164
+	(#UF )	2
+	(#UFt)	2
+	      	Add_8_8_8	#1
+	      	Sub_8_8_8	#1
+	(#K  )	1
+	(#reg)	6
+	(#inp)	1
+	(#ite)	3
+	(#CF )	11
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#1)		!(((\im.p1_c == \s1) && (\im.p1_b == \s1) && (\im.p1_a == \s1) && ((\im.p1_c == \s3) || (\im.p1_c != \s3)) && (\im.p1_c == \s3) && ((\im.p1_c == 8'd0) || (\im.p1_c != 8'd0)) && (\im.p1_c == 8'd0) && (\im.p2_c$next != \im.p2_m$next) && (\im.p2_m$next == \im.p2_m$next_rhs) && (\im.p2_c$next == \im.p2_c$next_rhs)))
+	(id)	216
+	(#UF )	2
+	(#UFt)	2
+	      	Add_8_8_8	#1
+	      	Sub_8_8_8	#1
+	(#K  )	1
+	(#reg)	8
+	(#inp)	1
+	(#ite)	3
+	(#CF )	18
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+
+(local equalities) #0
+
+(learned predicates) #2
+            (\im.p1_c == 8'd0)
+            (\im.p1_c == \s3)
+
+(learned constants)  #1
+            8'd0
+
+(learned signals)    #2
+            \im.p1_c
+            \s3
+
+(learned UFs)        #0
+
+(#sim. iterations) 2
+(#ref. iterations) 2
+(#refs) 2
+(#assump. lemmas)  0
+(#lemmas)          2

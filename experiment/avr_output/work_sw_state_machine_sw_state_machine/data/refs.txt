@@ -1,0 +1,33 @@
+(benchmark) sw_state_machine_sw_state_machine
+
+(#0)		!(((\S == 32'd2) && (\L5$next == \L5$next_rhs) && \L5$next && \LoneHot))
+	(id)	889
+	(#UF )	1
+	(#UFt)	1
+	      	LT_1_32_32	#1
+	(#K  )	1
+	(#reg)	5
+	(#inp)	0
+	(#ite)	1
+	(#CF )	6
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+
+(local equalities) #0
+
+(learned predicates) #0
+
+(learned constants)  #0
+
+(learned signals)    #0
+
+(learned UFs)        #0
+
+(#sim. iterations) 0
+(#ref. iterations) 1
+(#refs) 1
+(#assump. lemmas)  0
+(#lemmas)          1

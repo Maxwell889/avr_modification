@@ -1,0 +1,193 @@
+(benchmark) eq_sdp_v5_eq_sdp_v5
+
+(#0)		!(((\im.p2_m == \s2) && (\im.p2_c == \s2) && (\s3$next == \s3$next_rhs) && (\s3$next != \im.p3_n$next) && (\s2 == 8'd0) && (\im.p3_n$next == \im.p3_n$next_rhs)))
+	(id)	160
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_8_8_8	#1
+	(#K  )	1
+	(#reg)	5
+	(#inp)	1
+	(#ite)	2
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#1)		!(((\im.p1_a == \s1) && ((\s1 == \s3) || (\s1 != \s3)) && (\s1 == \s3) && ((\s1 == 8'd0) || (\s1 != 8'd0)) && (\s1 == 8'd0) && ((\im.p1_c == \s3) || (\im.p1_c != \s3)) && (\im.p1_c == \s3) && ((\im.p1_c == 8'd0) || (\im.p1_c != 8'd0)) && (\im.p1_c == 8'd0) && ((\im.p1_b == \s3) || (\im.p1_b != \s3)) && (\im.p1_b == \s3) && ((\im.p1_b == 8'd0) || (\im.p1_b != 8'd0)) && (\im.p1_b == 8'd0) && (\im.p2_c$next != \im.p2_m$next) && (\im.p2_m$next == \im.p2_m$next_rhs) && (\im.p2_c$next == \im.p2_c$next_rhs)))
+	(id)	224
+	(#UF )	3
+	(#UFt)	3
+	      	Add_8_8_8	#1
+	      	BitWiseAnd_8_8_8	#1
+	      	Sub_8_8_8	#1
+	(#K  )	2
+	(#reg)	7
+	(#inp)	1
+	(#ite)	3
+	(#CF )	28
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+	(too large to print)
+	(id)	507
+	(comment)	ab
+	(#UF )	7
+	(#UFt)	1
+	      	Sub_8_8_8	#7
+	(#K  )	4
+	(#reg)	8
+	(#inp)	4
+	(#ite)	2
+	(#CF )	37
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#3)		!(((\s3$next == 8'd0) && (\s3$next == \s3$next_rhs) && (\s2 != $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y) && (\im.p2_c == 8'd0) && !(\im.reset) && (\im.p2_m == 8'd0)))
+	(id)	575
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_8_8_8	#1
+	(#K  )	1
+	(#reg)	4
+	(#inp)	1
+	(#ite)	1
+	(#CF )	9
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#4)		!(((\im.p1_a == 8'd0) && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$9_Y == 8'd1)))
+	(id)	592
+	(#UF )	1
+	(#UFt)	1
+	      	BitWiseAnd_8_8_8	#1
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#5)		!(((\im.p1_a$next == 8'd0) && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$9_Y$next == 8'd1)))
+	(id)	594
+	(#UF )	1
+	(#UFt)	1
+	      	BitWiseAnd_8_8_8	#1
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+	(too large to print)
+	(id)	691
+	(#UF )	9
+	(#UFt)	3
+	      	Add_8_8_8	#1
+	      	BitWiseAnd_8_8_8	#1
+	      	Sub_8_8_8	#7
+	(#K  )	5
+	(#reg)	7
+	(#inp)	4
+	(#ite)	4
+	(#CF )	39
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#7)		!(((\im.p1_a$next == \im.p1_a$next_rhs) && !(\im.reset) && \a[0:0] && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$9_Y$next != 8'd1)))
+	(id)	733
+	(#UF )	1
+	(#UFt)	1
+	      	BitWiseAnd_8_8_8	#1
+	(#K  )	2
+	(#reg)	1
+	(#inp)	2
+	(#ite)	1
+	(#CF )	6
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	1
+	(#Ext)	1
+
+
+(local equalities) #8
+            \im.p2_m == $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y
+            $techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$9_Y == 8'd1
+            \im.p2_m == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$12_Y
+            \s2 == $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y
+            \s1 == l$9
+            \s2 == l$9
+            \s1 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c)
+            \s2 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c)
+
+(learned predicates) #25
+            (\im.p1_b == 8'd0)
+            (\im.p1_c == 8'd0)
+            (\s1 == 8'd0)
+            (\im.p1_b == \s3)
+            (\im.p1_c == \s3)
+            (\s1 == \s3)
+            (\s2 == $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y)
+            (\im.p2_c == 8'd190)
+            (\im.p2_c == \im.p1_c)
+            (\im.p2_c == \c)
+            (\s2 == l$8)
+            (\s2 == l$9)
+            (\s2 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c))
+            (\im.p2_m == l$7)
+            (\im.p2_m == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$12_Y)
+            (\im.p2_m == $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y)
+            (\s1 == l$9)
+            (\s1 == l$13)
+            (\s1 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c))
+            (\im.p1_b == 8'd184)
+            (\im.p1_b == \b)
+            (\im.p1_a == 8'd110)
+            (\im.p1_a == \a)
+            (\im.p1_c == 8'd188)
+            (\im.p1_c == \c)
+
+(learned constants)  #1
+            8'd0
+
+(learned signals)    #11
+            \im.p1_a
+            \im.p1_b
+            \im.p1_c
+            \im.p2_c
+            \im.p2_m
+            \s1
+            \s2
+            \s3
+            \a
+            \b
+            \c
+
+(learned UFs)        #5
+            Sub_8_8_8(\a, \b)	:= $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y
+            Sub_8_8_8(\im.p1_a, \im.p1_b)	:= $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$12_Y
+            Sub_8_8_8(\im.p2_m, \im.p2_c)	:= $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y
+            Sub_8_8_8($techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$12_Y, \im.p1_c)	:= l$9
+            Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c)
+
+(#sim. iterations) 4
+(#ref. iterations) 7
+(#refs) 8
+(#assump. lemmas)  0
+(#lemmas)          8

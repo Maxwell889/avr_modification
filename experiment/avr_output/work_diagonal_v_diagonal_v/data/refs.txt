@@ -1,0 +1,1409 @@
+(benchmark) diagonal_v_diagonal_v
+
+(#0)		!(((\Y == 4'd0) && LT_1_4_4(\X, \Y)))
+	(id)	81
+	(#UF )	1
+	(#UFt)	1
+	      	LT_1_4_4	#1
+	(#K  )	1
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	3
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#1)		!(((\Y$next == 4'd0) && LT_1_4_4(\X$next, \Y$next)))
+	(id)	82
+	(#UF )	1
+	(#UFt)	1
+	      	LT_1_4_4	#1
+	(#K  )	1
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	3
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#2)		!((!(GT_1_4_4(\X, \Y)) && (\X == 4'd1) && (\Y == 4'd0)))
+	(id)	102
+	(#UF )	1
+	(#UFt)	1
+	      	GT_1_4_4	#1
+	(#K  )	2
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#3)		!((!(GT_1_4_4(\X$next, \Y$next)) && (\X$next == 4'd1) && (\Y$next == 4'd0)))
+	(id)	103
+	(#UF )	1
+	(#UFt)	1
+	      	GT_1_4_4	#1
+	(#K  )	2
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#4)		!(((\Y$next == \Y$next_rhs) && !(LT_1_4_4(\X, \Y)) && LT_1_4_4(\X$next, \Y$next) && (\X$next == \X$next_rhs) && (\X == 4'd1)))
+	(id)	108
+	(#UF )	8
+	(#UFt)	4
+	      	Add_4_4_4	#3
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#2
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	4
+	(#inp)	1
+	(#ite)	5
+	(#CF )	18
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#5)		!(((\Y != \X) && !(LT_1_4_4(\X, \Y)) && !(GT_1_4_4(\X, \Y))))
+	(id)	123
+	(#UF )	2
+	(#UFt)	2
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#6)		!(((\Y$next != \X$next) && !(LT_1_4_4(\X$next, \Y$next)) && !(GT_1_4_4(\X$next, \Y$next))))
+	(id)	125
+	(#UF )	2
+	(#UFt)	2
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#7)		!(((\Y$next == \Y$next_rhs) && (\Y == \X) && LT_1_4_4(\X$next, \Y$next) && (\X$next == \X$next_rhs)))
+	(id)	135
+	(#UF )	8
+	(#UFt)	4
+	      	Add_4_4_4	#3
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#2
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	4
+	(#inp)	1
+	(#ite)	5
+	(#CF )	16
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#8)		!(((\Y$next == \Y$next_rhs) && LT_1_4_4(\X$next, \Y$next) && !(\reset) && (\X$next == \X$next_rhs) && GT_1_4_4(\X, \Y)))
+	(id)	146
+	(#UF )	8
+	(#UFt)	4
+	      	Add_4_4_4	#3
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#2
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	4
+	(#inp)	1
+	(#ite)	5
+	(#CF )	16
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#9)		!(((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs) && (\X != 4'd15) && !(LT_1_4_4(\X, \Y)) && LT_1_4_4(\X$next, \Y$next)))
+	(id)	154
+	(#UF )	8
+	(#UFt)	4
+	      	Add_4_4_4	#3
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#2
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	4
+	(#inp)	1
+	(#ite)	5
+	(#CF )	17
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#10)		!(((\X == 4'd1) && (\X$next == \X$next_rhs) && (\X$next == 4'd15)))
+	(id)	171
+	(#UF )	6
+	(#UFt)	4
+	      	Add_4_4_4	#2
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	13
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#11)		!(((\Y != 4'd1) && !(LT_1_4_4(\X, \Y)) && (\X == 4'd1) && (\Y$next != 4'd1) && (\Y$next == \Y$next_rhs) && \reset))
+	(id)	184
+	(#UF )	3
+	(#UFt)	3
+	      	Add_4_4_4	#1
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	2
+	(#CF )	14
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#12)		!((((\X == l$2) || (\X != l$2)) && (\X == l$2) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	214
+	(#UF )	8
+	(#UFt)	4
+	      	Add_4_4_4	#3
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#3
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	15
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#13)		!((((\X == l$5) || (\X != l$5)) && (\X == l$5) && ((\X == l$4) || (\X != l$4)) && (\X == l$4) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	274
+	(#UF )	8
+	(#UFt)	4
+	      	Add_4_4_4	#4
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	18
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#14)		!((((\X == l$6) || (\X != l$6)) && (\X == l$6) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	340
+	(#UF )	8
+	(#UFt)	4
+	      	Add_4_4_4	#4
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	15
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#15)		!(((\X == l$5) && (\X == l$2)))
+	(id)	360
+	(#UF )	4
+	(#UFt)	2
+	      	Add_4_4_4	#2
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#16)		!(((\X$next == l$5$next) && (\X$next == l$2)))
+	(id)	362
+	(#UF )	4
+	(#UFt)	2
+	      	Add_4_4_4	#2
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#17)		!(((\X == l$4) && (\X == l$2)))
+	(id)	374
+	(#UF )	4
+	(#UFt)	2
+	      	Add_4_4_4	#2
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#18)		!(((\X$next == l$4) && (\X$next == l$2)))
+	(id)	376
+	(#UF )	4
+	(#UFt)	2
+	      	Add_4_4_4	#2
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#19)		!(((\X == l$6) && (\X == l$2)))
+	(id)	387
+	(#UF )	5
+	(#UFt)	2
+	      	Add_4_4_4	#3
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#20)		!(((\X$next == l$6) && (\X$next == l$2)))
+	(id)	389
+	(#UF )	5
+	(#UFt)	2
+	      	Add_4_4_4	#3
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#21)		!((((\X == 4'd15) || (\X != 4'd15)) && $ne$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$21_Y && \reset && ((\Y == 4'd0) || (\Y != 4'd0)) && (\Y == 4'd0) && (\Y$next != 4'd1) && (\Y$next == \Y$next_rhs)))
+	(id)	433
+	(#UF )	2
+	(#UFt)	2
+	      	Add_4_4_4	#1
+	      	GT_1_4_4	#1
+	(#K  )	3
+	(#reg)	3
+	(#inp)	1
+	(#ite)	2
+	(#CF )	16
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#22)		!(((\X == l$5) && (\X == l$6)))
+	(id)	470
+	(#UF )	3
+	(#UFt)	1
+	      	Add_4_4_4	#3
+	(#K  )	1
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#23)		!(((\X$next == l$5$next) && (\X$next == l$6)))
+	(id)	472
+	(#UF )	3
+	(#UFt)	1
+	      	Add_4_4_4	#3
+	(#K  )	1
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#24)		!((((\X == l$13) || (\X != l$13)) && (\X == l$13) && ((\X == l$10) || (\X != l$10)) && (\X == l$10) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	519
+	(#UF )	13
+	(#UFt)	4
+	      	Add_4_4_4	#6
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#5
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	18
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#25)		!(((\X$next == \X$next_rhs) && (\X == l$2) && (\Y == 4'd0) && (\X$next != l$10) && (\Y$next == 4'd1) && (\Y$next == \Y$next_rhs)))
+	(id)	544
+	(#UF )	12
+	(#UFt)	4
+	      	Add_4_4_4	#6
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#4
+	(#K  )	3
+	(#reg)	4
+	(#inp)	1
+	(#ite)	5
+	(#CF )	20
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#26)		!(((\Y == \X) && GT_1_4_4(\X, \Y)))
+	(id)	569
+	(#UF )	1
+	(#UFt)	1
+	      	GT_1_4_4	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	3
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#27)		!(((\Y$next == \X$next) && GT_1_4_4(\X$next, \Y$next)))
+	(id)	571
+	(#UF )	1
+	(#UFt)	1
+	      	GT_1_4_4	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	3
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#28)		!(((\X == l$10) && (\X$next == \X$next_rhs) && (\X$next == 4'd15)))
+	(id)	591
+	(#UF )	9
+	(#UFt)	4
+	      	Add_4_4_4	#4
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#3
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	13
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#29)		!((((\X == l$8) || (\X != l$8)) && (\X == l$8) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	626
+	(#UF )	10
+	(#UFt)	4
+	      	Add_4_4_4	#4
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#4
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	15
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#30)		!((((\X == l$14) || (\X != l$14)) && (\X == l$14) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	713
+	(#UF )	9
+	(#UFt)	4
+	      	Add_4_4_4	#5
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	15
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#31)		!((((\X == l$16) || (\X != l$16)) && (\X == l$16) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	782
+	(#UF )	10
+	(#UFt)	4
+	      	Add_4_4_4	#5
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#3
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	15
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#32)		!(((\X$next != l$16) && (\X$next == \X$next_rhs) && (\X == l$10) && !(LT_1_4_4(\X, \Y)) && \reset))
+	(id)	803
+	(#UF )	13
+	(#UFt)	4
+	      	Add_4_4_4	#7
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#4
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	14
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#33)		!(((\X == l$10) && (\X == l$6)))
+	(id)	818
+	(#UF )	5
+	(#UFt)	2
+	      	Add_4_4_4	#3
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#34)		!(((\X$next == l$10) && (\X$next == l$6)))
+	(id)	820
+	(#UF )	5
+	(#UFt)	2
+	      	Add_4_4_4	#3
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#35)		!(((\X == l$6) && (\X == l$8)))
+	(id)	833
+	(#UF )	7
+	(#UFt)	2
+	      	Add_4_4_4	#4
+	      	ShiftR_4_4_4	#3
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#36)		!(((\X$next == l$6) && (\X$next == l$8)))
+	(id)	835
+	(#UF )	7
+	(#UFt)	2
+	      	Add_4_4_4	#4
+	      	ShiftR_4_4_4	#3
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#37)		!((GT_1_4_4(\X, \Y) && (\X$next == \X$next_rhs) && (\X$next != l$10) && !(\reset) && (\X == l$6)))
+	(id)	846
+	(#UF )	10
+	(#UFt)	4
+	      	Add_4_4_4	#5
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#3
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	13
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#38)		!(((\X == l$14) && (\X == l$8)))
+	(id)	871
+	(#UF )	8
+	(#UFt)	2
+	      	Add_4_4_4	#5
+	      	ShiftR_4_4_4	#3
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#39)		!(((\X$next == l$14) && (\X$next == l$8)))
+	(id)	873
+	(#UF )	8
+	(#UFt)	2
+	      	Add_4_4_4	#5
+	      	ShiftR_4_4_4	#3
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#40)		!(((\X == l$13) && (\Y == 4'd0) && (\X != 4'd15)))
+	(id)	885
+	(#UF )	4
+	(#UFt)	2
+	      	Add_4_4_4	#2
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#41)		!(((\X$next == l$13$next) && (\Y$next == 4'd0) && (\X$next != 4'd15)))
+	(id)	887
+	(#UF )	4
+	(#UFt)	2
+	      	Add_4_4_4	#2
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#42)		!(((\Y$next == 4'd1) && (\X == l$8) && (\Y$next == \Y$next_rhs) && (\X == l$5)))
+	(id)	900
+	(#UF )	8
+	(#UFt)	3
+	      	Add_4_4_4	#4
+	      	GT_1_4_4	#1
+	      	ShiftR_4_4_4	#3
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	2
+	(#CF )	13
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#43)		!((((\X == l$22) || (\X != l$22)) && (\X == l$22) && ((\X == l$17) || (\X != l$17)) && (\X == l$17) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	973
+	(#UF )	17
+	(#UFt)	4
+	      	Add_4_4_4	#8
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#7
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	18
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#44)		!(((\Y == 4'd1) && !(\reset) && (\X$next == \X$next_rhs) && (\X == l$13) && (\X$next != l$17)))
+	(id)	1005
+	(#UF )	15
+	(#UFt)	4
+	      	Add_4_4_4	#7
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#6
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	14
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#45)		!(((\X$next == 4'd15) && (\X != l$22) && (\Y == 4'd0) && (\X$next == \X$next_rhs)))
+	(id)	1036
+	(#UF )	12
+	(#UFt)	4
+	      	Add_4_4_4	#5
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#5
+	(#K  )	3
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	14
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#46)		!(((\X == l$22) && (\X == l$5)))
+	(id)	1051
+	(#UF )	7
+	(#UFt)	2
+	      	Add_4_4_4	#4
+	      	ShiftR_4_4_4	#3
+	(#K  )	1
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#47)		!(((\X$next == l$22$next) && (\X$next == l$5$next)))
+	(id)	1053
+	(#UF )	7
+	(#UFt)	2
+	      	Add_4_4_4	#4
+	      	ShiftR_4_4_4	#3
+	(#K  )	1
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#48)		!(((\X$next == \X$next_rhs) && (\X == l$8) && (\X$next == l$22$next) && (\Y$next == 4'd0)))
+	(id)	1069
+	(#UF )	16
+	(#UFt)	4
+	      	Add_4_4_4	#7
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#7
+	(#K  )	3
+	(#reg)	4
+	(#inp)	1
+	(#ite)	3
+	(#CF )	14
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#49)		!(((\X == l$16) && (\X == l$17)))
+	(id)	1103
+	(#UF )	8
+	(#UFt)	2
+	      	Add_4_4_4	#5
+	      	ShiftR_4_4_4	#3
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#50)		!(((\X$next == l$16) && (\X$next == l$17)))
+	(id)	1105
+	(#UF )	8
+	(#UFt)	2
+	      	Add_4_4_4	#5
+	      	ShiftR_4_4_4	#3
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#51)		!(((\X == l$14) && (\X$next != l$22$next) && (\Y$next == \Y$next_rhs) && (\Y$next != 4'd0) && (\X != l$22) && (\X != l$5) && (\X$next == \X$next_rhs) && (\Y$next != 4'd1) && !(LT_1_4_4(\X$next, \Y$next))))
+	(id)	1121
+	(#UF )	24
+	(#UFt)	4
+	      	Add_4_4_4	#13
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#2
+	      	ShiftR_4_4_4	#8
+	(#K  )	3
+	(#reg)	4
+	(#inp)	1
+	(#ite)	5
+	(#CF )	23
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#52)		!(((\X$next == \X$next_rhs) && !(LT_1_4_4(\X, \Y)) && \reset && (\X$next != l$8) && (\X == l$16)))
+	(id)	1137
+	(#UF )	12
+	(#UFt)	4
+	      	Add_4_4_4	#6
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#4
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	14
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#53)		!((!(LT_1_4_4(\X, \Y)) && (\X == l$14) && (\X == l$5) && (\X != l$13)))
+	(id)	1150
+	(#UF )	8
+	(#UFt)	3
+	      	Add_4_4_4	#5
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	6
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#54)		!((!(LT_1_4_4(\X$next, \Y$next)) && (\X$next == l$14) && (\X$next == l$5$next) && (\X$next != l$13$next)))
+	(id)	1152
+	(#UF )	8
+	(#UFt)	3
+	      	Add_4_4_4	#5
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	6
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#55)		!(((\X == l$6) && (\X == l$13)))
+	(id)	1166
+	(#UF )	6
+	(#UFt)	2
+	      	Add_4_4_4	#4
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#56)		!(((\X$next == l$6) && (\X$next == l$13$next)))
+	(id)	1168
+	(#UF )	6
+	(#UFt)	2
+	      	Add_4_4_4	#4
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#57)		!(((\Y != 4'd1) && (\X$next == l$5$next) && (\Y$next == \Y$next_rhs) && !(LT_1_4_4(\X$next, \Y$next)) && (\X$next == l$14) && \reset))
+	(id)	1180
+	(#UF )	7
+	(#UFt)	3
+	      	Add_4_4_4	#5
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	(#K  )	2
+	(#reg)	4
+	(#inp)	1
+	(#ite)	2
+	(#CF )	14
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#58)		!((((\X == l$23) || (\X != l$23)) && (\X == l$23) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	1272
+	(#UF )	10
+	(#UFt)	4
+	      	Add_4_4_4	#6
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	15
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#59)		!(((\X == l$16) && (\Y$next == \Y$next_rhs) && (\X == l$22) && (\X$next == \X$next_rhs) && (\X$next != l$22$next)))
+	(id)	1296
+	(#UF )	23
+	(#UFt)	4
+	      	Add_4_4_4	#12
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#9
+	(#K  )	2
+	(#reg)	4
+	(#inp)	1
+	(#ite)	5
+	(#CF )	19
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#60)		!((!(\reset) && (\X == l$10) && GT_1_4_4(\X, \Y) && (\X$next != l$17) && (\X$next == \X$next_rhs)))
+	(id)	1321
+	(#UF )	14
+	(#UFt)	4
+	      	Add_4_4_4	#7
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#5
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	13
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#61)		!(((\X$next == \X$next_rhs) && GT_1_4_4(\X, \Y) && !(\reset) && (\X$next != l$16) && (\X == l$14)))
+	(id)	1335
+	(#UF )	13
+	(#UFt)	4
+	      	Add_4_4_4	#8
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#3
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	13
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#62)		!((!(\reset) && (\X$next == \X$next_rhs) && (\X$next != l$17) && (\X == l$16) && GT_1_4_4(\X, \Y)))
+	(id)	1349
+	(#UF )	13
+	(#UFt)	4
+	      	Add_4_4_4	#7
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#4
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	13
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#63)		!(((\X == l$23) && (\X == l$8)))
+	(id)	1367
+	(#UF )	9
+	(#UFt)	2
+	      	Add_4_4_4	#6
+	      	ShiftR_4_4_4	#3
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#64)		!(((\X$next == l$23) && (\X$next == l$8)))
+	(id)	1369
+	(#UF )	9
+	(#UFt)	2
+	      	Add_4_4_4	#6
+	      	ShiftR_4_4_4	#3
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#65)		!((((\X == l$24) || (\X != l$24)) && (\X == l$24) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	1430
+	(#UF )	12
+	(#UFt)	4
+	      	Add_4_4_4	#6
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#4
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	15
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#66)		!(((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs) && GT_1_4_4(\X, \Y) && (\Y$next == 4'd0) && (\X$next != l$24) && (\X == l$8)))
+	(id)	1464
+	(#UF )	13
+	(#UFt)	4
+	      	Add_4_4_4	#7
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#4
+	(#K  )	3
+	(#reg)	4
+	(#inp)	1
+	(#ite)	5
+	(#CF )	19
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#67)		!(((\X != 4'd0) && (\X == l$5) && (\Y == 4'd0)))
+	(id)	1486
+	(#UF )	1
+	(#UFt)	1
+	      	Add_4_4_4	#1
+	(#K  )	1
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#68)		!(((\X$next != 4'd0) && (\X$next == l$5$next) && (\Y$next == 4'd0)))
+	(id)	1488
+	(#UF )	1
+	(#UFt)	1
+	      	Add_4_4_4	#1
+	(#K  )	1
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#69)		!((((\X == l$30) || (\X != l$30)) && (\X == l$30) && ((\X == l$27) || (\X != l$27)) && (\X == l$27) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	1577
+	(#UF )	21
+	(#UFt)	4
+	      	Add_4_4_4	#10
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#9
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	18
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#70)		!(((\X == l$24) && (\Y == 4'd0) && (\X$next == \X$next_rhs) && (\X$next != l$27)))
+	(id)	1608
+	(#UF )	15
+	(#UFt)	4
+	      	Add_4_4_4	#8
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#5
+	(#K  )	3
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	14
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#71)		!(((\X$next == \X$next_rhs) && (\X$next != l$24) && (\X == l$17) && (\Y == 4'd1)))
+	(id)	1625
+	(#UF )	12
+	(#UFt)	4
+	      	Add_4_4_4	#6
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#4
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	14
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#72)		!(((\X == l$27) && (\X == l$17)))
+	(id)	1650
+	(#UF )	9
+	(#UFt)	2
+	      	Add_4_4_4	#5
+	      	ShiftR_4_4_4	#4
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#73)		!(((\X$next == l$27) && (\X$next == l$17)))
+	(id)	1652
+	(#UF )	9
+	(#UFt)	2
+	      	Add_4_4_4	#5
+	      	ShiftR_4_4_4	#4
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#74)		!(((\X$next == 4'd15) && (\X$next == \X$next_rhs) && (\X == l$17)))
+	(id)	1664
+	(#UF )	11
+	(#UFt)	4
+	      	Add_4_4_4	#5
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#4
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	13
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#75)		!(((\X == l$27) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	1690
+	(#UF )	13
+	(#UFt)	4
+	      	Add_4_4_4	#6
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#5
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	13
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#76)		!(((\X$next == \X$next_rhs) && !(LT_1_4_4(\X, \Y)) && (\X == l$24) && (\X$next != l$27)))
+	(id)	1732
+	(#UF )	15
+	(#UFt)	4
+	      	Add_4_4_4	#8
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#5
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	14
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#77)		!(((\X == l$22) && (\X$next == \X$next_rhs) && (\X$next == l$23) && (\X != l$30)))
+	(id)	1752
+	(#UF )	19
+	(#UFt)	4
+	      	Add_4_4_4	#11
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#6
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	14
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#78)		!((((\X == l$31) || (\X != l$31)) && (\X == l$31) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	1854
+	(#UF )	11
+	(#UFt)	4
+	      	Add_4_4_4	#7
+	      	GT_1_4_4	#1
+	      	LT_1_4_4	#1
+	      	ShiftR_4_4_4	#2
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	3
+	(#CF )	15
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+
+(local equalities) #4
+            \X == l$5
+            \X == l$13
+            \X == l$22
+            \X == l$30
+
+(learned predicates) #18
+            (\Y == 4'd0)
+            (\X == 4'd15)
+            (\X == l$2)
+            (\X == l$4)
+            (\X == l$5)
+            (\X == l$6)
+            (\X == l$8)
+            (\X == l$10)
+            (\X == l$13)
+            (\X == l$14)
+            (\X == l$16)
+            (\X == l$17)
+            (\X == l$22)
+            (\X == l$23)
+            (\X == l$24)
+            (\X == l$27)
+            (\X == l$30)
+            (\X == l$31)
+
+(learned constants)  #3
+            4'd1
+            4'd0
+            4'd15
+
+(learned signals)    #2
+            \X
+            \Y
+
+(learned UFs)        #31
+            ShiftR_4_4_4(4'd15, 4'd1)	:= $shr$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$5_Y
+            ShiftR_4_4_4(4'd1, 4'd1)	:= l$1
+            Add_4_4_4($shr$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$5_Y, l$1)	:= l$2
+            Add_4_4_4(4'd1, 4'd1)	:= l$4
+            Add_4_4_4(\Y, \Y)	:= l$5
+            Add_4_4_4(l$4, 4'd1)	:= l$6
+            ShiftR_4_4_4(l$2, 4'd1)	:= l$7
+            Add_4_4_4($shr$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$5_Y, l$7)	:= l$8
+            ShiftR_4_4_4(l$4, 4'd1)	:= l$9
+            Add_4_4_4($shr$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$5_Y, l$9)	:= l$10
+            ShiftR_4_4_4(4'd15, \Y)	:= l$11
+            ShiftR_4_4_4(l$5, \Y)	:= l$12
+            Add_4_4_4(l$11, l$12)	:= l$13
+            Add_4_4_4(l$6, 4'd1)	:= l$14
+            Add_4_4_4(l$2, 4'd1)	:= l$15
+            Add_4_4_4(l$15, 4'd1)	:= l$16
+            Add_4_4_4(l$8, 4'd1)	:= l$17
+            ShiftR_4_4_4(\Y, \Y)	:= l$18
+            Add_4_4_4(l$11, l$18)	:= l$19
+            ShiftR_4_4_4(l$19, \Y)	:= l$20
+            Add_4_4_4(l$11, l$20)	:= l$21
+            Add_4_4_4(l$21, \Y)	:= l$22
+            Add_4_4_4(l$14, 4'd1)	:= l$23
+            Add_4_4_4(l$17, 4'd1)	:= l$24
+            ShiftR_4_4_4(l$8, 4'd1)	:= l$25
+            Add_4_4_4($shr$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$5_Y, l$25)	:= l$26
+            Add_4_4_4(l$26, 4'd1)	:= l$27
+            ShiftR_4_4_4(l$21, \Y)	:= l$28
+            Add_4_4_4(l$11, l$28)	:= l$29
+            Add_4_4_4(l$29, \Y)	:= l$30
+            Add_4_4_4(l$23, 4'd1)	:= l$31
+
+(#sim. iterations) 13
+(#ref. iterations) 60
+(#refs) 79
+(#assump. lemmas)  0
+(#lemmas)          79

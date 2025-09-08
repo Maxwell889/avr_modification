@@ -1,0 +1,94 @@
+------------
+Size Summary
+------------
+
+State variables (#12)
+	(1-bit)	11
+	(32-bit)	1
+
+Inputs (#1)
+	(1-bit)	1
+
+Constants (#4)
+	(1-bit)	1
+	(32-bit)	3
+
+---------------
+State Variables
+---------------
+\X                              (1-bit)
+\LoneHot                        (1-bit)
+\L9                             (1-bit)
+\L8                             (1-bit)
+\L7                             (1-bit)
+\L6                             (1-bit)
+\L5                             (1-bit)
+\L4                             (1-bit)
+\L3                             (1-bit)
+\L10                            (1-bit)
+\L1                             (1-bit)
+\S                              (32-bit)
+
+------
+Inputs
+------
+\inp                            (1-bit)
+
+---------
+Constants
+---------
+1'd0
+32'd2
+32'd1
+32'd0
+
+-----------------------------
+Uninterpreted Functions (UFs)
+-----------------------------
+LT_1_32_32	#1
+
+------------------
+Initial Conditions
+------------------
+
+	\L1
+	!\L10
+	!\L3
+	!\L4
+	!\L5
+	!\L6
+	!\L7
+	!\L8
+	!\L9
+	\LoneHot
+	(\S == 32'd0)
+	!\X
+
+
+
+-----------------
+Dependency List
+-----------------
+
+Depth: 0
+	(1-bit) #1	n0	u0	c0	e0	property	<= \L10, 
+
+Depth: 1
+	(1-bit) #5	n1	u0	c0	e0	\L10$next	<= \L3, \LoneHot, \S, \X, 
+
+Depth: 2
+	(1-bit) #4	n1	u1	c0	e0	\X$next	<= \L4, 
+	(1-bit) #9	n0	u0	c0	e0	\LoneHot$next	<= \L1, \L4, \L5, \L6, \L7, \L8, \L9, 
+	(1-bit) #8	n1	u0	c0	e0	\L3$next	<= \L1, \L7, \L8, \L9, 
+	(32-bit) #5	n3	u0	c0	e0	\S$next	<= \L6, \L8, 
+
+Depth: 3
+	(1-bit) #5	n1	u0	c0	e0	\L9$next	<= 
+	(1-bit) #5	n1	u0	c0	e0	\L8$next	<= 
+	(1-bit) #5	n1	u0	c0	e0	\L7$next	<= 
+	(1-bit) #5	n1	u1	c0	e0	\L6$next	<= 
+	(1-bit) #4	n1	u1	c0	e0	\L5$next	<= 
+	(1-bit) #5	n1	u0	c0	e0	\L4$next	<= 
+	(1-bit) #2	n1	u0	c0	e0	\L1$next	<= 
+
+-----------------

@@ -1,0 +1,94 @@
+------------
+Size Summary
+------------
+
+State variables (#12)
+	(1-bit)	12
+
+Inputs (#6)
+	(1-bit)	6
+
+Constants (#1)
+	(1-bit)	1
+
+---------------
+State Variables
+---------------
+\s3                             (1-bit)
+\s2                             (1-bit)
+\s1                             (1-bit)
+\im.p3_n                        (1-bit)
+\im.p2_m                        (1-bit)
+\im.p2_ctl_2                    (1-bit)
+\im.p2_c                        (1-bit)
+\im.p1_ctl_2                    (1-bit)
+\im.p1_ctl_1                    (1-bit)
+\im.p1_c                        (1-bit)
+\im.p1_b                        (1-bit)
+\im.p1_a                        (1-bit)
+
+------
+Inputs
+------
+\b                              (1-bit)
+\a                              (1-bit)
+\ctl_1                          (1-bit)
+\c                              (1-bit)
+\ctl_2                          (1-bit)
+\im.reset                       (1-bit)
+
+---------
+Constants
+---------
+1'd0
+
+-----------------------------
+Uninterpreted Functions (UFs)
+-----------------------------
+Sub_1_1_1	#4
+
+------------------
+Initial Conditions
+------------------
+
+	!\im.p1_a
+	!\im.p1_b
+	!\im.p1_c
+	!\im.p1_ctl_1
+	!\im.p1_ctl_2
+	!\im.p2_c
+	!\im.p2_ctl_2
+	!\im.p2_m
+	!\im.p3_n
+	!\s1
+	!\s2
+	!\s3
+
+
+
+-----------------
+Dependency List
+-----------------
+
+Depth: 0
+	(1-bit) #2	n0	u0	c0	e0	property	<= \im.p3_n, \s3, 
+
+Depth: 1
+	(1-bit) #1	n1	u0	c0	e0	\s3$next	<= \s2, 
+	(1-bit) #3	n1	u1	c0	e0	\im.p3_n$next	<= \im.p2_c, \im.p2_ctl_2, \im.p2_m, 
+
+Depth: 2
+	(1-bit) #1	n1	u0	c0	e0	\s2$next	<= \s1, 
+	(1-bit) #3	n1	u1	c0	e0	\im.p2_m$next	<= \im.p1_a, \im.p1_b, \im.p1_ctl_1, 
+	(1-bit) #1	n1	u0	c0	e0	\im.p2_ctl_2$next	<= \im.p1_ctl_2, 
+	(1-bit) #1	n1	u0	c0	e0	\im.p2_c$next	<= \im.p1_c, 
+
+Depth: 3
+	(1-bit) #0	n1	u2	c0	e0	\s1$next	<= 
+	(1-bit) #0	n1	u0	c0	e0	\im.p1_ctl_2$next	<= 
+	(1-bit) #0	n1	u0	c0	e0	\im.p1_ctl_1$next	<= 
+	(1-bit) #0	n1	u0	c0	e0	\im.p1_c$next	<= 
+	(1-bit) #0	n1	u0	c0	e0	\im.p1_b$next	<= 
+	(1-bit) #0	n1	u0	c0	e0	\im.p1_a$next	<= 
+
+-----------------

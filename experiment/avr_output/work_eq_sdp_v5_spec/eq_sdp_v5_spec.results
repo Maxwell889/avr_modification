@@ -1,0 +1,6 @@
+i-benchmark:	eq_sdp_v5_spec
+frontend:	yosys
+backend:	y2+bt
+y2-force-reset-limit:	1000
+y2-force-reset-timeout-sec:	50
+y2-ab-soft-reset-timeout-sec:	3

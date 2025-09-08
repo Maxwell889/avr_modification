@@ -1,0 +1,860 @@
+(benchmark) eq_sdp_v4_eq_sdp_v4
+
+(#0)		!(((\im.p2_c == 8'd0) && (\s3$next != \im.p3_n$next) && (\s2 == 8'd0) && (\s3$next == \s3$next_rhs) && (\im.p2_m == 8'd0) && (\im.p3_n$next == \im.p3_n$next_rhs)))
+	(id)	165
+	(#UF )	2
+	(#UFt)	2
+	      	Add_8_8_8	#1
+	      	Sub_8_8_8	#1
+	(#K  )	1
+	(#reg)	6
+	(#inp)	1
+	(#ite)	3
+	(#CF )	11
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#1)		!(((\im.p1_a == \s1) && ((\s1 == \s3) || (\s1 != \s3)) && (\s1 == \s3) && ((\s1 == 8'd0) || (\s1 != 8'd0)) && (\s1 == 8'd0) && ((\im.p1_c == \s3) || (\im.p1_c != \s3)) && (\im.p1_c == \s3) && ((\im.p1_c == 8'd0) || (\im.p1_c != 8'd0)) && (\im.p1_c == 8'd0) && ((\im.p1_b == \s3) || (\im.p1_b != \s3)) && (\im.p1_b == \s3) && ((\im.p1_b == 8'd0) || (\im.p1_b != 8'd0)) && (\im.p1_b == 8'd0) && (\im.p2_c$next != \im.p2_m$next) && (\im.p2_m$next == \im.p2_m$next_rhs) && (\im.p2_c$next == \im.p2_c$next_rhs)))
+	(id)	233
+	(#UF )	3
+	(#UFt)	3
+	      	Add_8_8_8	#1
+	      	BitWiseAnd_8_8_8	#1
+	      	Sub_8_8_8	#1
+	(#K  )	2
+	(#reg)	7
+	(#inp)	1
+	(#ite)	3
+	(#CF )	28
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+	(too large to print)
+	(id)	513
+	(comment)	ab
+	(#UF )	8
+	(#UFt)	2
+	      	Add_8_8_8	#1
+	      	Sub_8_8_8	#7
+	(#K  )	4
+	(#reg)	9
+	(#inp)	4
+	(#ite)	3
+	(#CF )	39
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#3)		!((!(\im.reset) && (\s3$next == \s3$next_rhs) && (\im.p2_m == 8'd0) && (\s2 != $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:51$15_Y) && (\s3$next == 8'd0) && (\im.p2_c == 8'd0)))
+	(id)	582
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_8_8_8	#1
+	(#K  )	1
+	(#reg)	4
+	(#inp)	1
+	(#ite)	1
+	(#CF )	9
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#4)		!((($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$9_Y == 8'd1) && (\im.p1_a == 8'd0)))
+	(id)	599
+	(#UF )	1
+	(#UFt)	1
+	      	BitWiseAnd_8_8_8	#1
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#5)		!((($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$9_Y$next == 8'd1) && (\im.p1_a$next == 8'd0)))
+	(id)	601
+	(#UF )	1
+	(#UFt)	1
+	      	BitWiseAnd_8_8_8	#1
+	(#K  )	2
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+	(too large to print)
+	(id)	702
+	(#UF )	9
+	(#UFt)	3
+	      	Add_8_8_8	#1
+	      	BitWiseAnd_8_8_8	#1
+	      	Sub_8_8_8	#7
+	(#K  )	5
+	(#reg)	7
+	(#inp)	4
+	(#ite)	4
+	(#CF )	40
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	1
+	(#Ext)	1
+
+(#7)		!((($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$9_Y != 8'd1) && l$12))
+	(id)	758
+	(#UF )	1
+	(#UFt)	1
+	      	BitWiseAnd_8_8_8	#1
+	(#K  )	1
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	3
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	1
+	(#Ext)	1
+
+(#8)		!((($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$9_Y$next != 8'd1) && l$12$next))
+	(id)	760
+	(#UF )	1
+	(#UFt)	1
+	      	BitWiseAnd_8_8_8	#1
+	(#K  )	1
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	3
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	1
+	(#Ext)	1
+
+(#9)		!((($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$9_Y == 8'd1) && !(l$12)))
+	(id)	774
+	(#UF )	1
+	(#UFt)	1
+	      	BitWiseAnd_8_8_8	#1
+	(#K  )	1
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	1
+	(#Ext)	1
+
+(#10)		!((($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$9_Y$next == 8'd1) && !(l$12$next)))
+	(id)	776
+	(#UF )	1
+	(#UFt)	1
+	      	BitWiseAnd_8_8_8	#1
+	(#K  )	1
+	(#reg)	1
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	1
+	(#Ext)	1
+
+(#11)		!(((\im.p1_b != \b) && (\s1$next == l$9$next) && (\im.p1_b == 8'd0) && (\im.p1_b$next == \im.p1_b$next_rhs) && (\im.p1_c$next == \im.p1_c$next_rhs) && (\im.p1_a$next == \im.p1_a$next_rhs) && !(\ctl_2) && (\im.p1_b$next != 8'd128) && (\s1$next == \s1$next_rhs) && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$9_Y$next == 8'd1)))
+	(id)	786
+	(#UF )	7
+	(#UFt)	3
+	      	Add_8_8_8	#2
+	      	BitWiseAnd_8_8_8	#1
+	      	Sub_8_8_8	#4
+	(#K  )	3
+	(#reg)	5
+	(#inp)	5
+	(#ite)	6
+	(#CF )	18
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	1
+	(#Ext)	1
+
+(#12)		!(((\s2$next != $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:51$15_Y$next) && (\im.p2_m$next == \im.p2_m$next_rhs) && (\s1 == l$9) && (\im.p2_c$next == \im.p2_c$next_rhs) && (\im.p1_b == 8'd128) && (\s2$next == \s2$next_rhs)))
+	(id)	804
+	(#UF )	5
+	(#UFt)	3
+	      	Add_8_8_8	#1
+	      	BitWiseAnd_8_8_8	#1
+	      	Sub_8_8_8	#3
+	(#K  )	3
+	(#reg)	7
+	(#inp)	1
+	(#ite)	4
+	(#CF )	13
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#13)		!(((\s2$next != $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:51$15_Y$next) && (\s1 == l$9) && (\s2$next == \s2$next_rhs) && (\im.p1_b == 8'd0) && (\im.p2_c$next == \im.p2_c$next_rhs) && (\im.p2_m$next == \im.p2_m$next_rhs)))
+	(id)	815
+	(#UF )	5
+	(#UFt)	3
+	      	Add_8_8_8	#1
+	      	BitWiseAnd_8_8_8	#1
+	      	Sub_8_8_8	#3
+	(#K  )	2
+	(#reg)	7
+	(#inp)	1
+	(#ite)	4
+	(#CF )	13
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+	(too large to print)
+	(id)	905
+	(#UF )	9
+	(#UFt)	3
+	      	Add_8_8_8	#3
+	      	BitWiseAnd_8_8_8	#1
+	      	Sub_8_8_8	#5
+	(#K  )	5
+	(#reg)	7
+	(#inp)	4
+	(#ite)	4
+	(#CF )	34
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#15)		!(((\im.p2_c$next == \im.p2_c$next_rhs) && (\im.p2_c$next == 8'd0) && (\im.p1_b == \s3) && (\im.p1_c == \s3) && !(\im.reset) && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$9_Y == 8'd1) && (\im.p2_m$next == \im.p2_m$next_rhs) && (\im.p2_m$next == 8'd0)))
+	(id)	1037
+	(#UF )	3
+	(#UFt)	3
+	      	Add_8_8_8	#1
+	      	BitWiseAnd_8_8_8	#1
+	      	Sub_8_8_8	#1
+	(#K  )	2
+	(#reg)	6
+	(#inp)	1
+	(#ite)	3
+	(#CF )	13
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#16)		!(((\im.p2_m == 8'd0) && (\s1$next == \s3$next) && (\im.p1_c$next == \im.p1_c$next_rhs) && !(\im.reset) && (\s1$next == \s1$next_rhs) && !(\a[0:0]) && (\im.p1_c$next == 8'd0) && (\s3$next == 8'd0) && (\im.p2_m != $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$2_Y)))
+	(id)	1047
+	(#UF )	4
+	(#UFt)	2
+	      	Add_8_8_8	#2
+	      	Sub_8_8_8	#2
+	(#K  )	1
+	(#reg)	4
+	(#inp)	5
+	(#ite)	4
+	(#CF )	15
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	1
+	(#Ext)	1
+
+(#17)		!(((\im.p1_c == \s3) && (\im.p1_a != 8'd0) && (\im.p1_c == 8'd0) && (\im.p2_m == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$12_Y) && (\im.p1_b == \s3) && (\im.p2_m == 8'd0)))
+	(id)	1074
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_8_8_8	#1
+	(#K  )	1
+	(#reg)	5
+	(#inp)	0
+	(#ite)	0
+	(#CF )	8
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#18)		!(((\im.p1_c$next == \s3$next) && (\im.p1_a$next != 8'd0) && (\im.p1_c$next == 8'd0) && (\im.p2_m$next == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$12_Y$next) && (\im.p1_b$next == \s3$next) && (\im.p2_m$next == 8'd0)))
+	(id)	1076
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_8_8_8	#1
+	(#K  )	1
+	(#reg)	5
+	(#inp)	0
+	(#ite)	0
+	(#CF )	8
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#19)		!(((\s3 == 8'd0) && (\im.p1_b == \s3) && (\s1 == l$9) && (\s1 != l$17)))
+	(id)	1088
+	(#UF )	4
+	(#UFt)	2
+	      	Add_8_8_8	#1
+	      	Sub_8_8_8	#3
+	(#K  )	1
+	(#reg)	5
+	(#inp)	0
+	(#ite)	0
+	(#CF )	6
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#20)		!(((\s3$next == 8'd0) && (\im.p1_b$next == \s3$next) && (\s1$next == l$9$next) && (\s1$next != l$17$next)))
+	(id)	1090
+	(#UF )	4
+	(#UFt)	2
+	      	Add_8_8_8	#1
+	      	Sub_8_8_8	#3
+	(#K  )	1
+	(#reg)	5
+	(#inp)	0
+	(#ite)	0
+	(#CF )	6
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#21)		!(((\im.p1_c$next == \im.p1_c$next_rhs) && (\im.p1_a$next == \im.p1_a$next_rhs) && (\im.p1_c$next == 8'd0) && (\s1$next == \s1$next_rhs) && (\im.p1_b$next == \im.p1_b$next_rhs) && l$12$next && (\s1$next != l$17$next)))
+	(id)	1102
+	(#UF )	6
+	(#UFt)	2
+	      	Add_8_8_8	#3
+	      	Sub_8_8_8	#3
+	(#K  )	1
+	(#reg)	4
+	(#inp)	5
+	(#ite)	6
+	(#CF )	14
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	2
+	(#Ext)	1
+
+(#22)		!(((\s3 == 8'd0) && (\s2 == 8'd0) && (\im.p1_b != \im.p1_a) && (\s2 == l$9) && (\im.p1_c == \s3)))
+	(id)	1119
+	(#UF )	2
+	(#UFt)	1
+	      	Sub_8_8_8	#2
+	(#K  )	1
+	(#reg)	5
+	(#inp)	0
+	(#ite)	0
+	(#CF )	7
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#23)		!(((\s3$next == 8'd0) && (\s2$next == 8'd0) && (\im.p1_b$next != \im.p1_a$next) && (\s2$next == l$9$next) && (\im.p1_c$next == \s3$next)))
+	(id)	1121
+	(#UF )	2
+	(#UFt)	1
+	      	Sub_8_8_8	#2
+	(#K  )	1
+	(#reg)	5
+	(#inp)	0
+	(#ite)	0
+	(#CF )	7
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#24)		!(((\s1$next != 8'd0) && (\im.p1_b == \s3) && (\im.p2_m == $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$2_Y) && (\s1$next == \s1$next_rhs) && (\s1 == \s3) && (\s1 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$2_Y, \c)) && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$9_Y$next != 8'd1) && (\im.p1_a$next == \im.p1_a$next_rhs) && (\im.p2_m == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$12_Y) && (\s1 == 8'd0) && (\im.p1_a == 8'd0)))
+	(id)	1133
+	(#UF )	7
+	(#UFt)	3
+	      	Add_8_8_8	#2
+	      	BitWiseAnd_8_8_8	#1
+	      	Sub_8_8_8	#4
+	(#K  )	2
+	(#reg)	7
+	(#inp)	5
+	(#ite)	4
+	(#CF )	17
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	1
+	(#Ext)	1
+
+(#25)		!(((\im.p1_c != 8'd0) && (\im.p1_b == 8'd0) && (\im.p1_a == 8'd0) && (\s1 == 8'd0) && (\s1 == l$9)))
+	(id)	1176
+	(#UF )	2
+	(#UFt)	1
+	      	Sub_8_8_8	#2
+	(#K  )	1
+	(#reg)	4
+	(#inp)	0
+	(#ite)	0
+	(#CF )	7
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#26)		!(((\im.p1_c$next != 8'd0) && (\im.p1_b$next == 8'd0) && (\im.p1_a$next == 8'd0) && (\s1$next == 8'd0) && (\s1$next == l$9$next)))
+	(id)	1178
+	(#UF )	2
+	(#UFt)	1
+	      	Sub_8_8_8	#2
+	(#K  )	1
+	(#reg)	4
+	(#inp)	0
+	(#ite)	0
+	(#CF )	7
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#27)		!(((\s1 == l$17) && (\im.p1_b == \s3) && (\im.p1_c != 8'd0) && (\s1 == \s3) && (\im.p1_a == 8'd0)))
+	(id)	1190
+	(#UF )	2
+	(#UFt)	2
+	      	Add_8_8_8	#1
+	      	Sub_8_8_8	#1
+	(#K  )	1
+	(#reg)	5
+	(#inp)	0
+	(#ite)	0
+	(#CF )	7
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#28)		!(((\s1$next == l$17$next) && (\im.p1_b$next == \s3$next) && (\im.p1_c$next != 8'd0) && (\s1$next == \s3$next) && (\im.p1_a$next == 8'd0)))
+	(id)	1192
+	(#UF )	2
+	(#UFt)	2
+	      	Add_8_8_8	#1
+	      	Sub_8_8_8	#1
+	(#K  )	1
+	(#reg)	5
+	(#inp)	0
+	(#ite)	0
+	(#CF )	7
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#29)		!(((\im.p2_m$next == \im.p2_m$next_rhs) && !(l$12) && (\im.p1_a == \im.p1_b) && (\im.p2_m$next != 8'd0)))
+	(id)	1202
+	(#UF )	3
+	(#UFt)	3
+	      	Add_8_8_8	#1
+	      	BitWiseAnd_8_8_8	#1
+	      	Sub_8_8_8	#1
+	(#K  )	2
+	(#reg)	3
+	(#inp)	1
+	(#ite)	2
+	(#CF )	9
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	1
+	(#Ext)	1
+
+(#30)		!(((\s2$next != 8'd0) && (\im.p1_b$next == \s3$next) && (\s1$next == \s1$next_rhs) && (\im.p2_m == 8'd0) && (\im.p2_m == $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$2_Y) && (\s2$next == \s2$next_rhs) && (\s1$next == 8'd0) && !(\a[0:0]) && (\s2 != Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$2_Y, \c)) && (\s3$next == \s3$next_rhs) && (\im.p1_b$next == 8'd0)))
+	(id)	1211
+	(#UF )	5
+	(#UFt)	2
+	      	Add_8_8_8	#2
+	      	Sub_8_8_8	#3
+	(#K  )	1
+	(#reg)	7
+	(#inp)	5
+	(#ite)	5
+	(#CF )	18
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	1
+	(#Ext)	1
+
+(#31)		!(((\im.p1_b == 8'd0) && (\im.p1_a != \im.p1_c) && (\s3 == 8'd0) && (\s1 == \s3) && (\s1 == l$17)))
+	(id)	1231
+	(#UF )	2
+	(#UFt)	2
+	      	Add_8_8_8	#1
+	      	Sub_8_8_8	#1
+	(#K  )	1
+	(#reg)	5
+	(#inp)	0
+	(#ite)	0
+	(#CF )	7
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#32)		!(((\im.p1_b$next == 8'd0) && (\im.p1_a$next != \im.p1_c$next) && (\s3$next == 8'd0) && (\s1$next == \s3$next) && (\s1$next == l$17$next)))
+	(id)	1233
+	(#UF )	2
+	(#UFt)	2
+	      	Add_8_8_8	#1
+	      	Sub_8_8_8	#1
+	(#K  )	1
+	(#reg)	5
+	(#inp)	0
+	(#ite)	0
+	(#CF )	7
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#33)		!(((\s2 == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:51$15_Y) && (\s3$next == 8'd0) && (\s3$next == \s3$next_rhs) && (\im.p2_c == 8'd0) && (\im.p1_c$next == \im.p1_c$next_rhs) && (\im.p1_c$next != 8'd0) && (\s1$next == \s1$next_rhs) && (\s1$next == 8'd0) && (\im.p2_m == $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$2_Y) && (\im.p1_a$next == \im.p1_a$next_rhs) && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$9_Y$next != 8'd1)))
+	(id)	1245
+	(#UF )	6
+	(#UFt)	3
+	      	Add_8_8_8	#2
+	      	BitWiseAnd_8_8_8	#1
+	      	Sub_8_8_8	#3
+	(#K  )	2
+	(#reg)	7
+	(#inp)	5
+	(#ite)	6
+	(#CF )	19
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	1
+	(#Ext)	1
+
+(#34)		!(((\im.p1_a$next == \im.p1_a$next_rhs) && (\im.p1_c$next == \im.p1_c$next_rhs) && (\im.p1_c$next == 8'd0) && (\s1$next != l$9$next) && !(\a[0:0]) && (\s1$next == \s1$next_rhs) && (\im.p1_b$next == \im.p1_b$next_rhs)))
+	(id)	1255
+	(#UF )	6
+	(#UFt)	2
+	      	Add_8_8_8	#2
+	      	Sub_8_8_8	#4
+	(#K  )	1
+	(#reg)	4
+	(#inp)	5
+	(#ite)	6
+	(#CF )	15
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	1
+	(#Ext)	1
+
+(#35)		!(((\s2 == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:51$15_Y) && (\im.p2_c == 8'd0) && (\im.p2_m != \s2)))
+	(id)	1284
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_8_8_8	#1
+	(#K  )	1
+	(#reg)	3
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#36)		!(((\s2$next == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:51$15_Y$next) && (\im.p2_c$next == 8'd0) && (\im.p2_m$next != \s2$next)))
+	(id)	1286
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_8_8_8	#1
+	(#K  )	1
+	(#reg)	3
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#37)		!(((\im.p3_n$next == \im.p3_n$next_rhs) && (\s3$next != \im.p3_n$next) && (\im.p2_c == 8'd0) && (\im.p2_m == \s2) && (\s3$next == \s3$next_rhs)))
+	(id)	1295
+	(#UF )	2
+	(#UFt)	2
+	      	Add_8_8_8	#1
+	      	Sub_8_8_8	#1
+	(#K  )	1
+	(#reg)	6
+	(#inp)	1
+	(#ite)	3
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#38)		!(((\im.p1_a$next == \im.p1_a$next_rhs) && (\im.p1_c$next == \im.p1_c$next_rhs) && (\im.p2_m == 8'd0) && \ctl_2 && (\im.p1_c$next == \s1$next) && (\im.p2_m != $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$2_Y) && (\s1$next == \s1$next_rhs) && (\im.p1_c$next != 8'd0) && !(l$12$next)))
+	(id)	1309
+	(#UF )	4
+	(#UFt)	2
+	      	Add_8_8_8	#2
+	      	Sub_8_8_8	#2
+	(#K  )	1
+	(#reg)	4
+	(#inp)	5
+	(#ite)	5
+	(#CF )	15
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	2
+	(#Ext)	1
+
+(#39)		!(((\im.p1_b != \im.p1_a) && (\im.p2_m == 8'd0) && (\im.p2_m == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$12_Y)))
+	(id)	1326
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_8_8_8	#1
+	(#K  )	1
+	(#reg)	3
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#40)		!(((\im.p1_b$next != \im.p1_a$next) && (\im.p2_m$next == 8'd0) && (\im.p2_m$next == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$12_Y$next)))
+	(id)	1328
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_8_8_8	#1
+	(#K  )	1
+	(#reg)	3
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#41)		!(((\im.p1_b$next == \im.p1_b$next_rhs) && (\im.p1_a$next == \im.p1_b$next) && (\im.p1_c$next == \im.p1_c$next_rhs) && (\s1$next == \s1$next_rhs) && \ctl_2 && l$12$next && (\im.p1_c$next == \s1$next) && (\im.p1_a$next == \im.p1_a$next_rhs)))
+	(id)	1338
+	(#UF )	4
+	(#UFt)	2
+	      	Add_8_8_8	#2
+	      	Sub_8_8_8	#2
+	(#K  )	1
+	(#reg)	4
+	(#inp)	5
+	(#ite)	6
+	(#CF )	14
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	2
+	(#Ext)	1
+
+(#42)		!(((\im.p1_a == \a) && ((\im.p1_a == 8'd203) || (\im.p1_a != 8'd203)) && (\im.p1_a == 8'd203) && (\im.p1_c == \c) && ((\im.p1_c == 8'd192) || (\im.p1_c != 8'd192)) && (\im.p1_c == 8'd192) && ((\s1 == Add_8_8_8($techmap\sp.$add$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$1_Y, \c)) || (\s1 != Add_8_8_8($techmap\sp.$add$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$1_Y, \c))) && (\s1 == Add_8_8_8($techmap\sp.$add$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$1_Y, \c)) && ((\s1 == l$24) || (\s1 != l$24)) && (\s1 == l$24) && ((\s1 == l$22) || (\s1 != l$22)) && (\s1 == l$22) && (\im.p1_b == \b) && ((\im.p1_b == 8'd53) || (\im.p1_b != 8'd53)) && (\im.p1_b == 8'd53) && (\im.p1_c == \s1) && $techmap\im.$eq$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$10_Y && (\im.p2_m$next != 8'd0) && (\im.p2_m$next == \im.p2_m$next_rhs)))
+	(id)	1441
+	(#UF )	8
+	(#UFt)	3
+	      	Add_8_8_8	#6
+	      	BitWiseAnd_8_8_8	#1
+	      	Sub_8_8_8	#1
+	(#K  )	5
+	(#reg)	5
+	(#inp)	4
+	(#ite)	2
+	(#CF )	29
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#43)		!(((\s1$next == l$17$next) && (\s1$next != l$22$next) && \ctl_2 && (\s2 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$2_Y, \c)) && (\s1$next == \s1$next_rhs) && (\im.p1_a$next == \im.p1_a$next_rhs) && (\s3$next == \s3$next_rhs) && (\im.p1_b$next == \im.p1_b$next_rhs) && (\s1$next == \s3$next) && (\s1$next == l$9$next)))
+	(id)	1483
+	(#UF )	10
+	(#UFt)	2
+	      	Add_8_8_8	#4
+	      	Sub_8_8_8	#6
+	(#K  )	1
+	(#reg)	6
+	(#inp)	5
+	(#ite)	6
+	(#CF )	17
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	1
+	(#Ext)	1
+
+(#44)		!(((\im.p2_m$next == \im.p2_m$next_rhs) && (\im.p1_c == \s1) && (\im.p2_m$next != 8'd0) && l$12 && (\s1 == l$22)))
+	(id)	1492
+	(#UF )	4
+	(#UFt)	3
+	      	Add_8_8_8	#2
+	      	BitWiseAnd_8_8_8	#1
+	      	Sub_8_8_8	#1
+	(#K  )	2
+	(#reg)	5
+	(#inp)	1
+	(#ite)	2
+	(#CF )	9
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	1
+	(#Ext)	1
+
+(#45)		!(((\s1$next == \s1$next_rhs) && (\s1$next == l$22$next) && (\im.p1_b$next == \im.p1_b$next_rhs) && \ctl_2 && (\im.p1_a$next == \im.p1_a$next_rhs) && (\im.p1_c$next == \im.p1_c$next_rhs) && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$9_Y$next != 8'd1) && (\im.p1_b$next != 8'd128) && (\im.p1_b$next != 8'd0)))
+	(id)	1518
+	(#UF )	7
+	(#UFt)	3
+	      	Add_8_8_8	#4
+	      	BitWiseAnd_8_8_8	#1
+	      	Sub_8_8_8	#2
+	(#K  )	3
+	(#reg)	4
+	(#inp)	5
+	(#ite)	6
+	(#CF )	16
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	1
+	(#Ext)	1
+
+(#46)		!(((\im.p1_b == 8'd128) && (\s1 != l$17) && (\s1 == l$9)))
+	(id)	1532
+	(#UF )	4
+	(#UFt)	2
+	      	Add_8_8_8	#1
+	      	Sub_8_8_8	#3
+	(#K  )	1
+	(#reg)	4
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#47)		!(((\im.p1_b$next == 8'd128) && (\s1$next != l$17$next) && (\s1$next == l$9$next)))
+	(id)	1534
+	(#UF )	4
+	(#UFt)	2
+	      	Add_8_8_8	#1
+	      	Sub_8_8_8	#3
+	(#K  )	1
+	(#reg)	4
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+
+(local equalities) #12
+            \im.p2_m == $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$2_Y
+            $techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$9_Y == 8'd1
+            \im.p2_m == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$12_Y
+            \s2 == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:51$15_Y
+            \s1 == l$9
+            \s2 == l$9
+            \s1 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$2_Y, \c)
+            \s2 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$2_Y, \c)
+            \s1 == l$17
+            \s1 == Sub_8_8_8($techmap\sp.$add$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$1_Y, \c)
+            \s1 == l$22
+            \s1 == Add_8_8_8($techmap\sp.$add$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$1_Y, \c)
+
+(learned predicates) #39
+            (\im.p1_b == 8'd0)
+            (\im.p1_c == 8'd0)
+            (\s1 == 8'd0)
+            ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$9_Y == 8'd1)
+            (\im.p1_b == \s3)
+            (\im.p1_c == \s3)
+            (\s1 == \s3)
+            (\s2 == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:51$15_Y)
+            (\s2 == l$8)
+            (\s2 == l$9)
+            (\s2 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$2_Y, \c))
+            (\im.p2_c == 8'd190)
+            (\im.p2_c == \im.p1_c)
+            (\im.p2_c == \c)
+            (\im.p2_m == l$7)
+            (\im.p2_m == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$12_Y)
+            (\im.p2_m == $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$2_Y)
+            (\s1 == l$9)
+            (\im.p1_c == 8'd252)
+            (\im.p1_c == \c)
+            (\im.p1_a == 8'd120)
+            (\im.p1_a == \a)
+            (\im.p1_b == 8'd189)
+            (\im.p1_b == \b)
+            l$12
+            (\s1 == l$14)
+            (\s1 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$2_Y, \c))
+            (\im.p1_a == 8'd175)
+            (\im.p1_c == 8'd87)
+            (\im.p1_b == 8'd41)
+            (\s1 == l$17)
+            (\s1 == l$19)
+            (\s1 == Sub_8_8_8($techmap\sp.$add$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$1_Y, \c))
+            (\im.p1_b == 8'd53)
+            (\s1 == l$22)
+            (\s1 == l$24)
+            (\s1 == Add_8_8_8($techmap\sp.$add$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$1_Y, \c))
+            (\im.p1_c == 8'd192)
+            (\im.p1_a == 8'd203)
+
+(learned constants)  #2
+            8'd0
+            8'd1
+
+(learned signals)    #11
+            \im.p1_a
+            \im.p1_b
+            \im.p1_c
+            \im.p2_c
+            \im.p2_m
+            \s1
+            \s2
+            \s3
+            \a
+            \b
+            \c
+
+(learned UFs)        #13
+            Add_8_8_8(\a, \b)	:= $techmap\sp.$add$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$1_Y
+            Sub_8_8_8(\a, \b)	:= $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$2_Y
+            BitWiseAnd_8_8_8(\im.p1_a, 8'd1)	:= $techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$9_Y
+            Add_8_8_8(\im.p1_a, \im.p1_b)	:= $techmap\im.$add$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$11_Y
+            Sub_8_8_8(\im.p1_a, \im.p1_b)	:= $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$12_Y
+            Sub_8_8_8(\im.p2_m, \im.p2_c)	:= $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:51$15_Y
+            Sub_8_8_8($techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$12_Y, \im.p1_c)	:= l$9
+            Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$2_Y, \c)
+            \im.p1_a[0:0]	:= l$12
+            Sub_8_8_8($techmap\im.$add$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$11_Y, \im.p1_c)	:= l$17
+            Sub_8_8_8($techmap\sp.$add$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$1_Y, \c)
+            Add_8_8_8($techmap\im.$add$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/impl.v:49$11_Y, \im.p1_c)	:= l$22
+            Add_8_8_8($techmap\sp.$add$/workspaces/avr_modification/tests/crafted/eq_sdp_v4/spec.v:9$1_Y, \c)
+
+(#sim. iterations) 5
+(#ref. iterations) 36
+(#refs) 48
+(#assump. lemmas)  0
+(#lemmas)          48

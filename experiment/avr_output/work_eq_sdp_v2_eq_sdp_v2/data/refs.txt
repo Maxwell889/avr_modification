@@ -1,0 +1,333 @@
+(benchmark) eq_sdp_v2_eq_sdp_v2
+
+(#0)		!((Sub_1_1_1(\im.p2_m, \im.p2_c) && !(\im.p2_m) && !(\im.p2_c)))
+	(id)	144
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_1_1_1	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#1)		!((Sub_1_1_1(\im.p2_m$next, \im.p2_c$next) && !(\im.p2_m$next) && !(\im.p2_c$next)))
+	(id)	145
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_1_1_1	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#2)		!((!(\c) && Sub_1_1_1(\a, \b) && !(Sub_1_1_1(\sp.m, \c))))
+	(id)	210
+	(#UF )	2
+	(#UFt)	1
+	      	Sub_1_1_1	#2
+	(#K  )	0
+	(#reg)	0
+	(#inp)	4
+	(#ite)	1
+	(#CF )	6
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#3)		!((!(\im.reset) && (\im.p1_c$next == \im.p1_c$next_rhs) && \b && !(\im.p1_c$next) && !(\a) && !(Sub_1_1_1(\sp.m, \c))))
+	(id)	230
+	(#UF )	2
+	(#UFt)	1
+	      	Sub_1_1_1	#2
+	(#K  )	1
+	(#reg)	1
+	(#inp)	5
+	(#ite)	2
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#4)		!((Sub_1_1_1(\im.p2_m, \im.p2_c) && \im.p2_c && \im.p2_m))
+	(id)	260
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_1_1_1	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	2
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#5)		!((Sub_1_1_1(\im.p2_m$next, \im.p2_c$next) && \im.p2_c$next && \im.p2_m$next))
+	(id)	262
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_1_1_1	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	2
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#6)		!((!(Sub_1_1_1(\sp.m, \c)) && \c && !(Sub_1_1_1(\a, \b))))
+	(id)	281
+	(#UF )	2
+	(#UFt)	1
+	      	Sub_1_1_1	#2
+	(#K  )	0
+	(#reg)	0
+	(#inp)	4
+	(#ite)	1
+	(#CF )	6
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#7)		!((\a && (\im.p1_c$next == \im.p1_c$next_rhs) && \im.p1_b$next && !(Sub_1_1_1(\sp.m, \c)) && \im.p1_c$next && (\im.p1_b$next == \im.p1_b$next_rhs)))
+	(id)	302
+	(#UF )	2
+	(#UFt)	1
+	      	Sub_1_1_1	#2
+	(#K  )	1
+	(#reg)	2
+	(#inp)	5
+	(#ite)	3
+	(#CF )	9
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#8)		!((\c && Sub_1_1_1(\sp.m, \c) && \a && !(\b)))
+	(id)	387
+	(#UF )	2
+	(#UFt)	1
+	      	Sub_1_1_1	#2
+	(#K  )	0
+	(#reg)	0
+	(#inp)	4
+	(#ite)	1
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#9)		!((!(\im.p1_a$next) && \b && \c && (\im.p1_a$next == \im.p1_a$next_rhs) && !(\im.reset) && Sub_1_1_1(\sp.m, \c)))
+	(id)	402
+	(#UF )	2
+	(#UFt)	1
+	      	Sub_1_1_1	#2
+	(#K  )	1
+	(#reg)	1
+	(#inp)	5
+	(#ite)	2
+	(#CF )	8
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#10)		!((!(\im.p3_n$next) && \im.p2_c && !(\im.p2_m) && (\s3$next == \s3$next_rhs) && \s3$next && (\im.p3_n$next == \im.p3_n$next_rhs)))
+	(id)	423
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_1_1_1	#1
+	(#K  )	1
+	(#reg)	6
+	(#inp)	1
+	(#ite)	3
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#11)		!((!(Sub_1_1_1(\im.p2_m, \im.p2_c)) && !(\im.p2_c) && \im.p2_m))
+	(id)	434
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_1_1_1	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#12)		!((!(Sub_1_1_1(\im.p2_m$next, \im.p2_c$next)) && !(\im.p2_c$next) && \im.p2_m$next))
+	(id)	436
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_1_1_1	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#13)		!((!(\s1$next) && \c && !(\b) && !(\im.reset) && !(\im.p1_a$next) && (\im.p1_a$next == \im.p1_a$next_rhs) && (\s1$next == \s1$next_rhs)))
+	(id)	509
+	(#UF )	2
+	(#UFt)	1
+	      	Sub_1_1_1	#2
+	(#K  )	1
+	(#reg)	2
+	(#inp)	6
+	(#ite)	4
+	(#CF )	14
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#14)		!((!(\im.p1_b) && \im.p1_a && !(Sub_1_1_1(\im.p1_a, \im.p1_b))))
+	(id)	662
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_1_1_1	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#15)		!((!(\im.p1_b$next) && \im.p1_a$next && !(Sub_1_1_1(\im.p1_a$next, \im.p1_b$next))))
+	(id)	664
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_1_1_1	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#16)		!(((\s1$next == \s1$next_rhs) && \im.p1_b$next && \a && (\im.p1_b$next == \im.p1_b$next_rhs) && \s1$next && !(\c)))
+	(id)	673
+	(#UF )	2
+	(#UFt)	1
+	      	Sub_1_1_1	#2
+	(#K  )	1
+	(#reg)	2
+	(#inp)	6
+	(#ite)	4
+	(#CF )	11
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#17)		!((!(\im.p1_a) && \im.p1_b && !(Sub_1_1_1(\im.p1_a, \im.p1_b))))
+	(id)	692
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_1_1_1	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#18)		!((!(\im.p1_a$next) && \im.p1_b$next && !(Sub_1_1_1(\im.p1_a$next, \im.p1_b$next))))
+	(id)	694
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_1_1_1	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#19)		!((!(\im.p1_a) && Sub_1_1_1(\im.p1_a, \im.p1_b) && !(\im.p1_b)))
+	(id)	708
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_1_1_1	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#20)		!((!(\im.p1_a$next) && Sub_1_1_1(\im.p1_a$next, \im.p1_b$next) && !(\im.p1_b$next)))
+	(id)	710
+	(#UF )	1
+	(#UFt)	1
+	      	Sub_1_1_1	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+
+(local equalities) #0
+
+(learned predicates) #0
+
+(learned constants)  #0
+
+(learned signals)    #0
+
+(learned UFs)        #0
+
+(#sim. iterations) 0
+(#ref. iterations) 15
+(#refs) 21
+(#assump. lemmas)  0
+(#lemmas)          21

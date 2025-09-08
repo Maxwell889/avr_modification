@@ -1,0 +1,4970 @@
+Timeout: 1, Memory_limit: 118000
+	10000.000000 (abstract query)
+	10000.000000 (concrete query)
+
+Config:
+	(concrete bit-width limit: 0)
+	(fineness: 2)
+	(interpret-ex-cc-level: 2)
+	(forward-check:	0)
+	(full projection)
+	(prioritization:	single)
+
+#STAT# num_bits= 0 num_regs= 2 num_total_bits= 8
+4  2
+
+System
+  int : 26
+  bool : 27
+  sum : 53
+  bool_op : 18
+  int_op : 7
+    !  3
+    !=_int  1
+    &&  3
+    +_4_4  3
+    <_4_4  1
+    ==  1
+    ==_int  3
+    >>_4_4  2
+    >_4_4  1
+    ?:_int  5
+    ||  2
+
+
+Property
+  int : 2
+  bool : 6
+  sum : 8
+  bool_op : 2
+  int_op : 1
+    !  1
+    <_4_4  1
+    ==  1
+
+Partial interpretation info:
+  depth: 0
+  count: 0
+  count (d=0): 0
+
+  depth (prop): 0
+  count (prop): 0
+  count (d=0) (prop): 0
+
+	# of Inst.                  : 75	(864 bytes each)
+	  ExInst::hm_ExInst.size()  : 0	(984 bytes each)
+	  SigInst::hm_SigInst.size(): 8	(904 bytes each)
+	  NumInst::hm_NumInst.size(): 5	(888 bytes each)
+	  OpInst::hm_OpInst.size()  : 35	(944 bytes each)
+	  OpInst::hm_ITEInst.size() : 5	(944 bytes each)
+	  OpInst::hm_ETCInst.size() : 0	(944 bytes each)
+	Total                       : 53
+
+	Memory (est.)               : 0.061798 MB
+	  ExInst                    : 0.000000 MB
+	  SigInst                   : 0.006897 MB
+	  NumInst                   : 0.004234 MB
+	  OpInst::OP                : 0.031509 MB
+	  OpInst::ITE               : 0.004501 MB
+	  OpInst::ETC               : 0.000000 MB
+
+	(maximum function composition in T: 2)
+
+---------------------------------------------------------------------------------------------
+ Reachability Analysis Begins
+---------------------------------------------------------------------------------------------
+Loop_FrameNumber_#ReachabilityIterations_#RefinementIterations
+---------------------------------------------------------------------------------------------
+Loop_0_0_0
+---------------------------------------------------------------------------------------------
+[Basis Step]:
+	F[0] = I
+	SAT_a ? [ F[0] && !P ]: SAT
+	(adding pred. from pre_c to ab. cube) #3
+	(adding pred. from pre_c to cc. cube) #3
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 1)
+		SAT_c ? [ F[0] & !P ]: 		(bv input core size: 4)
+		(cc core: 4 -> 2)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\Y == 4'd0) && LT_1_4_4(\X, \Y))
+
+	[Lemmas]: 
+		[1] !(((\Y == 4'd0) && LT_1_4_4(\X, \Y)))
+#81
+		[2] !(((\Y$next == 4'd0) && LT_1_4_4(\X$next, \Y$next)))
+#82
+[RES_1]       2	: 0	: 0 s: 0
+[RES_0]    L  0 : 0 s: 0, mem: 14, time: 0.003639
+---------------------------------------------------------------------------------------------
+Loop_0_0_1
+---------------------------------------------------------------------------------------------
+[Basis Step]:
+	SAT_a ? [ F[0] && !P ]: UNSAT
+
+[First Step]:
+	SAT_a ? [ F[0] & T & !P ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #6
+	(adding from pre_c to cc. cube) #6
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 5	(5 + 0 + 0 + 0 + 0)
+	(concrete cube) 5	(5 + 0 + 0 + 0)
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 1)
+		SAT_c ? [ F[0] & T & !P+ ]: 		(bv input core size: 13)
+		(cc core: 13 -> 4)
+UNSAT
+
+		[MUS(s)]:
+		[1] (!(GT_1_4_4(\X, \Y)) && (\X == 4'd1) && (\Y == 4'd0))
+
+	[Lemmas]: 
+		[1] !((!(GT_1_4_4(\X, \Y)) && (\X == 4'd1) && (\Y == 4'd0)))
+#102
+		[2] !((!(GT_1_4_4(\X$next, \Y$next)) && (\X$next == 4'd1) && (\Y$next == 4'd0)))
+#103
+[RES_1]       4	: 0	: 0 s: 0
+[RES_0]    L  0 : 0 s: 0, mem: 14, time: 0.005511
+---------------------------------------------------------------------------------------------
+Loop_0_0_2
+---------------------------------------------------------------------------------------------
+[First Step]:
+	SAT_a ? [ F[0] & T & !P ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 5	(5 + 0 + 0 + 0 + 0)
+	(concrete cube) 5	(5 + 0 + 0 + 0)
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 1)
+		SAT_c ? [ F[0] & T & !P+ ]: 		(bv input core size: 13)
+		(cc core: 13 -> 10)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\Y$next == \Y$next_rhs) && !(LT_1_4_4(\X, \Y)) && LT_1_4_4(\X$next, \Y$next) && (\X$next == \X$next_rhs) && (\X == 4'd1))
+
+	[Lemmas]: 
+		[1] !(((\Y$next == \Y$next_rhs) && !(LT_1_4_4(\X, \Y)) && LT_1_4_4(\X$next, \Y$next) && (\X$next == \X$next_rhs) && (\X == 4'd1)))
+#108
+[RES_1]       5	: 0	: 0 s: 0
+[RES_0]    L  0 : 0 s: 0, mem: 14, time: 0.006819
+---------------------------------------------------------------------------------------------
+Loop_0_0_3
+---------------------------------------------------------------------------------------------
+[First Step]:
+	SAT_a ? [ F[0] & T & !P ]: UNSAT
+
+[RES_1]       5	: 0	: 0 s: 0
+[RES_0]    L  0 : 0 s: 0, mem: 14, time: 0.007069
+[RES_1]       5	: 1	: 0 0 s: 0
+[RES_0]    L  1 : 0 0 s: 0, mem: 14, time: 0.007272
+---------------------------------------------------------------------------------------------
+Loop_1_0_3
+---------------------------------------------------------------------------------------------
+	F[1] = P
+	SAT_a ? [ F[1] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding from pre_c to cc. cube) #7
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 7	(7 + 0 + 0 + 0 + 0)
+	(concrete cube) 7	(7 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 5	(5 + 0 + 0 + 0 + 0)
+	(concrete cube) 5	(5 + 0 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 2)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 13)
+		(cc core: 13 -> 3)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\Y != \X) && !(LT_1_4_4(\X, \Y)) && !(GT_1_4_4(\X, \Y)))
+
+	[Lemmas]: 
+		[1] !(((\Y != \X) && !(LT_1_4_4(\X, \Y)) && !(GT_1_4_4(\X, \Y))))
+#123
+		[2] !(((\Y$next != \X$next) && !(LT_1_4_4(\X$next, \Y$next)) && !(GT_1_4_4(\X$next, \Y$next))))
+#125
+#Lemmas = 7
+[RES_1]       7	: 1	: 0 0 s: 0
+[RES_0]    L  1 : 0 0 s: 0, mem: 15, time: 0.00939
+---------------------------------------------------------------------------------------------
+Loop_1_0_4
+---------------------------------------------------------------------------------------------
+	F[1] = P
+	SAT_a ? [ F[1] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #4
+	(adding from pre_c to cc. cube) #4
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 4	(4 + 0 + 0 + 0 + 0)
+	(concrete cube) 4	(4 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 5	(5 + 0 + 0 + 0 + 0)
+	(concrete cube) 5	(5 + 0 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 2)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 10)
+		(cc core: 10 -> 7)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\Y$next == \Y$next_rhs) && (\Y == \X) && LT_1_4_4(\X$next, \Y$next) && (\X$next == \X$next_rhs))
+
+	[Lemmas]: 
+		[1] !(((\Y$next == \Y$next_rhs) && (\Y == \X) && LT_1_4_4(\X$next, \Y$next) && (\X$next == \X$next_rhs)))
+#135
+#Lemmas = 8
+[RES_1]       8	: 1	: 0 0 s: 0
+[RES_0]    L  1 : 0 0 s: 0, mem: 15, time: 0.01103
+---------------------------------------------------------------------------------------------
+Loop_1_0_5
+---------------------------------------------------------------------------------------------
+	F[1] = P
+	SAT_a ? [ F[1] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 7	(7 + 0 + 0 + 0 + 0)
+	(concrete cube) 7	(7 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 5	(5 + 0 + 0 + 0 + 0)
+	(concrete cube) 5	(5 + 0 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 2)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 13)
+		(cc core: 13 -> 9)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\Y$next == \Y$next_rhs) && LT_1_4_4(\X$next, \Y$next) && !(\reset) && (\X$next == \X$next_rhs) && GT_1_4_4(\X, \Y))
+
+	[Lemmas]: 
+		[1] !(((\Y$next == \Y$next_rhs) && LT_1_4_4(\X$next, \Y$next) && !(\reset) && (\X$next == \X$next_rhs) && GT_1_4_4(\X, \Y)))
+#146
+#Lemmas = 9
+[RES_1]       9	: 1	: 0 0 s: 0
+[RES_0]    L  1 : 0 0 s: 0, mem: 15, time: 0.01278
+---------------------------------------------------------------------------------------------
+Loop_1_0_6
+---------------------------------------------------------------------------------------------
+	F[1] = P
+	SAT_a ? [ F[1] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 7	(7 + 0 + 0 + 0 + 0)
+	(concrete cube) 7	(7 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 5	(5 + 0 + 0 + 0 + 0)
+	(concrete cube) 5	(5 + 0 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 2)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 13)
+		(cc core: 13 -> 10)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs) && (\X != 4'd15) && !(LT_1_4_4(\X, \Y)) && LT_1_4_4(\X$next, \Y$next))
+
+	[Lemmas]: 
+		[1] !(((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs) && (\X != 4'd15) && !(LT_1_4_4(\X, \Y)) && LT_1_4_4(\X$next, \Y$next)))
+#154
+#Lemmas = 10
+[RES_1]       10	: 1	: 0 0 s: 0
+[RES_0]    L  1 : 0 0 s: 0, mem: 15, time: 0.014554
+---------------------------------------------------------------------------------------------
+Loop_1_0_7
+---------------------------------------------------------------------------------------------
+	F[1] = P
+	SAT_a ? [ F[1] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 6	(6 + 0 + 0 + 0 + 0)
+	(concrete cube) 6	(6 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 5	(5 + 0 + 0 + 0 + 0)
+	(concrete cube) 5	(5 + 0 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 2)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 12)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 13)
+		(cc core: 13 -> 5)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == 4'd1) && (\X$next == \X$next_rhs) && (\X$next == 4'd15))
+
+	[Lemmas]: 
+		[1] !(((\X == 4'd1) && (\X$next == \X$next_rhs) && (\X$next == 4'd15)))
+#171
+#Lemmas = 11
+[RES_1]       11	: 1	: 0 0 s: 0
+[RES_0]    L  1 : 0 0 s: 0, mem: 15, time: 0.016373
+---------------------------------------------------------------------------------------------
+Loop_1_0_8
+---------------------------------------------------------------------------------------------
+	F[1] = P
+	SAT_a ? [ F[1] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 6	(6 + 0 + 0 + 0 + 0)
+	(concrete cube) 6	(6 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: UNSAT
+		(ab core: 6 -> 1)
+	(18 + 6 -> 18 + 1)
+	(6 -> 1 -> 1)
+	(6 -> 1 -> 1)
+
+		[MUS(s)]:
+
+		[1] w4	(\X == 4'd15)
+[RES_1]       11	: 1	: 0 1 s: 1
+[RES_0]    L  1 : 0 1 s: 1, mem: 15, time: 0.016865
+---------------------------------------------------------------------------------------------
+Loop_1_1_8
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[1] & T & !P+ ]: UNSAT
+[RES_1]       11	: 1	: 0 1 s: 1
+[RES_0]    L  1 : 0 1 s: 1, mem: 15, time: 0.016931
+	[Forward propagation]:
+	(F1 about to converge: #1)
+		(\X == 4'd15)
+[RES_1]       11	: 2	: 0 1 0 s: 1
+[RES_0]    L  2 : 0 1 0 s: 1, mem: 15, time: 0.017169
+---------------------------------------------------------------------------------------------
+Loop_2_0_8
+---------------------------------------------------------------------------------------------
+	F[2] = P
+	SAT_a ? [ F[2] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 6	(6 + 0 + 0 + 0 + 0)
+	(concrete cube) 6	(6 + 0 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 7	(7 + 0 + 0 + 0 + 0)
+	(concrete cube) 7	(7 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 5	(5 + 0 + 0 + 0 + 0)
+	(concrete cube) 5	(5 + 0 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 3)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 12)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 15)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 14)
+		(cc core: 14 -> 6)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\Y != 4'd1) && !(LT_1_4_4(\X, \Y)) && (\X == 4'd1) && (\Y$next != 4'd1) && (\Y$next == \Y$next_rhs) && \reset)
+
+	[Lemmas]: 
+		[1] !(((\Y != 4'd1) && !(LT_1_4_4(\X, \Y)) && (\X == 4'd1) && (\Y$next != 4'd1) && (\Y$next == \Y$next_rhs) && \reset))
+#184
+#Lemmas = 12
+[RES_1]       12	: 2	: 0 1 0 s: 1
+[RES_0]    L  2 : 0 1 0 s: 1, mem: 15, time: 0.019593
+---------------------------------------------------------------------------------------------
+Loop_2_0_9
+---------------------------------------------------------------------------------------------
+	F[2] = P
+	SAT_a ? [ F[2] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 6	(6 + 0 + 0 + 0 + 0)
+	(concrete cube) 6	(6 + 0 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 7	(7 + 0 + 0 + 0 + 0)
+	(concrete cube) 7	(7 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 5	(5 + 0 + 0 + 0 + 0)
+	(concrete cube) 5	(5 + 0 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 3)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 12)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 15)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 14)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[2]
+			(creating wire l$1 for port ShiftR_4_4_4(4'd1, 4'd1))
+			(creating wire l$2 for port Add_4_4_4($shr$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$5_Y, l$1))
+
+	2: A[1]
+[1] Cube to CubeNext+ is UNSAT
+
+		(cc core: 17 -> 3)
+resMusBv: 1
+		ACEXT is infeasible
+			(unsat: A[1] to A[0] )
+[Sim_1]    Adding lemma to ensure following never happens: 
+	(\X == l$2)
+	(\X$next == 4'd15)
+	(\X$next == \X$next_rhs)
+
+[Sim_1]    Processing failure condition: 
+	(\X == l$2)
+	(\X$next == 4'd15)
+	(\X$next == \X$next_rhs)
+
+			(adding predicate (absent)   (\X == l$2) )
+			(finding parent expressions)	(\X == l$2)
+				(parent expression)
+					(\X == l$2) := (\X == l$2)
+						(learning signal    \X )
+						(learning constant  4'd15 )
+						(learning constant  4'd1 )
+						(learning uf type   ShiftR_4_4_4 )
+						(learning uf        ShiftR_4_4_4(4'd15, 4'd1) )
+						(learning uf        ShiftR_4_4_4(4'd1, 4'd1) )
+						(learning uf type   Add_4_4_4 )
+						(learning uf        Add_4_4_4($shr$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$5_Y, l$1) )
+[Sim_1]    =========== Simulation Ends ===============
+
+	[Lemmas]: 
+		[1] !((((\X == l$2) || (\X != l$2)) && (\X == l$2) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+#214
+#Lemmas = 13
+[RES_1]       13	: 2	: 0 1 0 s: 1
+[RES_0]    L  2 : 0 1 0 s: 1, mem: 15, time: 0.023341
+---------------------------------------------------------------------------------------------
+Loop_2_0_10
+---------------------------------------------------------------------------------------------
+	F[2] = P
+	SAT_a ? [ F[2] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 8	(7 + 1 + 0 + 0 + 0)
+	(concrete cube) 8	(7 + 1 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 8	(7 + 1 + 0 + 0 + 0)
+	(concrete cube) 8	(7 + 1 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: UNSAT
+		(ab core: 8 -> 2)
+	(20 + 8 -> 20 + 2)
+	(8 -> 2 -> 2)
+	(8 -> 2 -> 2)
+
+		[MUS(s)]:
+
+		   (forcing elimination of initial states from original mus)
+		[0] (orig) ((\X != l$2) && (\Y != 4'd1))
+		[1] w4	((\X != l$2) && (\Y != 4'd1) && !(((\X == 4'd1) && (\Y == 4'd0))))
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 6	(5 + 1 + 0 + 0 + 0)
+	(concrete cube) 6	(5 + 1 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 6	(5 + 1 + 0 + 0 + 0)
+	(concrete cube) 6	(5 + 1 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 3)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 14)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 16)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 14)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[2]
+			(creating wire l$3 for port Add_4_4_4(4'd0, 4'd1))
+			(creating wire l$4 for port Add_4_4_4(4'd1, 4'd1))
+
+	2: A[1]
+[1] Cube to CubeNext+ is UNSAT
+
+		(cc core: 19 -> 3)
+resMusBv: 1
+		ACEXT is infeasible
+			(unsat: A[1] to A[0] )
+[Sim_1]    Adding lemma to ensure following never happens: 
+	(\X == l$4)
+	(\X$next == 4'd15)
+	(\X$next == \X$next_rhs)
+
+[Sim_1]    Processing failure condition: 
+	(\X == l$4)
+	(\X$next == 4'd15)
+	(\X$next == \X$next_rhs)
+
+			(adding predicate (absent)   (\X == l$4) )
+			(finding parent expressions)	(\X == l$4)
+				(number value parent)	4'd1	:=	\Y
+				(parent expression)
+					(\X == l$4) := (\X == Add_4_4_4(\Y, \Y))
+			(creating wire l$5 for port Add_4_4_4(\Y, \Y))
+				(adding predicate (from parent)   (\X == l$5) )
+						(learning signal    \Y )
+						(learning uf        Add_4_4_4(\Y, \Y) )
+						(learning uf        Add_4_4_4(4'd1, 4'd1) )
+[Sim_1]    =========== Simulation Ends ===============
+
+	[Lemmas]: 
+		[1] !((((\X == l$5) || (\X != l$5)) && (\X == l$5) && ((\X == l$4) || (\X != l$4)) && (\X == l$4) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+#274
+#Lemmas = 14
+[RES_1]       14	: 2	: 0 2 0 s: 2
+[RES_0]    L  2 : 0 4 0 s: 4, mem: 15, time: 0.02827
+---------------------------------------------------------------------------------------------
+Loop_2_0_11
+---------------------------------------------------------------------------------------------
+	F[2] = P
+	SAT_a ? [ F[2] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 10	(7 + 3 + 0 + 0 + 0)
+	(concrete cube) 10	(7 + 3 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 8	(5 + 3 + 0 + 0 + 0)
+	(concrete cube) 8	(5 + 3 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: UNSAT
+		(ab core: 8 -> 2)
+	(21 + 8 -> 21 + 2)
+	(8 -> 2 -> 2)
+	(8 -> 2 -> 2)
+
+		[MUS(s)]:
+
+		[1] w4	((\X != l$5) && (\Y == 4'd1))
+	SAT_a ? [ F[1] & T & C+ ]: UNSAT
+		(ab core: 10 -> 1)
+	(22 + 10 -> 22 + 1)
+	(10 -> 1 -> 1)
+	(10 -> 1 -> 1)
+
+		[MUS(s)]:
+
+		[1] w4	(\X == 4'd15)
+[RES_1]       14	: 2	: 0 2 1 s: 3
+[RES_0]    L  2 : 0 5 1 s: 6, mem: 15, time: 0.029681
+---------------------------------------------------------------------------------------------
+Loop_2_1_11
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[2] & T & !P+ ]: UNSAT
+[RES_1]       14	: 2	: 0 2 1 s: 3
+[RES_0]    L  2 : 0 5 1 s: 6, mem: 15, time: 0.029733
+	[Forward propagation]:
+	(F1 about to converge: #2)
+		((\X != l$2) && (\Y != 4'd1) && !(((\X == 4'd1) && (\Y == 4'd0))))
+		((\X != l$5) && (\Y == 4'd1))
+	(F2 about to converge: #1)
+		(\X == 4'd15)
+[RES_1]       14	: 3	: 0 2 1 0 s: 3
+[RES_0]    L  3 : 0 5 1 0 s: 6, mem: 15, time: 0.030185
+---------------------------------------------------------------------------------------------
+Loop_3_0_11
+---------------------------------------------------------------------------------------------
+	F[3] = P
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 10	(7 + 3 + 0 + 0 + 0)
+	(concrete cube) 10	(7 + 3 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 10	(8 + 2 + 0 + 0 + 0)
+	(concrete cube) 10	(8 + 2 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 8	(6 + 2 + 0 + 0 + 0)
+	(concrete cube) 8	(6 + 2 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 8	(5 + 3 + 0 + 0 + 0)
+	(concrete cube) 8	(5 + 3 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 4)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 16)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 22)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 20)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 18)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[3]
+
+	2: A[2]
+			(creating wire l$6 for port Add_4_4_4(l$4, 4'd1))
+
+	3: A[1]
+[1] Cube to CubeNext+ is UNSAT
+
+		(cc core: 27 -> 3)
+resMusBv: 1
+		ACEXT is infeasible
+			(unsat: A[1] to A[0] )
+[Sim_1]    Adding lemma to ensure following never happens: 
+	(\X$next == 4'd15)
+	(\X == l$6)
+	(\X$next == \X$next_rhs)
+
+[Sim_1]    Processing failure condition: 
+	(\X$next == 4'd15)
+	(\X == l$6)
+	(\X$next == \X$next_rhs)
+
+			(adding predicate (absent)   (\X == l$6) )
+			(finding parent expressions)	(\X == l$6)
+				(parent expression)
+					(\X == l$6) := (\X == l$6)
+						(learning uf        Add_4_4_4(l$4, 4'd1) )
+[Sim_1]    =========== Simulation Ends ===============
+
+	[Lemmas]: 
+		[1] !((((\X == l$6) || (\X != l$6)) && (\X == l$6) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+#340
+#Lemmas = 15
+[RES_1]       15	: 3	: 0 2 1 0 s: 3
+[RES_0]    L  3 : 0 5 1 0 s: 6, mem: 16, time: 0.037762
+---------------------------------------------------------------------------------------------
+Loop_3_0_12
+---------------------------------------------------------------------------------------------
+	F[3] = P
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 11	(7 + 4 + 0 + 0 + 0)
+	(concrete cube) 11	(7 + 4 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 11	(8 + 3 + 0 + 0 + 0)
+	(concrete cube) 11	(8 + 3 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 11	(8 + 3 + 0 + 0 + 0)
+	(concrete cube) 11	(8 + 3 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 9	(5 + 4 + 0 + 0 + 0)
+	(concrete cube) 9	(5 + 4 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 4)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 17)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 24)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 24)
+		(cc core: 24 -> 2)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$5) && (\X == l$2))
+
+	[Lemmas]: 
+		[1] !(((\X == l$5) && (\X == l$2)))
+#360
+		[2] !(((\X$next == l$5$next) && (\X$next == l$2)))
+#362
+#Lemmas = 17
+[RES_1]       17	: 3	: 0 2 1 0 s: 3
+[RES_0]    L  3 : 0 5 1 0 s: 6, mem: 16, time: 0.043299
+---------------------------------------------------------------------------------------------
+Loop_3_0_13
+---------------------------------------------------------------------------------------------
+	F[3] = P
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 11	(7 + 4 + 0 + 0 + 0)
+	(concrete cube) 11	(7 + 4 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 11	(8 + 3 + 0 + 0 + 0)
+	(concrete cube) 11	(8 + 3 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 11	(8 + 3 + 0 + 0 + 0)
+	(concrete cube) 11	(8 + 3 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 9	(5 + 4 + 0 + 0 + 0)
+	(concrete cube) 9	(5 + 4 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 4)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 17)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 24)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 24)
+		(cc core: 24 -> 2)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$4) && (\X == l$2))
+
+	[Lemmas]: 
+		[1] !(((\X == l$4) && (\X == l$2)))
+#374
+		[2] !(((\X$next == l$4) && (\X$next == l$2)))
+#376
+#Lemmas = 19
+[RES_1]       19	: 3	: 0 2 1 0 s: 3
+[RES_0]    L  3 : 0 5 1 0 s: 6, mem: 16, time: 0.048221
+---------------------------------------------------------------------------------------------
+Loop_3_0_14
+---------------------------------------------------------------------------------------------
+	F[3] = P
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 11	(7 + 4 + 0 + 0 + 0)
+	(concrete cube) 11	(7 + 4 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 11	(8 + 3 + 0 + 0 + 0)
+	(concrete cube) 11	(8 + 3 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 11	(8 + 3 + 0 + 0 + 0)
+	(concrete cube) 11	(8 + 3 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 9	(5 + 4 + 0 + 0 + 0)
+	(concrete cube) 9	(5 + 4 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 4)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 17)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 24)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 24)
+		(cc core: 24 -> 2)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$6) && (\X == l$2))
+
+	[Lemmas]: 
+		[1] !(((\X == l$6) && (\X == l$2)))
+#387
+		[2] !(((\X$next == l$6) && (\X$next == l$2)))
+#389
+#Lemmas = 21
+[RES_1]       21	: 3	: 0 2 1 0 s: 3
+[RES_0]    L  3 : 0 5 1 0 s: 6, mem: 16, time: 0.053433
+---------------------------------------------------------------------------------------------
+Loop_3_0_15
+---------------------------------------------------------------------------------------------
+	F[3] = P
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 11	(7 + 4 + 0 + 0 + 0)
+	(concrete cube) 11	(7 + 4 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 11	(8 + 3 + 0 + 0 + 0)
+	(concrete cube) 11	(8 + 3 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 11	(8 + 3 + 0 + 0 + 0)
+	(concrete cube) 11	(8 + 3 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 9	(5 + 4 + 0 + 0 + 0)
+	(concrete cube) 9	(5 + 4 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 4)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 17)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 24)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 24)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 22)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[3]
+
+	2: A[2]
+			(creating wire l$7 for port ShiftR_4_4_4(l$2, 4'd1))
+			(creating wire l$8 for port Add_4_4_4($shr$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$5_Y, l$7))
+
+	3: A[1]
+[1] Cube to CubeNext+ is UNSAT
+
+		(cc core: 27 -> 4)
+resMusBv: 1
+		ACEXT is infeasible
+			(unsat: A[1] to A[0] )
+[Sim_1]    Adding lemma to ensure following never happens: 
+	(\Y == 4'd0)
+	\reset
+	(\X != 4'd15)
+	(\Y$next != 4'd1)
+	(\Y$next == \Y$next_rhs)
+
+[Sim_1]    Processing failure condition: 
+	(\Y == 4'd0)
+	\reset
+	(\X != 4'd15)
+	(\Y$next != 4'd1)
+	(\Y$next == \Y$next_rhs)
+
+			(adding predicate (absent)   (\Y == 4'd0) )
+			(finding parent expressions)	(\Y == 4'd0)
+				(number value parent)	4'd0	:=	\Y
+				(parent expression)
+					(\Y == 4'd0) := (\Y == \Y)
+						(learning constant  4'd0 )
+			(skipping predicate (present)  \reset )
+			(adding predicate (absent)   (\X == 4'd15) )
+			(finding parent expressions)	(\X != 4'd15)
+				(parent expression)
+					(\X != 4'd15) := (\X != 4'd15)
+[Sim_1]    =========== Simulation Ends ===============
+
+	[Lemmas]: 
+		[1] !((((\X == 4'd15) || (\X != 4'd15)) && $ne$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$21_Y && \reset && ((\Y == 4'd0) || (\Y != 4'd0)) && (\Y == 4'd0) && (\Y$next != 4'd1) && (\Y$next == \Y$next_rhs)))
+#433
+#Lemmas = 22
+[RES_1]       22	: 3	: 0 2 1 0 s: 3
+[RES_0]    L  3 : 0 5 1 0 s: 6, mem: 16, time: 0.065079
+---------------------------------------------------------------------------------------------
+Loop_3_0_16
+---------------------------------------------------------------------------------------------
+	F[3] = P
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 12	(8 + 4 + 0 + 0 + 0)
+	(concrete cube) 12	(8 + 4 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 13	(10 + 3 + 0 + 0 + 0)
+	(concrete cube) 13	(10 + 3 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 13	(10 + 3 + 0 + 0 + 0)
+	(concrete cube) 13	(10 + 3 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: UNSAT
+		(ab core: 13 -> 2)
+	(29 + 13 -> 29 + 2)
+	(13 -> 2 -> 2)
+	(13 -> 2 -> 2)
+
+		[MUS(s)]:
+
+		[1] w4	((\Y != 4'd0) && (\Y != 4'd1))
+	SAT_a ? [ F[1] & T & C+ ]: UNSAT
+		(ab core: 13 -> 4)
+	(32 + 13 -> 32 + 4)
+	(13 -> 4 -> 4)
+	(13 -> 4 -> 4)
+
+		[MUS(s)]:
+
+		[1] w4	((\X != l$6) && (\Y != \X) && (\Y != 4'd0) && (\Y != 4'd1))
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 10	(6 + 4 + 0 + 0 + 0)
+	(concrete cube) 10	(6 + 4 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 10	(7 + 3 + 0 + 0 + 0)
+	(concrete cube) 10	(7 + 3 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 8	(4 + 4 + 0 + 0 + 0)
+	(concrete cube) 8	(4 + 4 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 4)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 18)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 24)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 22)
+		(cc core: 22 -> 2)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$5) && (\X == l$6))
+
+	[Lemmas]: 
+		[1] !(((\X == l$5) && (\X == l$6)))
+#470
+		[2] !(((\X$next == l$5$next) && (\X$next == l$6)))
+#472
+#Lemmas = 24
+[RES_1]       24	: 3	: 0 3 2 0 s: 5
+[RES_0]    L  3 : 0 7 5 0 s: 12, mem: 16, time: 0.071827
+---------------------------------------------------------------------------------------------
+Loop_3_0_17
+---------------------------------------------------------------------------------------------
+	F[3] = P
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 12	(8 + 4 + 0 + 0 + 0)
+	(concrete cube) 12	(8 + 4 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 10	(6 + 4 + 0 + 0 + 0)
+	(concrete cube) 10	(6 + 4 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 10	(7 + 3 + 0 + 0 + 0)
+	(concrete cube) 10	(7 + 3 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 8	(4 + 4 + 0 + 0 + 0)
+	(concrete cube) 8	(4 + 4 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 4)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 18)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 24)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 22)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 20)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[3]
+
+	2: A[2]
+			(creating wire l$9 for port ShiftR_4_4_4(l$4, 4'd1))
+			(creating wire l$10 for port Add_4_4_4($shr$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$5_Y, l$9))
+
+	3: A[1]
+[1] Cube to CubeNext+ is UNSAT
+
+		(cc core: 27 -> 3)
+resMusBv: 1
+		ACEXT is infeasible
+			(unsat: A[1] to A[0] )
+[Sim_1]    Adding lemma to ensure following never happens: 
+	(\X == l$10)
+	(\X$next == 4'd15)
+	(\X$next == \X$next_rhs)
+
+[Sim_1]    Processing failure condition: 
+	(\X == l$10)
+	(\X$next == 4'd15)
+	(\X$next == \X$next_rhs)
+
+			(adding predicate (absent)   (\X == l$10) )
+			(finding parent expressions)	(\X == l$10)
+				(number value parent)	4'd1	:=	\Y
+				(parent expression)
+					(\X == l$10) := (\X == Add_4_4_4(ShiftR_4_4_4(4'd15, \Y), ShiftR_4_4_4(l$5, \Y)))
+			(creating wire l$11 for port ShiftR_4_4_4(4'd15, \Y))
+			(creating wire l$12 for port ShiftR_4_4_4(l$5, \Y))
+			(creating wire l$13 for port Add_4_4_4(l$11, l$12))
+				(adding predicate (from parent)   (\X == l$13) )
+						(learning uf        ShiftR_4_4_4(4'd15, \Y) )
+						(learning uf        ShiftR_4_4_4(l$5, \Y) )
+						(learning uf        Add_4_4_4(l$11, l$12) )
+						(learning uf        ShiftR_4_4_4(l$4, 4'd1) )
+						(learning uf        Add_4_4_4($shr$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$5_Y, l$9) )
+[Sim_1]    =========== Simulation Ends ===============
+
+	[Lemmas]: 
+		[1] !((((\X == l$13) || (\X != l$13)) && (\X == l$13) && ((\X == l$10) || (\X != l$10)) && (\X == l$10) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+#519
+#Lemmas = 25
+[RES_1]       25	: 3	: 0 3 2 0 s: 5
+[RES_0]    L  3 : 0 7 5 0 s: 12, mem: 16, time: 0.080785
+---------------------------------------------------------------------------------------------
+Loop_3_0_18
+---------------------------------------------------------------------------------------------
+	F[3] = P
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 14	(8 + 6 + 0 + 0 + 0)
+	(concrete cube) 14	(8 + 6 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 12	(6 + 6 + 0 + 0 + 0)
+	(concrete cube) 12	(6 + 6 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 12	(8 + 4 + 0 + 0 + 0)
+	(concrete cube) 12	(8 + 4 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 10	(4 + 6 + 0 + 0 + 0)
+	(concrete cube) 10	(4 + 6 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 4)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 20)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 28)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 26)
+		(cc core: 26 -> 6)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X$next == \X$next_rhs) && (\X == l$2) && (\Y == 4'd0) && (\X$next != l$10) && (\Y$next == 4'd1) && (\Y$next == \Y$next_rhs))
+
+	[Lemmas]: 
+		[1] !(((\X$next == \X$next_rhs) && (\X == l$2) && (\Y == 4'd0) && (\X$next != l$10) && (\Y$next == 4'd1) && (\Y$next == \Y$next_rhs)))
+#544
+#Lemmas = 26
+[RES_1]       26	: 3	: 0 3 2 0 s: 5
+[RES_0]    L  3 : 0 7 5 0 s: 12, mem: 16, time: 0.089207
+---------------------------------------------------------------------------------------------
+Loop_3_0_19
+---------------------------------------------------------------------------------------------
+	F[3] = P
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 14	(8 + 6 + 0 + 0 + 0)
+	(concrete cube) 14	(8 + 6 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 12	(6 + 6 + 0 + 0 + 0)
+	(concrete cube) 12	(6 + 6 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: UNSAT
+		(ab core: 12 -> 4)
+	(37 + 12 -> 37 + 4)
+	(12 -> 4 -> 3)
+	(12 -> 4 -> 3)
+
+		[MUS(s)]:
+
+		[1] w4	((\X != l$10) && (\X != l$5) && (\Y == 4'd1))
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 13	(6 + 7 + 0 + 0 + 0)
+	(concrete cube) 13	(6 + 7 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding from pre_c to cc. cube) #5
+	(abstract cube) 11	(5 + 6 + 0 + 0 + 0)
+	(concrete cube) 11	(5 + 6 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 10	(4 + 6 + 0 + 0 + 0)
+	(concrete cube) 10	(4 + 6 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 4)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 20)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 29)
+		(cc core: 29 -> 2)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\Y == \X) && GT_1_4_4(\X, \Y))
+
+	[Lemmas]: 
+		[1] !(((\Y == \X) && GT_1_4_4(\X, \Y)))
+#569
+		[2] !(((\Y$next == \X$next) && GT_1_4_4(\X$next, \Y$next)))
+#571
+#Lemmas = 28
+[RES_1]       28	: 3	: 0 3 3 0 s: 6
+[RES_0]    L  3 : 0 7 8 0 s: 15, mem: 16, time: 0.095226
+---------------------------------------------------------------------------------------------
+Loop_3_0_20
+---------------------------------------------------------------------------------------------
+	F[3] = P
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 14	(8 + 6 + 0 + 0 + 0)
+	(concrete cube) 14	(8 + 6 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: UNSAT
+		(ab core: 14 -> 4)
+	(36 + 14 -> 36 + 4)
+	(14 -> 4 -> 4)
+	(14 -> 4 -> 4)
+
+		[MUS(s)]:
+
+		[1] w4	((\Y != \X) && (\Y != 4'd0) && (\X == 4'd15) && (\Y != 4'd1))
+[RES_1]       28	: 3	: 0 3 3 1 s: 7
+[RES_0]    L  3 : 0 7 8 4 s: 19, mem: 16, time: 0.096248
+---------------------------------------------------------------------------------------------
+Loop_3_1_20
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 12	(6 + 6 + 0 + 0 + 0)
+	(concrete cube) 12	(6 + 6 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 12	(8 + 4 + 0 + 0 + 0)
+	(concrete cube) 12	(8 + 4 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 12	(8 + 4 + 0 + 0 + 0)
+	(concrete cube) 12	(8 + 4 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 10	(4 + 6 + 0 + 0 + 0)
+	(concrete cube) 10	(4 + 6 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 4)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 18)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 26)
+		(cc core: 26 -> 3)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$10) && (\X$next == \X$next_rhs) && (\X$next == 4'd15))
+
+	[Lemmas]: 
+		[1] !(((\X == l$10) && (\X$next == \X$next_rhs) && (\X$next == 4'd15)))
+#591
+#Lemmas = 29
+[RES_1]       29	: 3	: 0 3 3 1 s: 7
+[RES_0]    L  3 : 0 7 8 4 s: 19, mem: 16, time: 0.102789
+---------------------------------------------------------------------------------------------
+Loop_3_0_21
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 12	(6 + 6 + 0 + 0 + 0)
+	(concrete cube) 12	(6 + 6 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 12	(8 + 4 + 0 + 0 + 0)
+	(concrete cube) 12	(8 + 4 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 12	(8 + 4 + 0 + 0 + 0)
+	(concrete cube) 12	(8 + 4 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 10	(4 + 6 + 0 + 0 + 0)
+	(concrete cube) 10	(4 + 6 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 4)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 18)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 26)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 26)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 24)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[3]
+
+	2: A[2]
+
+	3: A[1]
+[1] Cube to CubeNext+ is UNSAT
+
+		(cc core: 28 -> 3)
+resMusBv: 1
+		ACEXT is infeasible
+			(unsat: A[1] to A[0] )
+[Sim_1]    Adding lemma to ensure following never happens: 
+	(\X$next == 4'd15)
+	(\X == l$8)
+	(\X$next == \X$next_rhs)
+
+[Sim_1]    Processing failure condition: 
+	(\X$next == 4'd15)
+	(\X == l$8)
+	(\X$next == \X$next_rhs)
+
+			(adding predicate (absent)   (\X == l$8) )
+			(finding parent expressions)	(\X == l$8)
+				(parent expression)
+					(\X == l$8) := (\X == l$8)
+						(learning uf        ShiftR_4_4_4(l$2, 4'd1) )
+						(learning uf        Add_4_4_4($shr$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$5_Y, l$7) )
+[Sim_1]    =========== Simulation Ends ===============
+
+	[Lemmas]: 
+		[1] !((((\X == l$8) || (\X != l$8)) && (\X == l$8) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+#626
+#Lemmas = 30
+[RES_1]       30	: 3	: 0 3 3 1 s: 7
+[RES_0]    L  3 : 0 7 8 4 s: 19, mem: 16, time: 0.113794
+---------------------------------------------------------------------------------------------
+Loop_3_0_22
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 13	(6 + 7 + 0 + 0 + 0)
+	(concrete cube) 13	(6 + 7 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 13	(8 + 5 + 0 + 0 + 0)
+	(concrete cube) 13	(8 + 5 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: UNSAT
+		(ab core: 13 -> 5)
+	(43 + 13 -> 43 + 5)
+	(13 -> 5 -> 4)
+	(13 -> 5 -> 4)
+
+		[MUS(s)]:
+
+		   (forcing elimination of initial states from original mus)
+		[0] (orig) ((\X != l$8) && (\Y == 4'd0) && (\X != l$6) && (\X != l$2))
+		[1] w4	((\X != l$8) && (\Y == 4'd0) && (\X != l$6) && (\X != l$2) && !(((\X == 4'd1) && (\Y == 4'd0))))
+	SAT_a ? [ F[2] & T & C+ ]: UNSAT
+		(ab core: 13 -> 2)
+	(40 + 13 -> 40 + 2)
+	(13 -> 2 -> 2)
+	(13 -> 2 -> 2)
+
+		[MUS(s)]:
+
+		[1] w4	((\Y != \X) && (\X == 4'd15))
+[RES_1]       30	: 3	: 0 3 4 1 s: 8
+[RES_0]    L  3 : 0 7 13 2 s: 22, mem: 16, time: 0.116006
+---------------------------------------------------------------------------------------------
+Loop_3_1_22
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[3] & T & !P+ ]: UNSAT
+[RES_1]       30	: 3	: 0 3 4 1 s: 8
+[RES_0]    L  3 : 0 7 13 2 s: 22, mem: 16, time: 0.116091
+	[Forward propagation]:
+	(F3 about to converge: #1)
+		((\Y != \X) && (\X == 4'd15))
+[RES_1]       30	: 4	: 0 3 4 1 0 s: 8
+[RES_0]    L  4 : 0 7 13 2 0 s: 22, mem: 16, time: 0.116811
+---------------------------------------------------------------------------------------------
+Loop_4_0_22
+---------------------------------------------------------------------------------------------
+	F[4] = P
+	SAT_a ? [ F[4] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 15	(8 + 7 + 0 + 0 + 0)
+	(concrete cube) 15	(8 + 7 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #10
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #10
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 16	(11 + 5 + 0 + 0 + 0)
+	(concrete cube) 16	(11 + 5 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #10
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #10
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 16	(11 + 5 + 0 + 0 + 0)
+	(concrete cube) 16	(11 + 5 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 13	(7 + 6 + 0 + 0 + 0)
+	(concrete cube) 13	(7 + 6 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 11	(4 + 7 + 0 + 0 + 0)
+	(concrete cube) 11	(4 + 7 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 5)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 21)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 33)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 34)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 31)
+		SAT_c ? [ A[4] & T[4] & A[3]+ ]: 		(bv input core size: 26)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[4]
+
+	2: A[3]
+
+	3: A[2]
+			(creating wire l$14 for port Add_4_4_4(l$6, 4'd1))
+
+	4: A[1]
+[1] Cube to CubeNext+ is UNSAT
+
+		(cc core: 39 -> 4)
+resMusBv: 1
+		ACEXT is infeasible
+			(unsat: A[1] to A[0] )
+[Sim_1]    Adding lemma to ensure following never happens: 
+	(\X == l$14)
+	(\X$next == 4'd15)
+	(\X$next == \X$next_rhs)
+
+[Sim_1]    Processing failure condition: 
+	(\X == l$14)
+	(\X$next == 4'd15)
+	(\X$next == \X$next_rhs)
+
+			(adding predicate (absent)   (\X == l$14) )
+			(finding parent expressions)	(\X == l$14)
+				(parent expression)
+					(\X == l$14) := (\X == l$14)
+						(learning uf        Add_4_4_4(l$6, 4'd1) )
+[Sim_1]    =========== Simulation Ends ===============
+
+	[Lemmas]: 
+		[1] !((((\X == l$14) || (\X != l$14)) && (\X == l$14) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+#713
+#Lemmas = 31
+[RES_1]       31	: 4	: 0 3 4 1 0 s: 8
+[RES_0]    L  4 : 0 7 13 2 0 s: 22, mem: 17, time: 0.134185
+---------------------------------------------------------------------------------------------
+Loop_4_0_23
+---------------------------------------------------------------------------------------------
+	F[4] = P
+	SAT_a ? [ F[4] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 16	(8 + 8 + 0 + 0 + 0)
+	(concrete cube) 16	(8 + 8 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #10
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #10
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(11 + 6 + 0 + 0 + 0)
+	(concrete cube) 17	(11 + 6 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 14	(7 + 7 + 0 + 0 + 0)
+	(concrete cube) 14	(7 + 7 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 14	(8 + 6 + 0 + 0 + 0)
+	(concrete cube) 14	(8 + 6 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 12	(4 + 8 + 0 + 0 + 0)
+	(concrete cube) 12	(4 + 8 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 5)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 22)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 35)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 33)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 30)
+		SAT_c ? [ A[4] & T[4] & A[3]+ ]: 		(bv input core size: 28)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[4]
+
+	2: A[3]
+			(creating wire l$15 for port Add_4_4_4(l$2, 4'd1))
+
+	3: A[2]
+			(creating wire l$16 for port Add_4_4_4(l$15, 4'd1))
+
+	4: A[1]
+[1] Cube to CubeNext+ is UNSAT
+
+		(cc core: 41 -> 3)
+resMusBv: 1
+		ACEXT is infeasible
+			(unsat: A[1] to A[0] )
+[Sim_1]    Adding lemma to ensure following never happens: 
+	(\X$next == 4'd15)
+	(\X == l$16)
+	(\X$next == \X$next_rhs)
+
+[Sim_1]    Processing failure condition: 
+	(\X$next == 4'd15)
+	(\X == l$16)
+	(\X$next == \X$next_rhs)
+
+			(adding predicate (absent)   (\X == l$16) )
+			(finding parent expressions)	(\X == l$16)
+				(parent expression)
+					(\X == l$16) := (\X == l$16)
+						(learning uf        Add_4_4_4(l$2, 4'd1) )
+						(learning uf        Add_4_4_4(l$15, 4'd1) )
+[Sim_1]    =========== Simulation Ends ===============
+
+	[Lemmas]: 
+		[1] !((((\X == l$16) || (\X != l$16)) && (\X == l$16) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+#782
+#Lemmas = 32
+[RES_1]       32	: 4	: 0 3 4 1 0 s: 8
+[RES_0]    L  4 : 0 7 13 2 0 s: 22, mem: 17, time: 0.152939
+---------------------------------------------------------------------------------------------
+Loop_4_0_24
+---------------------------------------------------------------------------------------------
+	F[4] = P
+	SAT_a ? [ F[4] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 17	(8 + 9 + 0 + 0 + 0)
+	(concrete cube) 17	(8 + 9 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #10
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #10
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(11 + 7 + 0 + 0 + 0)
+	(concrete cube) 18	(11 + 7 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(7 + 8 + 0 + 0 + 0)
+	(concrete cube) 15	(7 + 8 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(8 + 7 + 0 + 0 + 0)
+	(concrete cube) 15	(8 + 7 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 13	(4 + 9 + 0 + 0 + 0)
+	(concrete cube) 13	(4 + 9 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 5)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 23)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 37)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 35)
+		(cc core: 35 -> 5)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X$next != l$16) && (\X$next == \X$next_rhs) && (\X == l$10) && !(LT_1_4_4(\X, \Y)) && \reset)
+
+	[Lemmas]: 
+		[1] !(((\X$next != l$16) && (\X$next == \X$next_rhs) && (\X == l$10) && !(LT_1_4_4(\X, \Y)) && \reset))
+#803
+#Lemmas = 33
+[RES_1]       33	: 4	: 0 3 4 1 0 s: 8
+[RES_0]    L  4 : 0 7 13 2 0 s: 22, mem: 17, time: 0.165919
+---------------------------------------------------------------------------------------------
+Loop_4_0_25
+---------------------------------------------------------------------------------------------
+	F[4] = P
+	SAT_a ? [ F[4] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 17	(8 + 9 + 0 + 0 + 0)
+	(concrete cube) 17	(8 + 9 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #10
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #10
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(11 + 7 + 0 + 0 + 0)
+	(concrete cube) 18	(11 + 7 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #10
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #10
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(11 + 7 + 0 + 0 + 0)
+	(concrete cube) 18	(11 + 7 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(7 + 8 + 0 + 0 + 0)
+	(concrete cube) 15	(7 + 8 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 13	(4 + 9 + 0 + 0 + 0)
+	(concrete cube) 13	(4 + 9 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 5)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 23)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 37)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 38)
+		(cc core: 38 -> 2)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$10) && (\X == l$6))
+
+	[Lemmas]: 
+		[1] !(((\X == l$10) && (\X == l$6)))
+#818
+		[2] !(((\X$next == l$10) && (\X$next == l$6)))
+#820
+#Lemmas = 35
+[RES_1]       35	: 4	: 0 3 4 1 0 s: 8
+[RES_0]    L  4 : 0 7 13 2 0 s: 22, mem: 17, time: 0.176811
+---------------------------------------------------------------------------------------------
+Loop_4_0_26
+---------------------------------------------------------------------------------------------
+	F[4] = P
+	SAT_a ? [ F[4] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 17	(8 + 9 + 0 + 0 + 0)
+	(concrete cube) 17	(8 + 9 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #10
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #10
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(11 + 7 + 0 + 0 + 0)
+	(concrete cube) 18	(11 + 7 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #10
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #10
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(11 + 7 + 0 + 0 + 0)
+	(concrete cube) 18	(11 + 7 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(7 + 8 + 0 + 0 + 0)
+	(concrete cube) 15	(7 + 8 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 13	(4 + 9 + 0 + 0 + 0)
+	(concrete cube) 13	(4 + 9 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 5)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 23)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 37)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 38)
+		(cc core: 38 -> 2)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$6) && (\X == l$8))
+
+	[Lemmas]: 
+		[1] !(((\X == l$6) && (\X == l$8)))
+#833
+		[2] !(((\X$next == l$6) && (\X$next == l$8)))
+#835
+#Lemmas = 37
+[RES_1]       37	: 4	: 0 3 4 1 0 s: 8
+[RES_0]    L  4 : 0 7 13 2 0 s: 22, mem: 17, time: 0.186088
+---------------------------------------------------------------------------------------------
+Loop_4_0_27
+---------------------------------------------------------------------------------------------
+	F[4] = P
+	SAT_a ? [ F[4] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 17	(8 + 9 + 0 + 0 + 0)
+	(concrete cube) 17	(8 + 9 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #10
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #10
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(11 + 7 + 0 + 0 + 0)
+	(concrete cube) 18	(11 + 7 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #10
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #10
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(11 + 7 + 0 + 0 + 0)
+	(concrete cube) 18	(11 + 7 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(7 + 8 + 0 + 0 + 0)
+	(concrete cube) 15	(7 + 8 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 13	(4 + 9 + 0 + 0 + 0)
+	(concrete cube) 13	(4 + 9 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 5)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 23)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 37)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 38)
+		(cc core: 38 -> 5)
+UNSAT
+
+		[MUS(s)]:
+		[1] (GT_1_4_4(\X, \Y) && (\X$next == \X$next_rhs) && (\X$next != l$10) && !(\reset) && (\X == l$6))
+
+	[Lemmas]: 
+		[1] !((GT_1_4_4(\X, \Y) && (\X$next == \X$next_rhs) && (\X$next != l$10) && !(\reset) && (\X == l$6)))
+#846
+#Lemmas = 38
+[RES_1]       38	: 4	: 0 3 4 1 0 s: 8
+[RES_0]    L  4 : 0 7 13 2 0 s: 22, mem: 17, time: 0.198925
+---------------------------------------------------------------------------------------------
+Loop_4_0_28
+---------------------------------------------------------------------------------------------
+	F[4] = P
+	SAT_a ? [ F[4] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 17	(8 + 9 + 0 + 0 + 0)
+	(concrete cube) 17	(8 + 9 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #10
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #10
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(11 + 7 + 0 + 0 + 0)
+	(concrete cube) 18	(11 + 7 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: UNSAT
+		(ab core: 18 -> 7)
+	(49 + 18 -> 49 + 7)
+	(18 -> 7 -> 7)
+	(18 -> 7 -> 7)
+
+		[MUS(s)]:
+
+		[1] w4	((\X != l$16) && (\X != l$14) && (\X != l$10) && (\X != l$6) && (\Y != 4'd0) && (\Y != \X) && (\Y != 4'd1))
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(6 + 9 + 0 + 0 + 0)
+	(concrete cube) 15	(6 + 9 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(8 + 7 + 0 + 0 + 0)
+	(concrete cube) 15	(8 + 7 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(6 + 9 + 0 + 0 + 0)
+	(concrete cube) 15	(6 + 9 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 13	(4 + 9 + 0 + 0 + 0)
+	(concrete cube) 13	(4 + 9 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 5)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 23)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 34)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 32)
+		(cc core: 32 -> 2)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$14) && (\X == l$8))
+
+	[Lemmas]: 
+		[1] !(((\X == l$14) && (\X == l$8)))
+#871
+		[2] !(((\X$next == l$14) && (\X$next == l$8)))
+#873
+#Lemmas = 40
+[RES_1]       40	: 4	: 0 3 4 2 0 s: 9
+[RES_0]    L  4 : 0 7 13 9 0 s: 29, mem: 17, time: 0.209904
+---------------------------------------------------------------------------------------------
+Loop_4_0_29
+---------------------------------------------------------------------------------------------
+	F[4] = P
+	SAT_a ? [ F[4] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 17	(8 + 9 + 0 + 0 + 0)
+	(concrete cube) 17	(8 + 9 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(6 + 9 + 0 + 0 + 0)
+	(concrete cube) 15	(6 + 9 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(8 + 7 + 0 + 0 + 0)
+	(concrete cube) 15	(8 + 7 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(6 + 9 + 0 + 0 + 0)
+	(concrete cube) 15	(6 + 9 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 13	(4 + 9 + 0 + 0 + 0)
+	(concrete cube) 13	(4 + 9 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 5)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 23)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 34)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 32)
+		(cc core: 32 -> 3)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$13) && (\Y == 4'd0) && (\X != 4'd15))
+
+	[Lemmas]: 
+		[1] !(((\X == l$13) && (\Y == 4'd0) && (\X != 4'd15)))
+#885
+		[2] !(((\X$next == l$13$next) && (\Y$next == 4'd0) && (\X$next != 4'd15)))
+#887
+#Lemmas = 42
+[RES_1]       42	: 4	: 0 3 4 2 0 s: 9
+[RES_0]    L  4 : 0 7 13 9 0 s: 29, mem: 17, time: 0.220507
+---------------------------------------------------------------------------------------------
+Loop_4_0_30
+---------------------------------------------------------------------------------------------
+	F[4] = P
+	SAT_a ? [ F[4] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 17	(8 + 9 + 0 + 0 + 0)
+	(concrete cube) 17	(8 + 9 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(6 + 9 + 0 + 0 + 0)
+	(concrete cube) 15	(6 + 9 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(8 + 7 + 0 + 0 + 0)
+	(concrete cube) 15	(8 + 7 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(7 + 8 + 0 + 0 + 0)
+	(concrete cube) 15	(7 + 8 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 13	(4 + 9 + 0 + 0 + 0)
+	(concrete cube) 13	(4 + 9 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 5)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 23)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 34)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 32)
+		(cc core: 32 -> 4)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\Y$next == 4'd1) && (\X == l$8) && (\Y$next == \Y$next_rhs) && (\X == l$5))
+
+	[Lemmas]: 
+		[1] !(((\Y$next == 4'd1) && (\X == l$8) && (\Y$next == \Y$next_rhs) && (\X == l$5)))
+#900
+#Lemmas = 43
+[RES_1]       43	: 4	: 0 3 4 2 0 s: 9
+[RES_0]    L  4 : 0 7 13 9 0 s: 29, mem: 17, time: 0.23218
+---------------------------------------------------------------------------------------------
+Loop_4_0_31
+---------------------------------------------------------------------------------------------
+	F[4] = P
+	SAT_a ? [ F[4] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 17	(8 + 9 + 0 + 0 + 0)
+	(concrete cube) 17	(8 + 9 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(6 + 9 + 0 + 0 + 0)
+	(concrete cube) 15	(6 + 9 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(8 + 7 + 0 + 0 + 0)
+	(concrete cube) 15	(8 + 7 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(8 + 7 + 0 + 0 + 0)
+	(concrete cube) 15	(8 + 7 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 13	(4 + 9 + 0 + 0 + 0)
+	(concrete cube) 13	(4 + 9 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 5)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 23)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 34)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 32)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 32)
+		SAT_c ? [ A[4] & T[4] & A[3]+ ]: 		(bv input core size: 30)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[4]
+
+	2: A[3]
+
+	3: A[2]
+			(creating wire l$17 for port Add_4_4_4(l$8, 4'd1))
+
+	4: A[1]
+[1] Cube to CubeNext+ is UNSAT
+
+		(cc core: 39 -> 4)
+resMusBv: 1
+		ACEXT is infeasible
+			(unsat: A[1] to A[0] )
+[Sim_1]    Adding lemma to ensure following never happens: 
+	(\X$next == 4'd15)
+	(\X == l$17)
+	(\X$next == \X$next_rhs)
+
+[Sim_1]    Processing failure condition: 
+	(\X$next == 4'd15)
+	(\X == l$17)
+	(\X$next == \X$next_rhs)
+
+			(adding predicate (absent)   (\X == l$17) )
+			(finding parent expressions)	(\X == l$17)
+				(number value parent)	4'd1	:=	\Y
+				(parent expression)
+					(\X == l$17) := (\X == Add_4_4_4(Add_4_4_4(l$11, ShiftR_4_4_4(Add_4_4_4(l$11, ShiftR_4_4_4(\Y, \Y)), \Y)), \Y))
+			(creating wire l$18 for port ShiftR_4_4_4(\Y, \Y))
+			(creating wire l$19 for port Add_4_4_4(l$11, l$18))
+			(creating wire l$20 for port ShiftR_4_4_4(l$19, \Y))
+			(creating wire l$21 for port Add_4_4_4(l$11, l$20))
+			(creating wire l$22 for port Add_4_4_4(l$21, \Y))
+				(adding predicate (from parent)   (\X == l$22) )
+						(learning uf        ShiftR_4_4_4(\Y, \Y) )
+						(learning uf        Add_4_4_4(l$11, l$18) )
+						(learning uf        ShiftR_4_4_4(l$19, \Y) )
+						(learning uf        Add_4_4_4(l$11, l$20) )
+						(learning uf        Add_4_4_4(l$21, \Y) )
+						(learning uf        Add_4_4_4(l$8, 4'd1) )
+[Sim_1]    =========== Simulation Ends ===============
+
+	[Lemmas]: 
+		[1] !((((\X == l$22) || (\X != l$22)) && (\X == l$22) && ((\X == l$17) || (\X != l$17)) && (\X == l$17) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+#973
+#Lemmas = 44
+[RES_1]       44	: 4	: 0 3 4 2 0 s: 9
+[RES_0]    L  4 : 0 7 13 9 0 s: 29, mem: 18, time: 0.254253
+---------------------------------------------------------------------------------------------
+Loop_4_0_32
+---------------------------------------------------------------------------------------------
+	F[4] = P
+	SAT_a ? [ F[4] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 19	(8 + 11 + 0 + 0 + 0)
+	(concrete cube) 19	(8 + 11 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(6 + 11 + 0 + 0 + 0)
+	(concrete cube) 17	(6 + 11 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(7 + 10 + 0 + 0 + 0)
+	(concrete cube) 17	(7 + 10 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(7 + 10 + 0 + 0 + 0)
+	(concrete cube) 17	(7 + 10 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(4 + 11 + 0 + 0 + 0)
+	(concrete cube) 15	(4 + 11 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 5)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 25)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 38)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 36)
+		(cc core: 36 -> 6)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\Y == 4'd1) && !(\reset) && (\X$next == \X$next_rhs) && (\X == l$13) && (\X$next != l$17))
+
+	[Lemmas]: 
+		[1] !(((\Y == 4'd1) && !(\reset) && (\X$next == \X$next_rhs) && (\X == l$13) && (\X$next != l$17)))
+#1005
+#Lemmas = 45
+[RES_1]       45	: 4	: 0 3 4 2 0 s: 9
+[RES_0]    L  4 : 0 7 13 9 0 s: 29, mem: 18, time: 0.270723
+---------------------------------------------------------------------------------------------
+Loop_4_0_33
+---------------------------------------------------------------------------------------------
+	F[4] = P
+	SAT_a ? [ F[4] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 19	(8 + 11 + 0 + 0 + 0)
+	(concrete cube) 19	(8 + 11 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(6 + 11 + 0 + 0 + 0)
+	(concrete cube) 17	(6 + 11 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: UNSAT
+		(ab core: 17 -> 7)
+	(57 + 17 -> 57 + 7)
+	(17 -> 7 -> 7)
+		(added cond. from num.)	(\Y$next != \X$next)
+	(17 -> 7 -> 8 -> 7)
+
+		[MUS(s)]:
+
+		[1] w4	((\X != l$17) && (\X != l$16) && (\X != l$14) && (\X != l$10) && (\X != l$5) && (\Y == 4'd1) && (\Y != \X))
+	SAT_a ? [ F[3] & T & C+ ]: UNSAT
+		(ab core: 19 -> 4)
+	(54 + 19 -> 54 + 4)
+	(19 -> 4 -> 4)
+	(19 -> 4 -> 4)
+
+		[MUS(s)]:
+
+		[1] w4	((\Y != 4'd0) && (\X == 4'd15) && (\Y != 4'd1) && (\Y != \X))
+[RES_1]       45	: 4	: 0 3 4 3 1 s: 11
+[RES_0]    L  4 : 0 7 13 16 4 s: 40, mem: 18, time: 0.273927
+---------------------------------------------------------------------------------------------
+Loop_4_1_33
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[4] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 17	(6 + 11 + 0 + 0 + 0)
+	(concrete cube) 17	(6 + 11 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(9 + 8 + 0 + 0 + 0)
+	(concrete cube) 17	(9 + 8 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(9 + 8 + 0 + 0 + 0)
+	(concrete cube) 17	(9 + 8 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(9 + 8 + 0 + 0 + 0)
+	(concrete cube) 17	(9 + 8 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(4 + 11 + 0 + 0 + 0)
+	(concrete cube) 15	(4 + 11 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 5)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 23)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 36)
+		(cc core: 36 -> 6)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X$next == 4'd15) && (\X != l$22) && (\Y == 4'd0) && (\X$next == \X$next_rhs))
+
+	[Lemmas]: 
+		[1] !(((\X$next == 4'd15) && (\X != l$22) && (\Y == 4'd0) && (\X$next == \X$next_rhs)))
+#1036
+#Lemmas = 46
+[RES_1]       46	: 4	: 0 3 4 3 1 s: 11
+[RES_0]    L  4 : 0 7 13 16 4 s: 40, mem: 18, time: 0.287055
+---------------------------------------------------------------------------------------------
+Loop_4_0_34
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[4] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 17	(6 + 11 + 0 + 0 + 0)
+	(concrete cube) 17	(6 + 11 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(9 + 8 + 0 + 0 + 0)
+	(concrete cube) 17	(9 + 8 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(8 + 9 + 0 + 0 + 0)
+	(concrete cube) 17	(8 + 9 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(9 + 8 + 0 + 0 + 0)
+	(concrete cube) 17	(9 + 8 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(4 + 11 + 0 + 0 + 0)
+	(concrete cube) 15	(4 + 11 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 5)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 23)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 36)
+		(cc core: 36 -> 5)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$22) && (\X == l$5))
+
+	[Lemmas]: 
+		[1] !(((\X == l$22) && (\X == l$5)))
+#1051
+		[2] !(((\X$next == l$22$next) && (\X$next == l$5$next)))
+#1053
+#Lemmas = 48
+[RES_1]       48	: 4	: 0 3 4 3 1 s: 11
+[RES_0]    L  4 : 0 7 13 16 4 s: 40, mem: 18, time: 0.301864
+---------------------------------------------------------------------------------------------
+Loop_4_0_35
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[4] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 17	(6 + 11 + 0 + 0 + 0)
+	(concrete cube) 17	(6 + 11 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(9 + 8 + 0 + 0 + 0)
+	(concrete cube) 17	(9 + 8 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(8 + 9 + 0 + 0 + 0)
+	(concrete cube) 17	(8 + 9 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(9 + 8 + 0 + 0 + 0)
+	(concrete cube) 17	(9 + 8 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(4 + 11 + 0 + 0 + 0)
+	(concrete cube) 15	(4 + 11 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 5)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 23)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 36)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 36)
+		(cc core: 36 -> 6)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X$next == \X$next_rhs) && (\X == l$8) && (\X$next == l$22$next) && (\Y$next == 4'd0))
+
+	[Lemmas]: 
+		[1] !(((\X$next == \X$next_rhs) && (\X == l$8) && (\X$next == l$22$next) && (\Y$next == 4'd0)))
+#1069
+#Lemmas = 49
+[RES_1]       49	: 4	: 0 3 4 3 1 s: 11
+[RES_0]    L  4 : 0 7 13 16 4 s: 40, mem: 18, time: 0.316067
+---------------------------------------------------------------------------------------------
+Loop_4_0_36
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[4] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 17	(6 + 11 + 0 + 0 + 0)
+	(concrete cube) 17	(6 + 11 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(9 + 8 + 0 + 0 + 0)
+	(concrete cube) 17	(9 + 8 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: UNSAT
+		(ab core: 17 -> 9)
+	(63 + 17 -> 63 + 9)
+	(17 -> 9 -> 9)
+		(added cond. from num.)	(\Y$next != \X$next)
+	(17 -> 9 -> 10 -> 9)
+
+		[MUS(s)]:
+
+		   (forcing elimination of initial states from original mus)
+		[0] (orig) ((\X == l$22) && (\X != l$8) && (\Y == 4'd0) && (\X != l$2) && (\X != l$16) && (\X != l$14) && (\X != l$6) && (\X != l$10) && (\Y != \X))
+		[1] w4	((\X == l$22) && (\X != l$8) && (\Y == 4'd0) && (\X != l$2) && (\X != l$16) && (\X != l$14) && (\X != l$6) && (\X != l$10) && (\Y != \X) && !(((\X == 4'd1) && (\Y == 4'd0))))
+	SAT_a ? [ F[3] & T & C+ ]: UNSAT
+		(ab core: 17 -> 2)
+	(60 + 17 -> 60 + 2)
+	(17 -> 2 -> 2)
+		(added cond. from num.)	(\Y$next != \X$next)
+		(added cond. from num.)	(\Y$next != \X$next)
+	(17 -> 2 -> 4 -> 2)
+
+		[MUS(s)]:
+
+		[1] w4	((\X == 4'd15) && (\Y != \X))
+[RES_1]       49	: 4	: 0 3 4 3 1 s: 11
+[RES_0]    L  4 : 0 7 13 24 2 s: 46, mem: 18, time: 0.319588
+---------------------------------------------------------------------------------------------
+Loop_4_1_36
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[4] & T & !P+ ]: UNSAT
+[RES_1]       49	: 4	: 0 3 4 3 1 s: 11
+[RES_0]    L  4 : 0 7 13 24 2 s: 46, mem: 18, time: 0.319654
+	[Forward propagation]:
+	(F4 about to converge: #1)
+		((\X == 4'd15) && (\Y != \X))
+[RES_1]       49	: 5	: 0 3 4 3 1 0 s: 11
+[RES_0]    L  5 : 0 7 13 24 2 0 s: 46, mem: 18, time: 0.320706
+---------------------------------------------------------------------------------------------
+Loop_5_0_36
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 19	(8 + 11 + 0 + 0 + 0)
+	(concrete cube) 19	(8 + 11 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(7 + 10 + 0 + 0 + 0)
+	(concrete cube) 17	(7 + 10 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(7 + 10 + 0 + 0 + 0)
+	(concrete cube) 17	(7 + 10 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(4 + 11 + 0 + 0 + 0)
+	(concrete cube) 15	(4 + 11 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 25)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 41)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 42)
+		(cc core: 42 -> 2)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$16) && (\X == l$17))
+
+	[Lemmas]: 
+		[1] !(((\X == l$16) && (\X == l$17)))
+#1103
+		[2] !(((\X$next == l$16) && (\X$next == l$17)))
+#1105
+#Lemmas = 51
+[RES_1]       51	: 5	: 0 3 4 3 1 0 s: 11
+[RES_0]    L  5 : 0 7 13 24 2 0 s: 46, mem: 18, time: 0.332708
+---------------------------------------------------------------------------------------------
+Loop_5_0_37
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 19	(8 + 11 + 0 + 0 + 0)
+	(concrete cube) 19	(8 + 11 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(7 + 10 + 0 + 0 + 0)
+	(concrete cube) 17	(7 + 10 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(4 + 11 + 0 + 0 + 0)
+	(concrete cube) 15	(4 + 11 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 25)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 41)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 42)
+		(cc core: 42 -> 12)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$14) && (\X$next != l$22$next) && (\Y$next == \Y$next_rhs) && (\Y$next != 4'd0) && (\X != l$22) && (\X != l$5) && (\X$next == \X$next_rhs) && (\Y$next != 4'd1) && !(LT_1_4_4(\X$next, \Y$next)))
+
+	[Lemmas]: 
+		[1] !(((\X == l$14) && (\X$next != l$22$next) && (\Y$next == \Y$next_rhs) && (\Y$next != 4'd0) && (\X != l$22) && (\X != l$5) && (\X$next == \X$next_rhs) && (\Y$next != 4'd1) && !(LT_1_4_4(\X$next, \Y$next))))
+#1121
+#Lemmas = 52
+[RES_1]       52	: 5	: 0 3 4 3 1 0 s: 11
+[RES_0]    L  5 : 0 7 13 24 2 0 s: 46, mem: 18, time: 0.356524
+---------------------------------------------------------------------------------------------
+Loop_5_0_38
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 19	(8 + 11 + 0 + 0 + 0)
+	(concrete cube) 19	(8 + 11 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(7 + 10 + 0 + 0 + 0)
+	(concrete cube) 17	(7 + 10 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(9 + 8 + 0 + 0 + 0)
+	(concrete cube) 17	(9 + 8 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(4 + 11 + 0 + 0 + 0)
+	(concrete cube) 15	(4 + 11 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 25)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 41)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 42)
+		(cc core: 42 -> 5)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X$next == \X$next_rhs) && !(LT_1_4_4(\X, \Y)) && \reset && (\X$next != l$8) && (\X == l$16))
+
+	[Lemmas]: 
+		[1] !(((\X$next == \X$next_rhs) && !(LT_1_4_4(\X, \Y)) && \reset && (\X$next != l$8) && (\X == l$16)))
+#1137
+#Lemmas = 53
+[RES_1]       53	: 5	: 0 3 4 3 1 0 s: 11
+[RES_0]    L  5 : 0 7 13 24 2 0 s: 46, mem: 18, time: 0.375047
+---------------------------------------------------------------------------------------------
+Loop_5_0_39
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 19	(8 + 11 + 0 + 0 + 0)
+	(concrete cube) 19	(8 + 11 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(7 + 10 + 0 + 0 + 0)
+	(concrete cube) 17	(7 + 10 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(4 + 11 + 0 + 0 + 0)
+	(concrete cube) 15	(4 + 11 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 25)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 41)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 42)
+		(cc core: 42 -> 6)
+UNSAT
+
+		[MUS(s)]:
+		[1] (!(LT_1_4_4(\X, \Y)) && (\X == l$14) && (\X == l$5) && (\X != l$13))
+
+	[Lemmas]: 
+		[1] !((!(LT_1_4_4(\X, \Y)) && (\X == l$14) && (\X == l$5) && (\X != l$13)))
+#1150
+		[2] !((!(LT_1_4_4(\X$next, \Y$next)) && (\X$next == l$14) && (\X$next == l$5$next) && (\X$next != l$13$next)))
+#1152
+#Lemmas = 55
+[RES_1]       55	: 5	: 0 3 4 3 1 0 s: 11
+[RES_0]    L  5 : 0 7 13 24 2 0 s: 46, mem: 18, time: 0.392392
+---------------------------------------------------------------------------------------------
+Loop_5_0_40
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 19	(8 + 11 + 0 + 0 + 0)
+	(concrete cube) 19	(8 + 11 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(7 + 10 + 0 + 0 + 0)
+	(concrete cube) 17	(7 + 10 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(4 + 11 + 0 + 0 + 0)
+	(concrete cube) 15	(4 + 11 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 25)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 41)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 42)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 42)
+		(cc core: 42 -> 4)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$6) && (\X == l$13))
+
+	[Lemmas]: 
+		[1] !(((\X == l$6) && (\X == l$13)))
+#1166
+		[2] !(((\X$next == l$6) && (\X$next == l$13$next)))
+#1168
+#Lemmas = 57
+[RES_1]       57	: 5	: 0 3 4 3 1 0 s: 11
+[RES_0]    L  5 : 0 7 13 24 2 0 s: 46, mem: 18, time: 0.407798
+---------------------------------------------------------------------------------------------
+Loop_5_0_41
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 19	(8 + 11 + 0 + 0 + 0)
+	(concrete cube) 19	(8 + 11 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(7 + 10 + 0 + 0 + 0)
+	(concrete cube) 17	(7 + 10 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(4 + 11 + 0 + 0 + 0)
+	(concrete cube) 15	(4 + 11 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 25)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 41)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 42)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 42)
+		(cc core: 42 -> 8)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\Y != 4'd1) && (\X$next == l$5$next) && (\Y$next == \Y$next_rhs) && !(LT_1_4_4(\X$next, \Y$next)) && (\X$next == l$14) && \reset)
+
+	[Lemmas]: 
+		[1] !(((\Y != 4'd1) && (\X$next == l$5$next) && (\Y$next == \Y$next_rhs) && !(LT_1_4_4(\X$next, \Y$next)) && (\X$next == l$14) && \reset))
+#1180
+#Lemmas = 58
+[RES_1]       58	: 5	: 0 3 4 3 1 0 s: 11
+[RES_0]    L  5 : 0 7 13 24 2 0 s: 46, mem: 18, time: 0.427307
+---------------------------------------------------------------------------------------------
+Loop_5_0_42
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 19	(8 + 11 + 0 + 0 + 0)
+	(concrete cube) 19	(8 + 11 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: UNSAT
+		(ab core: 20 -> 8)
+	(74 + 20 -> 74 + 8)
+	(20 -> 8 -> 6)
+	(20 -> 8 -> 6)
+
+		[MUS(s)]:
+
+		[1] w4	((\X == l$5) && (\X != l$16) && (\Y != 4'd0) && (\X != l$10) && (\Y != 4'd1) && (\Y != \X))
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(12 + 8 + 0 + 0 + 0)
+	(concrete cube) 20	(12 + 8 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(7 + 10 + 0 + 0 + 0)
+	(concrete cube) 17	(7 + 10 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(4 + 11 + 0 + 0 + 0)
+	(concrete cube) 15	(4 + 11 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 25)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 41)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 42)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 42)
+		SAT_c ? [ A[4] & T[4] & A[3]+ ]: 		(bv input core size: 39)
+		SAT_c ? [ A[5] & T[5] & A[4]+ ]: 		(bv input core size: 34)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[5]
+
+	2: A[4]
+
+	3: A[3]
+
+	4: A[2]
+			(creating wire l$23 for port Add_4_4_4(l$14, 4'd1))
+
+	5: A[1]
+[1] Cube to CubeNext+ is UNSAT
+
+		(cc core: 48 -> 3)
+resMusBv: 1
+		ACEXT is infeasible
+			(unsat: A[1] to A[0] )
+[Sim_1]    Adding lemma to ensure following never happens: 
+	(\X$next == 4'd15)
+	(\X == l$23)
+	(\X$next == \X$next_rhs)
+
+[Sim_1]    Processing failure condition: 
+	(\X$next == 4'd15)
+	(\X == l$23)
+	(\X$next == \X$next_rhs)
+
+			(adding predicate (absent)   (\X == l$23) )
+			(finding parent expressions)	(\X == l$23)
+				(parent expression)
+					(\X == l$23) := (\X == l$23)
+						(learning uf        Add_4_4_4(l$14, 4'd1) )
+[Sim_1]    =========== Simulation Ends ===============
+
+	[Lemmas]: 
+		[1] !((((\X == l$23) || (\X != l$23)) && (\X == l$23) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+#1272
+#Lemmas = 59
+[RES_1]       59	: 5	: 0 3 4 4 1 0 s: 12
+[RES_0]    L  5 : 0 7 13 30 2 0 s: 52, mem: 19, time: 0.461073
+---------------------------------------------------------------------------------------------
+Loop_5_0_43
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 20	(8 + 12 + 0 + 0 + 0)
+	(concrete cube) 20	(8 + 12 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(12 + 9 + 0 + 0 + 0)
+	(concrete cube) 21	(12 + 9 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(12 + 9 + 0 + 0 + 0)
+	(concrete cube) 21	(12 + 9 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(7 + 11 + 0 + 0 + 0)
+	(concrete cube) 18	(7 + 11 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(9 + 9 + 0 + 0 + 0)
+	(concrete cube) 18	(9 + 9 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 16	(4 + 12 + 0 + 0 + 0)
+	(concrete cube) 16	(4 + 12 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 26)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 43)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 44)
+		(cc core: 44 -> 8)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$16) && (\Y$next == \Y$next_rhs) && (\X == l$22) && (\X$next == \X$next_rhs) && (\X$next != l$22$next))
+
+	[Lemmas]: 
+		[1] !(((\X == l$16) && (\Y$next == \Y$next_rhs) && (\X == l$22) && (\X$next == \X$next_rhs) && (\X$next != l$22$next)))
+#1296
+#Lemmas = 60
+[RES_1]       60	: 5	: 0 3 4 4 1 0 s: 12
+[RES_0]    L  5 : 0 7 13 30 2 0 s: 52, mem: 19, time: 0.483399
+---------------------------------------------------------------------------------------------
+Loop_5_0_44
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 20	(8 + 12 + 0 + 0 + 0)
+	(concrete cube) 20	(8 + 12 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(12 + 9 + 0 + 0 + 0)
+	(concrete cube) 21	(12 + 9 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(12 + 9 + 0 + 0 + 0)
+	(concrete cube) 21	(12 + 9 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #10
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #10
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(11 + 10 + 0 + 0 + 0)
+	(concrete cube) 21	(11 + 10 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: UNSAT
+		(ab core: 21 -> 4)
+	(81 + 21 -> 81 + 4)
+	(21 -> 4 -> 4)
+	(21 -> 4 -> 4)
+
+		[MUS(s)]:
+
+		[1] w4	((\X == l$4) && (\Y != 4'd0) && (\Y != 4'd1) && (\Y != \X))
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #10
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #10
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(11 + 10 + 0 + 0 + 0)
+	(concrete cube) 21	(11 + 10 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(7 + 11 + 0 + 0 + 0)
+	(concrete cube) 18	(7 + 11 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 16	(4 + 12 + 0 + 0 + 0)
+	(concrete cube) 16	(4 + 12 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 26)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 43)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 44)
+		(cc core: 44 -> 5)
+UNSAT
+
+		[MUS(s)]:
+		[1] (!(\reset) && (\X == l$10) && GT_1_4_4(\X, \Y) && (\X$next != l$17) && (\X$next == \X$next_rhs))
+
+	[Lemmas]: 
+		[1] !((!(\reset) && (\X == l$10) && GT_1_4_4(\X, \Y) && (\X$next != l$17) && (\X$next == \X$next_rhs)))
+#1321
+#Lemmas = 61
+[RES_1]       61	: 5	: 0 3 5 4 1 0 s: 13
+[RES_0]    L  5 : 0 7 17 30 2 0 s: 56, mem: 19, time: 0.507267
+---------------------------------------------------------------------------------------------
+Loop_5_0_45
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 20	(8 + 12 + 0 + 0 + 0)
+	(concrete cube) 20	(8 + 12 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(12 + 9 + 0 + 0 + 0)
+	(concrete cube) 21	(12 + 9 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(12 + 9 + 0 + 0 + 0)
+	(concrete cube) 21	(12 + 9 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(12 + 9 + 0 + 0 + 0)
+	(concrete cube) 21	(12 + 9 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(7 + 11 + 0 + 0 + 0)
+	(concrete cube) 18	(7 + 11 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 16	(4 + 12 + 0 + 0 + 0)
+	(concrete cube) 16	(4 + 12 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 26)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 43)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 44)
+		(cc core: 44 -> 5)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X$next == \X$next_rhs) && GT_1_4_4(\X, \Y) && !(\reset) && (\X$next != l$16) && (\X == l$14))
+
+	[Lemmas]: 
+		[1] !(((\X$next == \X$next_rhs) && GT_1_4_4(\X, \Y) && !(\reset) && (\X$next != l$16) && (\X == l$14)))
+#1335
+#Lemmas = 62
+[RES_1]       62	: 5	: 0 3 5 4 1 0 s: 13
+[RES_0]    L  5 : 0 7 17 30 2 0 s: 56, mem: 19, time: 0.527657
+---------------------------------------------------------------------------------------------
+Loop_5_0_46
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 20	(8 + 12 + 0 + 0 + 0)
+	(concrete cube) 20	(8 + 12 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(12 + 9 + 0 + 0 + 0)
+	(concrete cube) 21	(12 + 9 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(12 + 9 + 0 + 0 + 0)
+	(concrete cube) 21	(12 + 9 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(7 + 11 + 0 + 0 + 0)
+	(concrete cube) 18	(7 + 11 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(9 + 9 + 0 + 0 + 0)
+	(concrete cube) 18	(9 + 9 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 16	(4 + 12 + 0 + 0 + 0)
+	(concrete cube) 16	(4 + 12 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 26)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 43)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 44)
+		(cc core: 44 -> 5)
+UNSAT
+
+		[MUS(s)]:
+		[1] (!(\reset) && (\X$next == \X$next_rhs) && (\X$next != l$17) && (\X == l$16) && GT_1_4_4(\X, \Y))
+
+	[Lemmas]: 
+		[1] !((!(\reset) && (\X$next == \X$next_rhs) && (\X$next != l$17) && (\X == l$16) && GT_1_4_4(\X, \Y)))
+#1349
+#Lemmas = 63
+[RES_1]       63	: 5	: 0 3 5 4 1 0 s: 13
+[RES_0]    L  5 : 0 7 17 30 2 0 s: 56, mem: 19, time: 0.548428
+---------------------------------------------------------------------------------------------
+Loop_5_0_47
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 20	(8 + 12 + 0 + 0 + 0)
+	(concrete cube) 20	(8 + 12 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(12 + 9 + 0 + 0 + 0)
+	(concrete cube) 21	(12 + 9 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(7 + 11 + 0 + 0 + 0)
+	(concrete cube) 18	(7 + 11 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(9 + 9 + 0 + 0 + 0)
+	(concrete cube) 18	(9 + 9 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(9 + 9 + 0 + 0 + 0)
+	(concrete cube) 18	(9 + 9 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 16	(4 + 12 + 0 + 0 + 0)
+	(concrete cube) 16	(4 + 12 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 26)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 43)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 41)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 38)
+		(cc core: 38 -> 2)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$23) && (\X == l$8))
+
+	[Lemmas]: 
+		[1] !(((\X == l$23) && (\X == l$8)))
+#1367
+		[2] !(((\X$next == l$23) && (\X$next == l$8)))
+#1369
+#Lemmas = 65
+[RES_1]       65	: 5	: 0 3 5 4 1 0 s: 13
+[RES_0]    L  5 : 0 7 17 30 2 0 s: 56, mem: 19, time: 0.564687
+---------------------------------------------------------------------------------------------
+Loop_5_0_48
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 20	(8 + 12 + 0 + 0 + 0)
+	(concrete cube) 20	(8 + 12 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(12 + 9 + 0 + 0 + 0)
+	(concrete cube) 21	(12 + 9 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(7 + 11 + 0 + 0 + 0)
+	(concrete cube) 18	(7 + 11 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(9 + 9 + 0 + 0 + 0)
+	(concrete cube) 18	(9 + 9 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(9 + 9 + 0 + 0 + 0)
+	(concrete cube) 18	(9 + 9 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 16	(4 + 12 + 0 + 0 + 0)
+	(concrete cube) 16	(4 + 12 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 26)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 43)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 41)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 38)
+		SAT_c ? [ A[4] & T[4] & A[3]+ ]: 		(bv input core size: 38)
+		SAT_c ? [ A[5] & T[5] & A[4]+ ]: 		(bv input core size: 36)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[5]
+
+	2: A[4]
+
+	3: A[3]
+
+	4: A[2]
+			(creating wire l$24 for port Add_4_4_4(l$17, 4'd1))
+
+	5: A[1]
+[1] Cube to CubeNext+ is UNSAT
+
+		(cc core: 50 -> 3)
+resMusBv: 1
+		ACEXT is infeasible
+			(unsat: A[1] to A[0] )
+[Sim_1]    Adding lemma to ensure following never happens: 
+	(\X$next == 4'd15)
+	(\X == l$24)
+	(\X$next == \X$next_rhs)
+
+[Sim_1]    Processing failure condition: 
+	(\X$next == 4'd15)
+	(\X == l$24)
+	(\X$next == \X$next_rhs)
+
+			(adding predicate (absent)   (\X == l$24) )
+			(finding parent expressions)	(\X == l$24)
+				(parent expression)
+					(\X == l$24) := (\X == l$24)
+						(learning uf        Add_4_4_4(l$17, 4'd1) )
+[Sim_1]    =========== Simulation Ends ===============
+
+	[Lemmas]: 
+		[1] !((((\X == l$24) || (\X != l$24)) && (\X == l$24) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+#1430
+#Lemmas = 66
+[RES_1]       66	: 5	: 0 3 5 4 1 0 s: 13
+[RES_0]    L  5 : 0 7 17 30 2 0 s: 56, mem: 19, time: 0.606382
+---------------------------------------------------------------------------------------------
+Loop_5_0_49
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 21	(8 + 13 + 0 + 0 + 0)
+	(concrete cube) 21	(8 + 13 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 22	(12 + 10 + 0 + 0 + 0)
+	(concrete cube) 22	(12 + 10 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: UNSAT
+		(ab core: 22 -> 11)
+	(79 + 22 -> 79 + 11)
+	(22 -> 11 -> 11)
+	(22 -> 11 -> 11)
+
+		[MUS(s)]:
+
+		[1] w4	((\X != l$24) && (\X != l$23) && (\X != l$17) && (\X != l$8) && (\X != l$14) && (\X != l$6) && (\X != l$16) && (\X != l$10) && (\Y != 4'd0) && (\Y != 4'd1) && (\Y != \X))
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(6 + 13 + 0 + 0 + 0)
+	(concrete cube) 19	(6 + 13 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(9 + 10 + 0 + 0 + 0)
+	(concrete cube) 19	(9 + 10 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(9 + 10 + 0 + 0 + 0)
+	(concrete cube) 19	(9 + 10 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(8 + 11 + 0 + 0 + 0)
+	(concrete cube) 19	(8 + 11 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(4 + 13 + 0 + 0 + 0)
+	(concrete cube) 17	(4 + 13 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 27)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 42)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 40)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 40)
+		(cc core: 40 -> 7)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs) && GT_1_4_4(\X, \Y) && (\Y$next == 4'd0) && (\X$next != l$24) && (\X == l$8))
+
+	[Lemmas]: 
+		[1] !(((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs) && GT_1_4_4(\X, \Y) && (\Y$next == 4'd0) && (\X$next != l$24) && (\X == l$8)))
+#1464
+#Lemmas = 67
+[RES_1]       67	: 5	: 0 3 5 4 2 0 s: 14
+[RES_0]    L  5 : 0 7 17 30 13 0 s: 67, mem: 20, time: 0.639542
+---------------------------------------------------------------------------------------------
+Loop_5_0_50
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 21	(8 + 13 + 0 + 0 + 0)
+	(concrete cube) 21	(8 + 13 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(6 + 13 + 0 + 0 + 0)
+	(concrete cube) 19	(6 + 13 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(9 + 10 + 0 + 0 + 0)
+	(concrete cube) 19	(9 + 10 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: UNSAT
+		(ab core: 19 -> 9)
+	(86 + 19 -> 86 + 9)
+	(19 -> 9 -> 9)
+		(added cond. from num.)	(\Y$next != \X$next)
+	(19 -> 9 -> 10 -> 9)
+
+		[MUS(s)]:
+
+		   (forcing elimination of initial states from original mus)
+		[0] (orig) ((\X != l$24) && (\Y == 4'd0) && (\X != l$8) && (\X != l$2) && (\X != l$14) && (\X != l$6) && (\X != l$16) && (\X != l$10) && (\Y != \X))
+		[1] w4	((\X != l$24) && (\Y == 4'd0) && (\X != l$8) && (\X != l$2) && (\X != l$14) && (\X != l$6) && (\X != l$16) && (\X != l$10) && (\Y != \X) && !(((\X == 4'd1) && (\Y == 4'd0))))
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(9 + 10 + 0 + 0 + 0)
+	(concrete cube) 19	(9 + 10 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(9 + 10 + 0 + 0 + 0)
+	(concrete cube) 19	(9 + 10 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(8 + 11 + 0 + 0 + 0)
+	(concrete cube) 19	(8 + 11 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(4 + 13 + 0 + 0 + 0)
+	(concrete cube) 17	(4 + 13 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 27)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 42)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 40)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 40)
+		(cc core: 40 -> 3)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X != 4'd0) && (\X == l$5) && (\Y == 4'd0))
+
+	[Lemmas]: 
+		[1] !(((\X != 4'd0) && (\X == l$5) && (\Y == 4'd0)))
+#1486
+		[2] !(((\X$next != 4'd0) && (\X$next == l$5$next) && (\Y$next == 4'd0)))
+#1488
+#Lemmas = 69
+[RES_1]       69	: 5	: 0 3 5 5 2 0 s: 15
+[RES_0]    L  5 : 0 7 17 40 13 0 s: 77, mem: 20, time: 0.663488
+---------------------------------------------------------------------------------------------
+Loop_5_0_51
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 21	(8 + 13 + 0 + 0 + 0)
+	(concrete cube) 21	(8 + 13 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(6 + 13 + 0 + 0 + 0)
+	(concrete cube) 19	(6 + 13 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(9 + 10 + 0 + 0 + 0)
+	(concrete cube) 19	(9 + 10 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(9 + 10 + 0 + 0 + 0)
+	(concrete cube) 19	(9 + 10 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(9 + 10 + 0 + 0 + 0)
+	(concrete cube) 19	(9 + 10 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(4 + 13 + 0 + 0 + 0)
+	(concrete cube) 17	(4 + 13 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 27)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 42)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 40)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 40)
+		SAT_c ? [ A[4] & T[4] & A[3]+ ]: 		(bv input core size: 40)
+		SAT_c ? [ A[5] & T[5] & A[4]+ ]: 		(bv input core size: 38)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[5]
+
+	2: A[4]
+
+	3: A[3]
+			(creating wire l$25 for port ShiftR_4_4_4(l$8, 4'd1))
+			(creating wire l$26 for port Add_4_4_4($shr$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$5_Y, l$25))
+
+	4: A[2]
+			(creating wire l$27 for port Add_4_4_4(l$26, 4'd1))
+
+	5: A[1]
+[1] Cube to CubeNext+ is UNSAT
+
+		(cc core: 48 -> 4)
+resMusBv: 1
+		ACEXT is infeasible
+			(unsat: A[1] to A[0] )
+[Sim_1]    Adding lemma to ensure following never happens: 
+	(\X$next == 4'd15)
+	(\X == l$27)
+	(\X$next == \X$next_rhs)
+
+[Sim_1]    Processing failure condition: 
+	(\X$next == 4'd15)
+	(\X == l$27)
+	(\X$next == \X$next_rhs)
+
+			(adding predicate (absent)   (\X == l$27) )
+			(finding parent expressions)	(\X == l$27)
+				(number value parent)	4'd1	:=	\Y
+				(parent expression)
+					(\X == l$27) := (\X == Add_4_4_4(Add_4_4_4(l$11, ShiftR_4_4_4(l$21, \Y)), \Y))
+			(creating wire l$28 for port ShiftR_4_4_4(l$21, \Y))
+			(creating wire l$29 for port Add_4_4_4(l$11, l$28))
+			(creating wire l$30 for port Add_4_4_4(l$29, \Y))
+				(adding predicate (from parent)   (\X == l$30) )
+						(learning uf        ShiftR_4_4_4(l$21, \Y) )
+						(learning uf        Add_4_4_4(l$11, l$28) )
+						(learning uf        Add_4_4_4(l$29, \Y) )
+						(learning uf        ShiftR_4_4_4(l$8, 4'd1) )
+						(learning uf        Add_4_4_4($shr$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$5_Y, l$25) )
+						(learning uf        Add_4_4_4(l$26, 4'd1) )
+[Sim_1]    =========== Simulation Ends ===============
+
+	[Lemmas]: 
+		[1] !((((\X == l$30) || (\X != l$30)) && (\X == l$30) && ((\X == l$27) || (\X != l$27)) && (\X == l$27) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+#1577
+#Lemmas = 70
+[RES_1]       70	: 5	: 0 3 5 5 2 0 s: 15
+[RES_0]    L  5 : 0 7 17 40 13 0 s: 77, mem: 20, time: 0.709327
+---------------------------------------------------------------------------------------------
+Loop_5_0_52
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 23	(8 + 15 + 0 + 0 + 0)
+	(concrete cube) 23	(8 + 15 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(6 + 15 + 0 + 0 + 0)
+	(concrete cube) 21	(6 + 15 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(10 + 11 + 0 + 0 + 0)
+	(concrete cube) 21	(10 + 11 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(10 + 11 + 0 + 0 + 0)
+	(concrete cube) 21	(10 + 11 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(10 + 11 + 0 + 0 + 0)
+	(concrete cube) 21	(10 + 11 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(4 + 15 + 0 + 0 + 0)
+	(concrete cube) 19	(4 + 15 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 29)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 46)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 44)
+		(cc core: 44 -> 6)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$24) && (\Y == 4'd0) && (\X$next == \X$next_rhs) && (\X$next != l$27))
+
+	[Lemmas]: 
+		[1] !(((\X == l$24) && (\Y == 4'd0) && (\X$next == \X$next_rhs) && (\X$next != l$27)))
+#1608
+#Lemmas = 71
+[RES_1]       71	: 5	: 0 3 5 5 2 0 s: 15
+[RES_0]    L  5 : 0 7 17 40 13 0 s: 77, mem: 20, time: 0.735515
+---------------------------------------------------------------------------------------------
+Loop_5_0_53
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 23	(8 + 15 + 0 + 0 + 0)
+	(concrete cube) 23	(8 + 15 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(6 + 15 + 0 + 0 + 0)
+	(concrete cube) 21	(6 + 15 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(7 + 14 + 0 + 0 + 0)
+	(concrete cube) 21	(7 + 14 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(7 + 14 + 0 + 0 + 0)
+	(concrete cube) 21	(7 + 14 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(7 + 14 + 0 + 0 + 0)
+	(concrete cube) 21	(7 + 14 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(4 + 15 + 0 + 0 + 0)
+	(concrete cube) 19	(4 + 15 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 29)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 46)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 44)
+		(cc core: 44 -> 5)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X$next == \X$next_rhs) && (\X$next != l$24) && (\X == l$17) && (\Y == 4'd1))
+
+	[Lemmas]: 
+		[1] !(((\X$next == \X$next_rhs) && (\X$next != l$24) && (\X == l$17) && (\Y == 4'd1)))
+#1625
+#Lemmas = 72
+[RES_1]       72	: 5	: 0 3 5 5 2 0 s: 15
+[RES_0]    L  5 : 0 7 17 40 13 0 s: 77, mem: 20, time: 0.761162
+---------------------------------------------------------------------------------------------
+Loop_5_0_54
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 23	(8 + 15 + 0 + 0 + 0)
+	(concrete cube) 23	(8 + 15 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(6 + 15 + 0 + 0 + 0)
+	(concrete cube) 21	(6 + 15 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: UNSAT
+		(ab core: 21 -> 11)
+	(87 + 21 -> 87 + 11)
+	(21 -> 11 -> 11)
+		(added cond. from num.)	(\Y$next != \X$next)
+	(21 -> 11 -> 12 -> 11)
+
+		[MUS(s)]:
+
+		[1] w4	((\X != l$27) && (\X != l$23) && (\X != l$24) && (\X != l$17) && (\X != l$5) && (\Y == 4'd1) && (\X != l$8) && (\X != l$14) && (\X != l$16) && (\X != l$10) && (\Y != \X))
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 24	(13 + 11 + 0 + 0 + 0)
+	(concrete cube) 24	(13 + 11 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 24	(13 + 11 + 0 + 0 + 0)
+	(concrete cube) 24	(13 + 11 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(7 + 14 + 0 + 0 + 0)
+	(concrete cube) 21	(7 + 14 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(7 + 14 + 0 + 0 + 0)
+	(concrete cube) 21	(7 + 14 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(4 + 15 + 0 + 0 + 0)
+	(concrete cube) 19	(4 + 15 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 29)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 49)
+		(cc core: 49 -> 2)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$27) && (\X == l$17))
+
+	[Lemmas]: 
+		[1] !(((\X == l$27) && (\X == l$17)))
+#1650
+		[2] !(((\X$next == l$27) && (\X$next == l$17)))
+#1652
+#Lemmas = 74
+[RES_1]       74	: 5	: 0 3 5 5 3 0 s: 16
+[RES_0]    L  5 : 0 7 17 40 24 0 s: 88, mem: 20, time: 0.786503
+---------------------------------------------------------------------------------------------
+Loop_5_0_55
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 23	(8 + 15 + 0 + 0 + 0)
+	(concrete cube) 23	(8 + 15 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 24	(13 + 11 + 0 + 0 + 0)
+	(concrete cube) 24	(13 + 11 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 24	(13 + 11 + 0 + 0 + 0)
+	(concrete cube) 24	(13 + 11 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(7 + 14 + 0 + 0 + 0)
+	(concrete cube) 21	(7 + 14 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(7 + 14 + 0 + 0 + 0)
+	(concrete cube) 21	(7 + 14 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(4 + 15 + 0 + 0 + 0)
+	(concrete cube) 19	(4 + 15 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 29)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 49)
+		(cc core: 49 -> 4)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X$next == 4'd15) && (\X$next == \X$next_rhs) && (\X == l$17))
+
+	[Lemmas]: 
+		[1] !(((\X$next == 4'd15) && (\X$next == \X$next_rhs) && (\X == l$17)))
+#1664
+#Lemmas = 75
+[RES_1]       75	: 5	: 0 3 5 5 3 0 s: 16
+[RES_0]    L  5 : 0 7 17 40 24 0 s: 88, mem: 20, time: 0.805423
+---------------------------------------------------------------------------------------------
+Loop_5_0_56
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 23	(8 + 15 + 0 + 0 + 0)
+	(concrete cube) 23	(8 + 15 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: UNSAT
+		(ab core: 23 -> 4)
+	(84 + 23 -> 84 + 4)
+	(23 -> 4 -> 4)
+	(23 -> 4 -> 4)
+
+		[MUS(s)]:
+
+		[1] w4	((\X == 4'd15) && (\Y != 4'd0) && (\Y != 4'd1) && (\Y != \X))
+[RES_1]       75	: 5	: 0 3 5 5 3 1 s: 17
+[RES_0]    L  5 : 0 7 17 40 24 4 s: 92, mem: 20, time: 0.807034
+---------------------------------------------------------------------------------------------
+Loop_5_1_56
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 21	(6 + 15 + 0 + 0 + 0)
+	(concrete cube) 21	(6 + 15 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(10 + 11 + 0 + 0 + 0)
+	(concrete cube) 21	(10 + 11 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(9 + 12 + 0 + 0 + 0)
+	(concrete cube) 21	(9 + 12 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(10 + 11 + 0 + 0 + 0)
+	(concrete cube) 21	(10 + 11 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(10 + 11 + 0 + 0 + 0)
+	(concrete cube) 21	(10 + 11 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(4 + 15 + 0 + 0 + 0)
+	(concrete cube) 19	(4 + 15 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 27)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 44)
+		(cc core: 44 -> 4)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$27) && (\X$next == 4'd15) && (\X$next == \X$next_rhs))
+
+	[Lemmas]: 
+		[1] !(((\X == l$27) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+#1690
+#Lemmas = 76
+[RES_1]       76	: 5	: 0 3 5 5 3 1 s: 17
+[RES_0]    L  5 : 0 7 17 40 24 4 s: 92, mem: 20, time: 0.825898
+---------------------------------------------------------------------------------------------
+Loop_5_0_57
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 21	(6 + 15 + 0 + 0 + 0)
+	(concrete cube) 21	(6 + 15 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(10 + 11 + 0 + 0 + 0)
+	(concrete cube) 21	(10 + 11 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: UNSAT
+		(ab core: 21 -> 12)
+	(93 + 21 -> 93 + 12)
+	(21 -> 12 -> 12)
+		(added cond. from num.)	(\Y$next != \X$next)
+	(21 -> 12 -> 13 -> 12)
+
+		[MUS(s)]:
+
+		   (forcing elimination of initial states from original mus)
+		[0] (orig) ((\X != l$27) && (\X != l$23) && (\X != l$24) && (\X != l$17) && (\Y == 4'd0) && (\X != l$2) && (\X != l$8) && (\X != l$6) && (\X != l$14) && (\X != l$16) && (\X != l$10) && (\Y != \X))
+		[1] w4	((\X != l$27) && (\X != l$23) && (\X != l$24) && (\X != l$17) && (\Y == 4'd0) && (\X != l$2) && (\X != l$8) && (\X != l$6) && (\X != l$14) && (\X != l$16) && (\X != l$10) && (\Y != \X) && !(((\X == 4'd1) && (\Y == 4'd0))))
+	SAT_a ? [ F[4] & T & C+ ]: UNSAT
+		(ab core: 21 -> 2)
+	(87 + 21 -> 87 + 2)
+	(21 -> 2 -> 2)
+	(21 -> 2 -> 2)
+
+		[MUS(s)]:
+
+		[1] w4	((\X == 4'd15) && (\Y != \X))
+[RES_1]       76	: 5	: 0 3 5 5 3 1 s: 17
+[RES_0]    L  5 : 0 7 17 40 35 2 s: 101, mem: 20, time: 0.830248
+---------------------------------------------------------------------------------------------
+Loop_5_1_57
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[5] & T & !P+ ]: UNSAT
+[RES_1]       76	: 5	: 0 3 5 5 3 1 s: 17
+[RES_0]    L  5 : 0 7 17 40 35 2 s: 101, mem: 20, time: 0.830311
+	[Forward propagation]:
+	(F5 about to converge: #1)
+		((\X == 4'd15) && (\Y != \X))
+[RES_1]       76	: 6	: 0 3 5 5 3 1 0 s: 17
+[RES_0]    L  6 : 0 7 17 40 35 2 0 s: 101, mem: 20, time: 0.832976
+---------------------------------------------------------------------------------------------
+Loop_6_0_57
+---------------------------------------------------------------------------------------------
+	F[6] = P
+	SAT_a ? [ F[6] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 23	(8 + 15 + 0 + 0 + 0)
+	(concrete cube) 23	(8 + 15 + 0 + 0)
+	SAT_a ? [ F[5] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 24	(13 + 11 + 0 + 0 + 0)
+	(concrete cube) 24	(13 + 11 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 24	(13 + 11 + 0 + 0 + 0)
+	(concrete cube) 24	(13 + 11 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(7 + 14 + 0 + 0 + 0)
+	(concrete cube) 21	(7 + 14 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(10 + 11 + 0 + 0 + 0)
+	(concrete cube) 21	(10 + 11 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(10 + 11 + 0 + 0 + 0)
+	(concrete cube) 21	(10 + 11 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(4 + 15 + 0 + 0 + 0)
+	(concrete cube) 19	(4 + 15 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 7)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 29)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 49)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 50)
+		(cc core: 50 -> 4)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X$next == \X$next_rhs) && !(LT_1_4_4(\X, \Y)) && (\X == l$24) && (\X$next != l$27))
+
+	[Lemmas]: 
+		[1] !(((\X$next == \X$next_rhs) && !(LT_1_4_4(\X, \Y)) && (\X == l$24) && (\X$next != l$27)))
+#1732
+#Lemmas = 77
+[RES_1]       77	: 6	: 0 3 5 5 3 1 0 s: 17
+[RES_0]    L  6 : 0 7 17 40 35 2 0 s: 101, mem: 21, time: 0.862264
+---------------------------------------------------------------------------------------------
+Loop_6_0_58
+---------------------------------------------------------------------------------------------
+	F[6] = P
+	SAT_a ? [ F[6] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 23	(8 + 15 + 0 + 0 + 0)
+	(concrete cube) 23	(8 + 15 + 0 + 0)
+	SAT_a ? [ F[5] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 24	(13 + 11 + 0 + 0 + 0)
+	(concrete cube) 24	(13 + 11 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 24	(13 + 11 + 0 + 0 + 0)
+	(concrete cube) 24	(13 + 11 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 24	(13 + 11 + 0 + 0 + 0)
+	(concrete cube) 24	(13 + 11 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 24	(13 + 11 + 0 + 0 + 0)
+	(concrete cube) 24	(13 + 11 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(7 + 14 + 0 + 0 + 0)
+	(concrete cube) 21	(7 + 14 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(4 + 15 + 0 + 0 + 0)
+	(concrete cube) 19	(4 + 15 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 7)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 29)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 49)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 50)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 50)
+		(cc core: 50 -> 10)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\X == l$22) && (\X$next == \X$next_rhs) && (\X$next == l$23) && (\X != l$30))
+
+	[Lemmas]: 
+		[1] !(((\X == l$22) && (\X$next == \X$next_rhs) && (\X$next == l$23) && (\X != l$30)))
+#1752
+#Lemmas = 78
+[RES_1]       78	: 6	: 0 3 5 5 3 1 0 s: 17
+[RES_0]    L  6 : 0 7 17 40 35 2 0 s: 101, mem: 21, time: 0.893085
+---------------------------------------------------------------------------------------------
+Loop_6_0_59
+---------------------------------------------------------------------------------------------
+	F[6] = P
+	SAT_a ? [ F[6] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 23	(8 + 15 + 0 + 0 + 0)
+	(concrete cube) 23	(8 + 15 + 0 + 0)
+	SAT_a ? [ F[5] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 24	(13 + 11 + 0 + 0 + 0)
+	(concrete cube) 24	(13 + 11 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 24	(13 + 11 + 0 + 0 + 0)
+	(concrete cube) 24	(13 + 11 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 24	(13 + 11 + 0 + 0 + 0)
+	(concrete cube) 24	(13 + 11 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 24	(13 + 11 + 0 + 0 + 0)
+	(concrete cube) 24	(13 + 11 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 21	(7 + 14 + 0 + 0 + 0)
+	(concrete cube) 21	(7 + 14 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #4
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #4
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 19	(4 + 15 + 0 + 0 + 0)
+	(concrete cube) 19	(4 + 15 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 7)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 29)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 49)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 50)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 50)
+		SAT_c ? [ A[4] & T[4] & A[3]+ ]: 		(bv input core size: 50)
+		SAT_c ? [ A[5] & T[5] & A[4]+ ]: 		(bv input core size: 47)
+		SAT_c ? [ A[6] & T[6] & A[5]+ ]: 		(bv input core size: 42)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[6]
+
+	2: A[5]
+
+	3: A[4]
+
+	4: A[3]
+
+	5: A[2]
+			(creating wire l$31 for port Add_4_4_4(l$23, 4'd1))
+
+	6: A[1]
+[1] Cube to CubeNext+ is UNSAT
+
+		(cc core: 57 -> 3)
+resMusBv: 1
+		ACEXT is infeasible
+			(unsat: A[1] to A[0] )
+[Sim_1]    Adding lemma to ensure following never happens: 
+	(\X == l$31)
+	(\X$next == 4'd15)
+	(\X$next == \X$next_rhs)
+
+[Sim_1]    Processing failure condition: 
+	(\X == l$31)
+	(\X$next == 4'd15)
+	(\X$next == \X$next_rhs)
+
+			(adding predicate (absent)   (\X == l$31) )
+			(finding parent expressions)	(\X == l$31)
+				(parent expression)
+					(\X == l$31) := (\X == l$31)
+						(learning uf        Add_4_4_4(l$23, 4'd1) )
+[Sim_1]    =========== Simulation Ends ===============
+
+	[Lemmas]: 
+		[1] !((((\X == l$31) || (\X != l$31)) && (\X == l$31) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+#1854
+#Lemmas = 79
+[RES_1]       79	: 6	: 0 3 5 5 3 1 0 s: 17
+[RES_0]    L  6 : 0 7 17 40 35 2 0 s: 101, mem: 21, time: 0.965212
+---------------------------------------------------------------------------------------------
+Loop_6_0_60
+---------------------------------------------------------------------------------------------
+	F[6] = P
+	SAT_a ? [ F[6] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #7
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #7
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 24	(8 + 16 + 0 + 0 + 0)
+	(concrete cube) 24	(8 + 16 + 0 + 0)
+	SAT_a ? [ F[5] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 25	(13 + 12 + 0 + 0 + 0)
+	(concrete cube) 25	(13 + 12 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #6
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #6
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 22	(7 + 15 + 0 + 0 + 0)
+	(concrete cube) 22	(7 + 15 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 22	(10 + 12 + 0 + 0 + 0)
+	(concrete cube) 22	(10 + 12 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #8
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #8
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 22	(9 + 13 + 0 + 0 + 0)
+	(concrete cube) 22	(9 + 13 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 22	(10 + 12 + 0 + 0 + 0)
+	(concrete cube) 22	(10 + 12 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 20	(4 + 16 + 0 + 0 + 0)
+	(concrete cube) 20	(4 + 16 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 7)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 30)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 51)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 49)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 46)
+		(cc core: 46 -> 6)
+signum: 24
+[RES_0]    TIMEOUT
+error: 0
+[RES_1]       79	: 6	: 0 3 5 5 3 1 0 s: 17
+[RES_0]    L  6 : 0 7 17 40 35 2 0 s: 101, mem: 22, time: 0.993492
+
+-----------
+Refinements
+-----------
+[1]	!(((\Y == 4'd0) && LT_1_4_4(\X, \Y)))
+[2]	!(((\Y$next == 4'd0) && LT_1_4_4(\X$next, \Y$next)))
+[3]	!((!(GT_1_4_4(\X, \Y)) && (\X == 4'd1) && (\Y == 4'd0)))
+[4]	!((!(GT_1_4_4(\X$next, \Y$next)) && (\X$next == 4'd1) && (\Y$next == 4'd0)))
+[5]	!(((\Y$next == \Y$next_rhs) && !(LT_1_4_4(\X, \Y)) && LT_1_4_4(\X$next, \Y$next) && (\X$next == \X$next_rhs) && (\X == 4'd1)))
+[6]	!(((\Y != \X) && !(LT_1_4_4(\X, \Y)) && !(GT_1_4_4(\X, \Y))))
+[7]	!(((\Y$next != \X$next) && !(LT_1_4_4(\X$next, \Y$next)) && !(GT_1_4_4(\X$next, \Y$next))))
+[8]	!(((\Y$next == \Y$next_rhs) && (\Y == \X) && LT_1_4_4(\X$next, \Y$next) && (\X$next == \X$next_rhs)))
+[9]	!(((\Y$next == \Y$next_rhs) && LT_1_4_4(\X$next, \Y$next) && !(\reset) && (\X$next == \X$next_rhs) && GT_1_4_4(\X, \Y)))
+[10]	!(((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs) && (\X != 4'd15) && !(LT_1_4_4(\X, \Y)) && LT_1_4_4(\X$next, \Y$next)))
+[11]	!(((\X == 4'd1) && (\X$next == \X$next_rhs) && (\X$next == 4'd15)))
+[12]	!(((\Y != 4'd1) && !(LT_1_4_4(\X, \Y)) && (\X == 4'd1) && (\Y$next != 4'd1) && (\Y$next == \Y$next_rhs) && \reset))
+[13]	!((((\X == l$2) || (\X != l$2)) && (\X == l$2) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+[14]	!((((\X == l$5) || (\X != l$5)) && (\X == l$5) && ((\X == l$4) || (\X != l$4)) && (\X == l$4) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+[15]	!((((\X == l$6) || (\X != l$6)) && (\X == l$6) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+[16]	!(((\X == l$5) && (\X == l$2)))
+[17]	!(((\X$next == l$5$next) && (\X$next == l$2)))
+[18]	!(((\X == l$4) && (\X == l$2)))
+[19]	!(((\X$next == l$4) && (\X$next == l$2)))
+[20]	!(((\X == l$6) && (\X == l$2)))
+[21]	!(((\X$next == l$6) && (\X$next == l$2)))
+[22]	!((((\X == 4'd15) || (\X != 4'd15)) && $ne$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$21_Y && \reset && ((\Y == 4'd0) || (\Y != 4'd0)) && (\Y == 4'd0) && (\Y$next != 4'd1) && (\Y$next == \Y$next_rhs)))
+[23]	!(((\X == l$5) && (\X == l$6)))
+[24]	!(((\X$next == l$5$next) && (\X$next == l$6)))
+[25]	!((((\X == l$13) || (\X != l$13)) && (\X == l$13) && ((\X == l$10) || (\X != l$10)) && (\X == l$10) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+[26]	!(((\X$next == \X$next_rhs) && (\X == l$2) && (\Y == 4'd0) && (\X$next != l$10) && (\Y$next == 4'd1) && (\Y$next == \Y$next_rhs)))
+[27]	!(((\Y == \X) && GT_1_4_4(\X, \Y)))
+[28]	!(((\Y$next == \X$next) && GT_1_4_4(\X$next, \Y$next)))
+[29]	!(((\X == l$10) && (\X$next == \X$next_rhs) && (\X$next == 4'd15)))
+[30]	!((((\X == l$8) || (\X != l$8)) && (\X == l$8) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+[31]	!((((\X == l$14) || (\X != l$14)) && (\X == l$14) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+[32]	!((((\X == l$16) || (\X != l$16)) && (\X == l$16) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+[33]	!(((\X$next != l$16) && (\X$next == \X$next_rhs) && (\X == l$10) && !(LT_1_4_4(\X, \Y)) && \reset))
+[34]	!(((\X == l$10) && (\X == l$6)))
+[35]	!(((\X$next == l$10) && (\X$next == l$6)))
+[36]	!(((\X == l$6) && (\X == l$8)))
+[37]	!(((\X$next == l$6) && (\X$next == l$8)))
+[38]	!((GT_1_4_4(\X, \Y) && (\X$next == \X$next_rhs) && (\X$next != l$10) && !(\reset) && (\X == l$6)))
+[39]	!(((\X == l$14) && (\X == l$8)))
+[40]	!(((\X$next == l$14) && (\X$next == l$8)))
+[41]	!(((\X == l$13) && (\Y == 4'd0) && (\X != 4'd15)))
+[42]	!(((\X$next == l$13$next) && (\Y$next == 4'd0) && (\X$next != 4'd15)))
+[43]	!(((\Y$next == 4'd1) && (\X == l$8) && (\Y$next == \Y$next_rhs) && (\X == l$5)))
+[44]	!((((\X == l$22) || (\X != l$22)) && (\X == l$22) && ((\X == l$17) || (\X != l$17)) && (\X == l$17) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+[45]	!(((\Y == 4'd1) && !(\reset) && (\X$next == \X$next_rhs) && (\X == l$13) && (\X$next != l$17)))
+[46]	!(((\X$next == 4'd15) && (\X != l$22) && (\Y == 4'd0) && (\X$next == \X$next_rhs)))
+[47]	!(((\X == l$22) && (\X == l$5)))
+[48]	!(((\X$next == l$22$next) && (\X$next == l$5$next)))
+[49]	!(((\X$next == \X$next_rhs) && (\X == l$8) && (\X$next == l$22$next) && (\Y$next == 4'd0)))
+[50]	!(((\X == l$16) && (\X == l$17)))
+[51]	!(((\X$next == l$16) && (\X$next == l$17)))
+[52]	!(((\X == l$14) && (\X$next != l$22$next) && (\Y$next == \Y$next_rhs) && (\Y$next != 4'd0) && (\X != l$22) && (\X != l$5) && (\X$next == \X$next_rhs) && (\Y$next != 4'd1) && !(LT_1_4_4(\X$next, \Y$next))))
+[53]	!(((\X$next == \X$next_rhs) && !(LT_1_4_4(\X, \Y)) && \reset && (\X$next != l$8) && (\X == l$16)))
+[54]	!((!(LT_1_4_4(\X, \Y)) && (\X == l$14) && (\X == l$5) && (\X != l$13)))
+[55]	!((!(LT_1_4_4(\X$next, \Y$next)) && (\X$next == l$14) && (\X$next == l$5$next) && (\X$next != l$13$next)))
+[56]	!(((\X == l$6) && (\X == l$13)))
+[57]	!(((\X$next == l$6) && (\X$next == l$13$next)))
+[58]	!(((\Y != 4'd1) && (\X$next == l$5$next) && (\Y$next == \Y$next_rhs) && !(LT_1_4_4(\X$next, \Y$next)) && (\X$next == l$14) && \reset))
+[59]	!((((\X == l$23) || (\X != l$23)) && (\X == l$23) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+[60]	!(((\X == l$16) && (\Y$next == \Y$next_rhs) && (\X == l$22) && (\X$next == \X$next_rhs) && (\X$next != l$22$next)))
+[61]	!((!(\reset) && (\X == l$10) && GT_1_4_4(\X, \Y) && (\X$next != l$17) && (\X$next == \X$next_rhs)))
+[62]	!(((\X$next == \X$next_rhs) && GT_1_4_4(\X, \Y) && !(\reset) && (\X$next != l$16) && (\X == l$14)))
+[63]	!((!(\reset) && (\X$next == \X$next_rhs) && (\X$next != l$17) && (\X == l$16) && GT_1_4_4(\X, \Y)))
+[64]	!(((\X == l$23) && (\X == l$8)))
+[65]	!(((\X$next == l$23) && (\X$next == l$8)))
+[66]	!((((\X == l$24) || (\X != l$24)) && (\X == l$24) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+[67]	!(((\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs) && GT_1_4_4(\X, \Y) && (\Y$next == 4'd0) && (\X$next != l$24) && (\X == l$8)))
+[68]	!(((\X != 4'd0) && (\X == l$5) && (\Y == 4'd0)))
+[69]	!(((\X$next != 4'd0) && (\X$next == l$5$next) && (\Y$next == 4'd0)))
+[70]	!((((\X == l$30) || (\X != l$30)) && (\X == l$30) && ((\X == l$27) || (\X != l$27)) && (\X == l$27) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+[71]	!(((\X == l$24) && (\Y == 4'd0) && (\X$next == \X$next_rhs) && (\X$next != l$27)))
+[72]	!(((\X$next == \X$next_rhs) && (\X$next != l$24) && (\X == l$17) && (\Y == 4'd1)))
+[73]	!(((\X == l$27) && (\X == l$17)))
+[74]	!(((\X$next == l$27) && (\X$next == l$17)))
+[75]	!(((\X$next == 4'd15) && (\X$next == \X$next_rhs) && (\X == l$17)))
+[76]	!(((\X == l$27) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+[77]	!(((\X$next == \X$next_rhs) && !(LT_1_4_4(\X, \Y)) && (\X == l$24) && (\X$next != l$27)))
+[78]	!(((\X == l$22) && (\X$next == \X$next_rhs) && (\X$next == l$23) && (\X != l$30)))
+[79]	!((((\X == l$31) || (\X != l$31)) && (\X == l$31) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+-----------
+ s: 101, mem: 22, time: 0.99
+Frames explored (60 datapath refinements) : 
+0 0 0 1 1 1 1 1 2 2 2 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 6 6 6 
+CEXT lengths (61 feasibility checks) : 
+0 1 1 2 2 2 2 2 3 3 3 4 4 4 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 7 7 7 7 
+DP lemmas (60 feasibility checks) : 
+2 2 1 2 1 1 1 1 1 1 1 1 2 2 2 1 2 1 1 2 1 1 1 1 1 2 2 1 2 2 1 1 1 1 2 1 2 1 1 2 2 1 1 1 1 1 1 2 1 1 2 1 1 1 2 1 1 1 1 1 
+Block= 66 BlockT= 71 BlockS= 66 BlockU= 5 Oblig= 267 ObligT= 267 ObligS= 244 ObligU= 23 FPT= 40 FPS= 40 FPU= 0 CallT= 1548 CallS= 1287 CallU= 261 MUST= 519 MUSS= 349 MUSU= 170 sMUST= 54 sMUSS= 28 sMUSU= 26 dMUST= 442 dMUSS= 321 dMUSU= 121 rMUST= 226 rMUSS= 163 rMUSU= 63 All_clauses= 23 All_literals= 120 Clauses= 17 Literals= 101 DPLemmas= 79 DPrefsNoDPL= 0 DPRefs= 60
+
+pme_fail: 0, pme_succ: 0, lit_before: 0, lit_after: 0
+coi_before: 0, coi_after: 0
+mus_before: 366 mus_lit: 113 mus_cls: 23 mus_cnt: 23
+S+M	Call = 2067 (sat=1636, 79.15%)
+SAT	Call = 1548 (sat=1287, 83.14%)
+MUS	Call = 519 (sat=349, 67.24%)
+
+Detailed Stats:
+
+  (reachability)
+	#Frame Restrictions:	23
+	#TB                :	312
+	#cubes-subsumed    :	6
+	#context reset     :	0
+	#Y2 reset          :	0
+	#frame solver reset:	8
+	avg-sz-frame-restriction:  	5.13
+
+	avg-sz-ab-cube:  	16.42
+		%t1-ab-cube:   	100.00%	[sel: 100.00% ]
+		%t2-ab-cube:   	0.00%	[sel: 0.00% ]
+		%t3-ab-cube:   	0.00%	[sel: 0.00% ]
+		%t4-ab-cube:   	0.00%	[sel: 0.00% ]
+
+		ab-cube info:	
+			s == s:	0.06%	[sel: 0.00% ]
+			s == n:	5.62%	[sel: 13.56% ]
+			s == o:	4.25%	[sel: 2.54% ]
+			n == o:	0.00%	[sel: 0.00% ]
+			o == o:	0.00%	[sel: 0.00% ]
+			s != s:	2.71%	[sel: 13.56% ]
+			s != n:	18.31%	[sel: 16.10% ]
+			s != o:	55.66%	[sel: 50.00% ]
+			n != o:	0.00%	[sel: 0.00% ]
+			o != o:	0.00%	[sel: 0.00% ]
+			s bool:	6.01%	[sel: 0.00% ]
+			up    :	7.38%	[sel: 4.24% ]
+			oth   :	0.00%	[sel: 0.00% ]
+
+		%coi-ab-cube  :	47.54%	[sel: 49.15% ]
+			s (==):	1.46%	[sel: 1.69% ]
+			s (!=):	8.78%	[sel: 13.56% ]
+			n (==):	5.62%	[sel: 13.56% ]
+			n (!=):	18.29%	[sel: 16.10% ]
+			other :	13.39%	[sel: 4.24% ]
+		%pred-ab-cube :	52.46%	[sel: 50.85% ]
+		%fproj-ab-cube:	0.00%	[sel: 0.00% ]
+			s (==):	0.00%	[sel: 0.00% ]
+			s (!=):	0.00%	[sel: 0.00% ]
+			n (==):	0.00%	[sel: 0.00% ]
+			n (!=):	0.00%	[sel: 0.00% ]
+		%proj-ab-cube :	0.00%	[sel: 0.00% ]
+			s (==):	0.00%	[sel: 0.00% ]
+			s (!=):	0.00%	[sel: 0.00% ]
+			n (==):	0.00%	[sel: 0.00% ]
+			n (!=):	0.00%	[sel: 0.00% ]
+		%subs-ab-cube :	0.00%	[sel: 0.00% ]
+	avg-#sv-ab-cube:  	2.00
+	avg-tsb-ab-cube:  	8.00
+	relevancy:       	100.00%
+
+	avg-sz-cc-cube:  	16.00
+		%coi-cc-cube  :	47.54%
+		%pred-cc-cube :	52.46%
+		%fproj-cc-cube:	0.00%
+			s (==):	0.00%
+			s (!=):	0.00%
+			n (==):	0.00%
+			n (!=):	0.00%
+		%proj-cc-cube :	0.00%
+			s (==):	0.00%
+			s (!=):	0.00%
+			n (==):	0.00%
+			n (!=):	0.00%
+
+	tb_cube_time:     	0.10 (9.88%)
+		cube_eval_time: 	0.03 (2.85%)
+		cube_pred_time: 	0.00 (0.42%)
+		cube_fproj_time:	0.00 (0.00%)
+		cube_proj_time: 	0.00 (0.00%)
+		cube _subs_time:	0.00 (0.02%)
+		sum:            	0.03 (33.38% of tb_cube_time)
+
+	tb_ct_time:      	0.00 (0.39%)
+		ct isblocked_time:  	0.00 (0.00%)
+		ct isinitial_time:  	0.00 (0.18%)
+		ct containment_time:	0.00 (0.00%)
+		ct fastforward_time:	0.00 (0.00%)
+		sum:                	0.00 (47.56% of tb_ct_time)
+
+	setcontain_time:	0.00 (0.00%)
+
+	updatesolver_time:	0.00 (0.09%)
+
+	tb_time:	0.20 (20.00%)
+		tb_reach_time:    	0.03 (3.02%)
+		tb_val_time:    	0.01 (0.87%) [ cti_val_time: 124867891.74 (12556174595.05%) ]
+		tb_cube_time:      	0.10 (9.88%)
+		tb_mus_time:      	0.01 (1.37%)
+			tb_mus_core_time:      	0.00 (0.36%)
+			tb_mus_min_time:      	0.01 (0.86%)
+		tb_ct_time:       	0.00 (0.39%)
+		tb_extra_time:    	0.00 (0.00%)
+		sum:           	0.15 (73.25% of tb_time)
+
+
+  (refinement)
+	sim_time:		0.15 (15.26%) 	 [20.16% of dpr_time]
+
+  pre_time:	0.00 (0.09%)
+  cti_time:	0.01 (0.79%)	[cti_i_time:	0.00 (0.14%) ]
+  tb_time:	0.20 (20.00%)
+  fp_time:	0.00 (0.32%)	[fp_extra_time:	0.00 (0.00%) ]
+  refine_time:	0.75 (75.69%)
+  sol_set_time:	0.00 (0.45%)
+  inv_time:	0.00 (0.00%)	[induct_time:	0.00 (0.00%) ]
+  draw_time:	0.00 (0.00%)
+  sum:		0.97 (97.34%)
+
+  extra_time:	0.00 (0.00%)
+
+  timeout_time:	0.00 (0.00%)
+
+[simplified] 0 (ex), 0 (cc), 16 (ot)
+
+===   TIMED OUT   ===
+
+Averroes finished.
+
+br-#mus          23           
+        hard        soft         out           
+           
+       54.43       15.91        5.09               (br-core)           
+       54.43        5.09        4.91                (br-min)          
+
+         sat       unsat           
+                                          #Calls           
+           0          23   (br-core)           
+           0           0  (br-core2)           
+         163          40    (br-min)           
+                                      Time (sec)           
+        0.27        0.01   (br-core)           
+        0.00        0.00  (br-core2)           
+        0.00        0.00    (br-min)           
+                                    Avg. Time (microsec)           
+           0         528   (br-core)           
+           0           0  (br-core2)           
+          27          37    (br-min)           
+                                    Max Time (microsec)           
+        6637         404   (br-core)           
+           0           0  (br-core2)           
+          71          80    (br-min)          
+
+                      ab                      bv           
+         sat       unsat         sat       unsat           
+                                                      #Calls           
+         160          15          36          13   (oneshot)           
+         742          63           0           0       (inc)           
+           0          23         349         147    (assume)           
+                       0                       0   (timeout)          
+
+                                                  Time (sec)           
+        0.00        0.00        0.07        0.00   (oneshot)           
+        0.01        0.00        0.00        0.00       (inc)           
+        0.00        0.00        0.59        0.02    (assume)           
+                    0.00                    0.00   (timeout)          
+
+                                                Avg. Time (microsec)
+          13           2        2071         321   (oneshot)           
+          19          32           0           0       (inc)           
+           0          51        1683         106    (assume)           
+                       0                       0   (timeout)           
+           
+      Result        Time        Mem.       #Refs           
+                     sec          MB                       
+        f_to        0.99          22          79

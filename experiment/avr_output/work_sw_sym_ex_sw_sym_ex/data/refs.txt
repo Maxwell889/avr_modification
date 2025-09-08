@@ -1,0 +1,54 @@
+(benchmark) sw_sym_ex_sw_sym_ex
+
+(#0)		!((((\Y == 8'd0) || (\Y != 8'd0)) && (\Y == 8'd0) && (\L3 || !(\L3)) && $logic_not$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:35$111_Y && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y$next == 8'd4) && (\X$next != 8'd4) && (\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+	(id)	369
+	(#UF )	1
+	(#UFt)	1
+	      	Add_8_8_8	#1
+	(#K  )	4
+	(#reg)	7
+	(#inp)	2
+	(#ite)	6
+	(#CF )	21
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#1)		!((($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y$next == 8'd4) && (\Y$next != \X$next) && (\X$next != 8'd4) && (\Y == 8'd0) && (\Y$next == \Y$next_rhs)))
+	(id)	479
+	(#UF )	1
+	(#UFt)	1
+	      	Add_8_8_8	#1
+	(#K  )	3
+	(#reg)	5
+	(#inp)	2
+	(#ite)	3
+	(#CF )	13
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+
+(local equalities) #1
+            $add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4
+
+(learned predicates) #2
+            \L3
+            (\Y == 8'd0)
+
+(learned constants)  #1
+            8'd0
+
+(learned signals)    #2
+            \L3
+            \Y
+
+(learned UFs)        #0
+
+(#sim. iterations) 1
+(#ref. iterations) 2
+(#refs) 2
+(#assump. lemmas)  0
+(#lemmas)          2

@@ -1,0 +1,16 @@
+-------------------------------
+Function Blocks ( out = F(in) )
+-------------------------------
+(type: Add     )	$add$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:20$6_Y = Add_3_3_3(\X, 3'd1)
+(type: Add     )	$add$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:21$10_Y = Add_3_3_3(\Y, 3'd1)
+(type: control )	$eq$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:21$9_Y = (\Y == \X)
+(type: GT      )	$gt$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:24$16_Y = GT_1_3_3(\Y, \X)
+(type: control )	$logic_or$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:20$5_Y = ($eq$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:21$9_Y || $ne$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:21$12_Y)
+(type: control )	$logic_or$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:21$13_Y = ($gt$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:24$16_Y || $ne$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:21$12_Y)
+(type: control )	$ne$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:21$12_Y = (\X != 3'd7)
+(type: control )	$ternary$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:20$7_Y = ($logic_or$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:20$5_Y?$add$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:20$6_Y:\Y)
+(type: control )	$ternary$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:21$14_Y = ($logic_or$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:21$13_Y?\Y:\X)
+(type: control )	\X$next_rhs = ($gt$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:24$16_Y?\X:$ternary$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:20$7_Y)
+(type: control )	\Y$next_rhs = ($eq$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:21$9_Y?$add$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:21$10_Y:$ternary$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:21$14_Y)
+(type: control )	property1 = !$gt$/workspaces/avr_modification/experiment/avr_output/work_cav14_example_cav14_example/cav14_example.v:24$16_Y
+

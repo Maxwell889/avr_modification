@@ -1,0 +1,102 @@
+(benchmark) sw_sym_ex_v_sw_sym_ex_v
+
+(#0)		!((((\X == 8'd3) || (\X != 8'd3)) && (\X == 8'd3) && ((\Y == 8'd0) || (\Y != 8'd0)) && (\Y == 8'd0) && (\L3 || !(\L3)) && $logic_not$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_v_sw_sym_ex_v/sw_sym_ex_v.v:35$111_Y && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_v_sw_sym_ex_v/sw_sym_ex_v.v:50$140_Y$next == 8'd4) && (\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+	(id)	373
+	(#UF )	1
+	(#UFt)	1
+	      	Add_8_8_8	#1
+	(#K  )	4
+	(#reg)	7
+	(#inp)	2
+	(#ite)	6
+	(#CF )	23
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#1)		!(((\Y == 8'd0) && (\X == 8'd0) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_v_sw_sym_ex_v/sw_sym_ex_v.v:50$140_Y == 8'd4)))
+	(id)	433
+	(#UF )	1
+	(#UFt)	1
+	      	Add_8_8_8	#1
+	(#K  )	2
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#2)		!(((\Y$next == 8'd0) && (\X$next == 8'd0) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_v_sw_sym_ex_v/sw_sym_ex_v.v:50$140_Y$next == 8'd4)))
+	(id)	435
+	(#UF )	1
+	(#UFt)	1
+	      	Add_8_8_8	#1
+	(#K  )	2
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#3)		!(((\Y != 8'd4) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_v_sw_sym_ex_v/sw_sym_ex_v.v:50$140_Y == 8'd4) && (\X == 8'd0)))
+	(id)	481
+	(#UF )	1
+	(#UFt)	1
+	      	Add_8_8_8	#1
+	(#K  )	2
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#4)		!(((\Y$next != 8'd4) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_v_sw_sym_ex_v/sw_sym_ex_v.v:50$140_Y$next == 8'd4) && (\X$next == 8'd0)))
+	(id)	483
+	(#UF )	1
+	(#UFt)	1
+	      	Add_8_8_8	#1
+	(#K  )	2
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+
+(local equalities) #1
+            $add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_v_sw_sym_ex_v/sw_sym_ex_v.v:50$140_Y == 8'd4
+
+(learned predicates) #3
+            \L3
+            (\Y == 8'd0)
+            (\X == 8'd3)
+
+(learned constants)  #2
+            8'd0
+            8'd3
+
+(learned signals)    #3
+            \L3
+            \X
+            \Y
+
+(learned UFs)        #0
+
+(#sim. iterations) 2
+(#ref. iterations) 3
+(#refs) 5
+(#assump. lemmas)  0
+(#lemmas)          5

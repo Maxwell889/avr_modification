@@ -1,0 +1,24 @@
+-------------------------------
+Function Blocks ( out = F(in) )
+-------------------------------
+(type: Add     )	$add$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$12_Y = Add_4_4_4(\X, 4'd1)
+(type: Add     )	$add$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$7_Y = Add_4_4_4($shr$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$5_Y, $shr$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$6_Y)
+(type: Add     )	$add$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$23_Y = Add_4_4_4(\Y, 4'd1)
+(type: control )	$eq$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$9_Y = (\Y == \X)
+(type: GT      )	$gt$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$19_Y = GT_1_4_4(\X, \Y)
+(type: control )	$logic_and$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$4_Y = ($logic_not$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$16_Y && $gt$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$19_Y)
+(type: control )	$logic_not$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$16_Y = !\reset
+(type: control )	$logic_not$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$20_Y = !$gt$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$19_Y
+(type: control )	$logic_or$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$11_Y = ($eq$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$9_Y || $ne$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$21_Y)
+(type: control )	$logic_or$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$22_Y = ($logic_not$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$20_Y || $ne$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$21_Y)
+(type: LT      )	$lt$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:22$26_Y = LT_1_4_4(\X, \Y)
+(type: control )	$ne$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$21_Y = (\X != 4'd15)
+(type: ShiftR  )	$shr$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$5_Y = ShiftR_4_4_4(4'd15, 4'd1)
+(type: ShiftR  )	$shr$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$6_Y = ShiftR_4_4_4(\X, 4'd1)
+(type: control )	$ternary$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$13_Y = ($logic_or$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$11_Y?$add$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$12_Y:\Y)
+(type: control )	$ternary$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$14_Y = ($lt$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:22$26_Y?\X:$ternary$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$13_Y)
+(type: control )	$ternary$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$24_Y = ($logic_or$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$22_Y?$add$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$23_Y:\X)
+(type: control )	\X$next_rhs = ($logic_and$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$4_Y?$add$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$7_Y:$ternary$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$14_Y)
+(type: control )	\Y$next_rhs = ($logic_and$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:18$4_Y?\Y:$ternary$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:19$24_Y)
+(type: control )	property1 = !$lt$/workspaces/avr_modification/experiment/avr_output/work_diagonal_v_diagonal_v/diagonal_v.v:22$26_Y
+

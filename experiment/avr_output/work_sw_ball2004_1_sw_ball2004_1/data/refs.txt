@@ -1,0 +1,72 @@
+(benchmark) sw_ball2004_1_sw_ball2004_1
+
+(#0)		!(((LT_1_3_3(\X, \Y) || !(LT_1_3_3(\X, \Y))) && $lt$/workspaces/avr_modification/experiment/avr_output/work_sw_ball2004_1_sw_ball2004_1/sw_ball2004_1.v:38$54_Y && ((\Y == 3'd3) || (\Y != 3'd3)) && (\Y == 3'd3) && ((\X == 3'd1) || (\X != 3'd1)) && (\X == 3'd1) && (LT_1_3_3(\Y, \Z) || !(LT_1_3_3(\Y, \Z))) && $lt$/workspaces/avr_modification/experiment/avr_output/work_sw_ball2004_1_sw_ball2004_1/sw_ball2004_1.v:38$58_Y && !(LT_1_3_3(\X$next, \Z$next)) && (\X$next == \X) && (\Z$next == \Z)))
+	(id)	228
+	(#UF )	3
+	(#UFt)	1
+	      	LT_1_3_3	#3
+	(#K  )	2
+	(#reg)	5
+	(#inp)	0
+	(#ite)	0
+	(#CF )	15
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#1)		!((LT_1_3_3(\Y, \Z) && LT_1_3_3(\X, \Y) && !(LT_1_3_3(\X, \Z))))
+	(id)	273
+	(#UF )	3
+	(#UFt)	1
+	      	LT_1_3_3	#3
+	(#K  )	0
+	(#reg)	3
+	(#inp)	0
+	(#ite)	0
+	(#CF )	3
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#2)		!((LT_1_3_3(\Y$next, \Z$next) && LT_1_3_3(\X$next, \Y$next) && !(LT_1_3_3(\X$next, \Z$next))))
+	(id)	275
+	(#UF )	3
+	(#UFt)	1
+	      	LT_1_3_3	#3
+	(#K  )	0
+	(#reg)	3
+	(#inp)	0
+	(#ite)	0
+	(#CF )	3
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+
+(local equalities) #0
+
+(learned predicates) #4
+            LT_1_3_3(\X, \Y)
+            LT_1_3_3(\Y, \Z)
+            (\X == 3'd1)
+            (\Y == 3'd3)
+
+(learned constants)  #0
+
+(learned signals)    #3
+            \Y
+            \X
+            \Z
+
+(learned UFs)        #2
+            LT_1_3_3(\X, \Y)	:= $lt$/workspaces/avr_modification/experiment/avr_output/work_sw_ball2004_1_sw_ball2004_1/sw_ball2004_1.v:38$54_Y
+            LT_1_3_3(\Y, \Z)	:= $lt$/workspaces/avr_modification/experiment/avr_output/work_sw_ball2004_1_sw_ball2004_1/sw_ball2004_1.v:38$58_Y
+
+(#sim. iterations) 1
+(#ref. iterations) 2
+(#refs) 3
+(#assump. lemmas)  0
+(#lemmas)          3

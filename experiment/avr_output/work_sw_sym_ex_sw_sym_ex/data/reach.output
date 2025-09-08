@@ -1,0 +1,1340 @@
+Timeout: 1, Memory_limit: 118000
+	10000.000000 (abstract query)
+	10000.000000 (concrete query)
+
+Config:
+	(concrete bit-width limit: 0)
+	(fineness: 2)
+	(interpret-ex-cc-level: 2)
+	(forward-check:	0)
+	(full projection)
+	(prioritization:	single)
+
+#STAT# num_bits= 9 num_regs= 2 num_total_bits= 25
+1  9
+8  2
+
+System
+  int : 26
+  bool : 192
+  sum : 218
+  bool_op : 98
+  int_op : 2
+    !  9
+    !=_int  3
+    &&  48
+    +_8_8  1
+    <_8_8  1
+    ==  10
+    ==_int  4
+    ?:  8
+    ?:_int  6
+    ||  10
+
+
+Property
+  int : 0
+  bool : 5
+  sum : 5
+  bool_op : 2
+  int_op : 0
+    !  1
+    ==  1
+
+Partial interpretation info:
+  depth: 0
+  count: 0
+  count (d=0): 0
+
+  depth (prop): 0
+  count (prop): 0
+  count (d=0) (prop): 0
+
+	# of Inst.                  : 244	(864 bytes each)
+	  ExInst::hm_ExInst.size()  : 0	(984 bytes each)
+	  SigInst::hm_SigInst.size(): 32	(904 bytes each)
+	  NumInst::hm_NumInst.size(): 7	(888 bytes each)
+	  OpInst::hm_OpInst.size()  : 102	(944 bytes each)
+	  OpInst::hm_ITEInst.size() : 14	(944 bytes each)
+	  OpInst::hm_ETCInst.size() : 2	(944 bytes each)
+	Total                       : 157
+
+	Memory (est.)               : 0.201050 MB
+	  ExInst                    : 0.000000 MB
+	  SigInst                   : 0.027588 MB
+	  NumInst                   : 0.005928 MB
+	  OpInst::OP                : 0.091827 MB
+	  OpInst::ITE               : 0.012604 MB
+	  OpInst::ETC               : 0.001801 MB
+
+	(maximum function composition in T: 1)
+
+---------------------------------------------------------------------------------------------
+ Reachability Analysis Begins
+---------------------------------------------------------------------------------------------
+Loop_FrameNumber_#ReachabilityIterations_#RefinementIterations
+---------------------------------------------------------------------------------------------
+Loop_0_0_0
+---------------------------------------------------------------------------------------------
+[Basis Step]:
+	F[0] = I
+	SAT_a ? [ F[0] && !P ]: UNSAT
+
+[First Step]:
+	SAT_a ? [ F[0] & T & !P ]: UNSAT
+
+[RES_1]       0	: 0	: 0 s: 0
+[RES_0]    L  0 : 0 s: 0, mem: 13, time: 0.003387
+[RES_1]       0	: 1	: 0 0 s: 0
+[RES_0]    L  1 : 0 0 s: 0, mem: 13, time: 0.003521
+---------------------------------------------------------------------------------------------
+Loop_1_0_0
+---------------------------------------------------------------------------------------------
+	F[1] = P
+	SAT_a ? [ F[1] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #6
+	(adding from pre_c to cc. cube) #6
+	(bad cube [in !P+]) sz: 2
+	(abstract cube) 6	(6 + 0 + 0 + 0 + 0)
+	(concrete cube) 6	(6 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: UNSAT
+		(ab core: 6 -> 1)
+	(19 + 6 -> 19 + 1)
+	(6 -> 1 -> 1)
+	(6 -> 1 -> 1)
+
+		[MUS(s)]:
+
+		[1] w8	(\Y != \X)
+[RES_1]       0	: 1	: 0 1 s: 1
+[RES_0]    L  1 : 0 1 s: 1, mem: 14, time: 0.004626
+---------------------------------------------------------------------------------------------
+Loop_1_1_0
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[1] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding from pre_c to cc. cube) #5
+	(bad cube [in !P+]) sz: 2
+	(abstract cube) 5	(5 + 0 + 0 + 0 + 0)
+	(concrete cube) 5	(5 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: UNSAT
+		(ab core: 5 -> 1)
+	(19 + 5 -> 19 + 1)
+	(5 -> 1 -> 1)
+	(5 -> 1 -> 1)
+
+		[MUS(s)]:
+
+		[1] w1	\L5
+[RES_1]       0	: 1	: 0 2 s: 2
+[RES_0]    L  1 : 0 2 s: 2, mem: 14, time: 0.005123
+---------------------------------------------------------------------------------------------
+Loop_1_2_0
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[1] & T & !P+ ]: UNSAT
+[RES_1]       0	: 1	: 0 2 s: 2
+[RES_0]    L  1 : 0 2 s: 2, mem: 14, time: 0.005228
+	[Forward propagation]:
+	(F1 about to converge: #2)
+		(\Y != \X)
+		\L5
+[RES_1]       0	: 2	: 0 2 0 s: 2
+[RES_0]    L  2 : 0 2 0 s: 2, mem: 14, time: 0.005469
+---------------------------------------------------------------------------------------------
+Loop_2_0_0
+---------------------------------------------------------------------------------------------
+	F[2] = P
+	SAT_a ? [ F[2] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #6
+	(adding from pre_c to cc. cube) #6
+	(bad cube [in !P+]) sz: 2
+	(abstract cube) 6	(6 + 0 + 0 + 0 + 0)
+	(concrete cube) 6	(6 + 0 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: UNSAT
+		(ab core: 6 -> 3)
+	(9 + 6 -> 9 + 3)
+	(6 -> 3 -> 3)
+	(6 -> 3 -> 3)
+
+		[MUS(s)]:
+
+		[1] w8	(\LoneHot && \L5 && (\Y != \X))
+[RES_1]       0	: 2	: 0 2 1 s: 3
+[RES_0]    L  2 : 0 2 3 s: 5, mem: 14, time: 0.006264
+---------------------------------------------------------------------------------------------
+Loop_2_1_0
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[2] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding from pre_c to cc. cube) #5
+	(bad cube [in !P+]) sz: 2
+	(abstract cube) 5	(5 + 0 + 0 + 0 + 0)
+	(concrete cube) 5	(5 + 0 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 13	(13 + 0 + 0 + 0 + 0)
+	(concrete cube) 13	(13 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: UNSAT
+		(ab core: 13 -> 1)
+	(26 + 13 -> 26 + 1)
+	(13 -> 1 -> 1)
+	(13 -> 1 -> 1)
+
+		[MUS(s)]:
+
+		[1] w1	\L2
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding from pre_c to cc. cube) #11
+	(abstract cube) 11	(11 + 0 + 0 + 0 + 0)
+	(concrete cube) 11	(11 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: UNSAT
+		(ab core: 11 -> 1)
+	(26 + 11 -> 26 + 1)
+	(11 -> 1 -> 1)
+	(11 -> 1 -> 1)
+
+		[MUS(s)]:
+
+		[1] w1	\L4
+	SAT_a ? [ F[1] & T & C+ ]: UNSAT
+		(ab core: 5 -> 1)
+	(12 + 5 -> 12 + 1)
+	(5 -> 1 -> 1)
+	(5 -> 1 -> 1)
+
+		[MUS(s)]:
+
+		[1] w1	\L5
+[RES_1]       0	: 2	: 0 3 1 s: 4
+[RES_0]    L  2 : 0 3 1 s: 4, mem: 14, time: 0.007991
+---------------------------------------------------------------------------------------------
+Loop_2_2_0
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[2] & T & !P+ ]: UNSAT
+[RES_1]       0	: 2	: 0 3 1 s: 4
+[RES_0]    L  2 : 0 3 1 s: 4, mem: 14, time: 0.00807
+	[Forward propagation]:
+	(F2 about to converge: #1)
+		\L5
+[RES_1]       0	: 3	: 0 3 1 0 s: 4
+[RES_0]    L  3 : 0 3 1 0 s: 4, mem: 14, time: 0.008356
+---------------------------------------------------------------------------------------------
+Loop_3_0_0
+---------------------------------------------------------------------------------------------
+	F[3] = P
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #6
+	(adding from pre_c to cc. cube) #6
+	(bad cube [in !P+]) sz: 2
+	(abstract cube) 6	(6 + 0 + 0 + 0 + 0)
+	(concrete cube) 6	(6 + 0 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #14
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #14
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(15 + 0 + 0 + 0 + 0)
+	(concrete cube) 15	(15 + 0 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #13
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #13
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 14	(14 + 0 + 0 + 0 + 0)
+	(concrete cube) 14	(14 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: UNSAT
+		(ab core: 14 -> 1)
+	(26 + 14 -> 26 + 1)
+	(14 -> 1 -> 1)
+	(14 -> 1 -> 1)
+
+		[MUS(s)]:
+
+		[1] w8	(\Y != 8'd0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #10
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #10
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 11	(11 + 0 + 0 + 0 + 0)
+	(concrete cube) 11	(11 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #10
+	(adding from pre_c to cc. cube) #10
+	(abstract cube) 10	(10 + 0 + 0 + 0 + 0)
+	(concrete cube) 10	(10 + 0 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\L0$next == \L0$next_rhs) && (\L1$next == \L1$next_rhs) && (\L2$next == \L2$next_rhs) && (\L3$next == \L3$next_rhs) && (\L4$next == \L4$next_rhs) && (\L5$next == \L5$next_rhs) && (\L6$next == \L6$next_rhs) && (\L7$next == \L7$next_rhs) && (\LoneHot$next == \LoneHot$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 4)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 10)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 25)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 37)
+		SAT_c ? [ A[3] & T[3] & A[2]+ ]: 		(bv input core size: 31)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[3]
+
+	2: A[2]
+
+	3: A[1]
+[1] Cube to CubeNext+ is UNSAT
+
+		(cc core: 25 -> 4)
+resMusBv: 1
+		ACEXT is infeasible
+			(unsat: A[1] to A[0] )
+[Sim_1]    Adding lemma to ensure following never happens: 
+	(\Y == 8'd0)
+	!(\L3)
+	($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y$next == 8'd4)
+	(\X$next != 8'd4)
+	(\Y$next == \Y$next_rhs)
+	(\X$next == \X$next_rhs)
+
+[Sim_1]    Processing failure condition: 
+	(\Y == 8'd0)
+	!(\L3)
+	($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y$next == 8'd4)
+	(\X$next != 8'd4)
+	(\Y$next == \Y$next_rhs)
+	(\X$next == \X$next_rhs)
+
+			(adding predicate (absent)   \L3 )
+						(learning signal    \L3 )
+			(adding predicate (absent)   (\Y == 8'd0) )
+			(finding parent expressions)	(\Y == 8'd0)
+				(number value parent)	8'd0	:=	\Y
+				(parent expression)
+					(\Y == 8'd0) := (\Y == \Y)
+						(learning signal    \Y )
+						(learning constant  8'd0 )
+[Sim_1]    =========== Simulation Ends ===============
+
+	[Lemmas]: 
+		[1] !((((\Y == 8'd0) || (\Y != 8'd0)) && (\Y == 8'd0) && (\L3 || !(\L3)) && $logic_not$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:35$111_Y && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y$next == 8'd4) && (\X$next != 8'd4) && (\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+#369
+#Lemmas = 1
+[RES_1]       1	: 3	: 0 4 1 0 s: 5
+[RES_0]    L  3 : 0 4 1 0 s: 5, mem: 16, time: 0.018831
+---------------------------------------------------------------------------------------------
+Loop_3_0_1
+---------------------------------------------------------------------------------------------
+	F[3] = P
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #8
+	(adding from pre_c to cc. cube) #8
+	(bad cube [in !P+]) sz: 2
+	(abstract cube) 9	(8 + 1 + 0 + 0 + 0)
+	(concrete cube) 9	(8 + 1 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #16
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #16
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 17	(17 + 0 + 0 + 0 + 0)
+	(concrete cube) 17	(17 + 0 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: UNSAT
+		(ab core: 17 -> 3)
+	(22 + 17 -> 22 + 3)
+	(17 -> 3 -> 3)
+	(17 -> 3 -> 3)
+
+		[MUS(s)]:
+
+		[1] w8	(\LoneHot && \L2 && (\Y != 8'd0))
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #14
+	(adding from pre_c to cc. cube) #14
+	(abstract cube) 14	(14 + 0 + 0 + 0 + 0)
+	(concrete cube) 14	(14 + 0 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: UNSAT
+		(ab core: 14 -> 3)
+	(23 + 14 -> 23 + 3)
+	(14 -> 3 -> 3)
+	(14 -> 3 -> 3)
+
+		[MUS(s)]:
+
+		[1] w8	((\X != 8'd0) && \L4 && \LoneHot)
+	SAT_a ? [ F[2] & T & C+ ]: UNSAT
+		(ab core: 9 -> 4)
+	(13 + 9 -> 13 + 4)
+	(9 -> 4 -> 4)
+	(9 -> 4 -> 4)
+
+		[MUS(s)]:
+
+		[1] w8	((\X != 8'd0) && (\Y != 8'd0) && \LoneHot && \L5)
+[RES_1]       1	: 3	: 0 4 3 1 s: 8
+[RES_0]    L  3 : 0 4 7 4 s: 15, mem: 16, time: 0.021135
+---------------------------------------------------------------------------------------------
+Loop_3_1_1
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #6
+	(adding from pre_c to cc. cube) #6
+	(bad cube [in !P+]) sz: 2
+	(abstract cube) 7	(6 + 1 + 0 + 0 + 0)
+	(concrete cube) 7	(6 + 1 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding from pre_c to cc. cube) #12
+	(abstract cube) 12	(12 + 0 + 0 + 0 + 0)
+	(concrete cube) 12	(12 + 0 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #11
+	(adding required pred. from inp_c to ab. cube) #2
+	(adding from pre_c to cc. cube) #11
+	(adding pred. from inp_c to cc. cube) #2
+	(abstract cube) 13	(13 + 0 + 0 + 0 + 0)
+	(concrete cube) 13	(13 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: UNSAT
+		(ab core: 13 -> 1)
+	(27 + 13 -> 27 + 1)
+	(13 -> 1 -> 1)
+	(13 -> 1 -> 1)
+
+		[MUS(s)]:
+
+		[1] w1	\L3
+	SAT_a ? [ F[1] & T & C+ ]: UNSAT
+		(ab core: 12 -> 1)
+	(26 + 12 -> 26 + 1)
+	(12 -> 1 -> 1)
+	(12 -> 1 -> 1)
+
+		[MUS(s)]:
+
+		[1] w8	(\Y != 8'd0)
+	SAT_a ? [ F[2] & T & C+ ]: UNSAT
+		(ab core: 7 -> 3)
+	(15 + 7 -> 15 + 3)
+	(7 -> 3 -> 3)
+	(7 -> 3 -> 3)
+
+		[MUS(s)]:
+
+		[1] w8	(\LoneHot && \L5 && (\Y != 8'd0))
+[RES_1]       1	: 3	: 0 4 3 1 s: 8
+[RES_0]    L  3 : 0 4 5 3 s: 12, mem: 16, time: 0.023104
+---------------------------------------------------------------------------------------------
+Loop_3_2_1
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding from pre_c to cc. cube) #5
+	(bad cube [in !P+]) sz: 2
+	(abstract cube) 6	(5 + 1 + 0 + 0 + 0)
+	(concrete cube) 6	(5 + 1 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: UNSAT
+		(ab core: 6 -> 4)
+	(16 + 6 -> 16 + 4)
+	(6 -> 4 -> 4)
+		(added cond. from num.)	(\X$next != $add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y$next)
+		(added cond. from num.)	(\X$next != $add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y$next)
+	(6 -> 4 -> 6 -> 4)
+
+		[MUS(s)]:
+
+		[1] w8	(($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && \LoneHot && \L5 && (\X != $add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y))
+[RES_1]       1	: 3	: 0 4 3 2 s: 9
+[RES_0]    L  3 : 0 4 5 7 s: 16, mem: 16, time: 0.023934
+---------------------------------------------------------------------------------------------
+Loop_3_3_1
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[3] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #5
+	(adding from pre_c to cc. cube) #5
+	(bad cube [in !P+]) sz: 2
+	(abstract cube) 6	(5 + 1 + 0 + 0 + 0)
+	(concrete cube) 6	(5 + 1 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 13	(13 + 0 + 0 + 0 + 0)
+	(concrete cube) 13	(13 + 0 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: UNSAT
+		(ab core: 13 -> 2)
+	(29 + 13 -> 29 + 2)
+	(13 -> 2 -> 1)
+	(13 -> 2 -> 1)
+
+		[MUS(s)]:
+
+		   (forcing elimination of initial states from original mus)
+		[0] (orig) ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4)
+		[1] w8	(($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && !((\L0 && !(\L1) && !(\L2) && !(\L3) && !(\L4) && !(\L5) && !(\L6) && !(\L7) && \LoneHot && (\X == 8'd0) && (\Y == 8'd0) && (\Z == 8'd0))))
+	SAT_a ? [ F[2] & T & C+ ]: UNSAT
+		(ab core: 6 -> 3)
+	(18 + 6 -> 18 + 3)
+	(6 -> 3 -> 3)
+	(6 -> 3 -> 3)
+
+		[MUS(s)]:
+
+		[1] w8	(($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && \LoneHot && \L5)
+[RES_1]       1	: 3	: 0 4 4 2 s: 10
+[RES_0]    L  3 : 0 4 7 6 s: 17, mem: 16, time: 0.025495
+---------------------------------------------------------------------------------------------
+Loop_3_4_1
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[3] & T & !P+ ]: UNSAT
+[RES_1]       1	: 3	: 0 4 4 2 s: 10
+[RES_0]    L  3 : 0 4 7 6 s: 17, mem: 16, time: 0.02557
+	[Forward propagation]:
+	(F1 about to converge: #2)
+		(\Y != \X)
+		\L2
+	(F2 about to converge: #2)
+		\L5
+		\L3
+[RES_1]       1	: 4	: 0 2 2 3 1 s: 8
+[RES_0]    L  4 : 0 2 2 4 3 s: 11, mem: 16, time: 0.02664
+---------------------------------------------------------------------------------------------
+Loop_4_0_1
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[4] & T & !P+ ]: UNSAT
+[RES_1]       1	: 4	: 0 2 2 3 1 s: 8
+[RES_0]    L  4 : 0 2 2 4 3 s: 11, mem: 16, time: 0.026829
+	[Forward propagation]:
+	(F1 about to converge: #2)
+		(\Y != \X)
+		\L2
+	(F2 about to converge: #2)
+		\L5
+		\L3
+	(F4 about to converge: #1)
+		(($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && \LoneHot && \L5)
+[RES_1]       1	: 5	: 0 2 2 3 1 0 s: 8
+[RES_0]    L  5 : 0 2 2 4 3 0 s: 11, mem: 16, time: 0.027498
+---------------------------------------------------------------------------------------------
+Loop_5_0_1
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #8
+	(adding from pre_c to cc. cube) #8
+	(bad cube [in !P+]) sz: 2
+	(abstract cube) 9	(8 + 1 + 0 + 0 + 0)
+	(concrete cube) 9	(8 + 1 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #15
+	(adding from pre_c to cc. cube) #15
+	(abstract cube) 15	(15 + 0 + 0 + 0 + 0)
+	(concrete cube) 15	(15 + 0 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: UNSAT
+		(ab core: 15 -> 4)
+	(23 + 15 -> 23 + 4)
+	(15 -> 4 -> 2)
+	(15 -> 4 -> 2)
+
+		[MUS(s)]:
+
+		   (forcing elimination of initial states from original mus)
+		[0] (orig) (!(\L4) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4))
+		[1] w8	(!(\L4) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && !((\L0 && !(\L1) && !(\L2) && !(\L3) && !(\L4) && !(\L5) && !(\L6) && !(\L7) && \LoneHot && (\X == 8'd0) && (\Y == 8'd0) && (\Z == 8'd0))))
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #15
+	(adding from pre_c to cc. cube) #15
+	(abstract cube) 15	(15 + 0 + 0 + 0 + 0)
+	(concrete cube) 15	(15 + 0 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #13
+	(adding required pred. from inp_c to ab. cube) #2
+	(adding from pre_c to cc. cube) #13
+	(adding pred. from inp_c to cc. cube) #2
+	(abstract cube) 15	(15 + 0 + 0 + 0 + 0)
+	(concrete cube) 15	(15 + 0 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #14
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #14
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 15	(15 + 0 + 0 + 0 + 0)
+	(concrete cube) 15	(15 + 0 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #10
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #10
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 11	(11 + 0 + 0 + 0 + 0)
+	(concrete cube) 11	(11 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #10
+	(adding from pre_c to cc. cube) #10
+	(abstract cube) 10	(10 + 0 + 0 + 0 + 0)
+	(concrete cube) 10	(10 + 0 + 0 + 0)
+		(Next: ((\Y$next == \Y$next_rhs) && (\L0$next == \L0$next_rhs) && (\L1$next == \L1$next_rhs) && (\L2$next == \L2$next_rhs) && (\L3$next == \L3$next_rhs) && (\L4$next == \L4$next_rhs) && (\L5$next == \L5$next_rhs) && (\L6$next == \L6$next_rhs) && (\L7$next == \L7$next_rhs) && (\LoneHot$next == \LoneHot$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 6)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 13)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 29)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 41)
+		(cc core: 41 -> 5)
+UNSAT
+
+		[MUS(s)]:
+		[1] (($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y$next == 8'd4) && (\Y$next != \X$next) && (\X$next != 8'd4) && (\Y == 8'd0) && (\Y$next == \Y$next_rhs))
+
+	[Lemmas]: 
+		[1] !((($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y$next == 8'd4) && (\Y$next != \X$next) && (\X$next != 8'd4) && (\Y == 8'd0) && (\Y$next == \Y$next_rhs)))
+#479
+#Lemmas = 2
+[RES_1]       2	: 5	: 0 2 2 3 2 0 s: 9
+[RES_0]    L  5 : 0 2 2 4 6 0 s: 14, mem: 16, time: 0.034815
+---------------------------------------------------------------------------------------------
+Loop_5_0_2
+---------------------------------------------------------------------------------------------
+	F[5] = P
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #8
+	(adding from pre_c to cc. cube) #8
+	(bad cube [in !P+]) sz: 2
+	(abstract cube) 9	(8 + 1 + 0 + 0 + 0)
+	(concrete cube) 9	(8 + 1 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #15
+	(adding from pre_c to cc. cube) #15
+	(abstract cube) 15	(15 + 0 + 0 + 0 + 0)
+	(concrete cube) 15	(15 + 0 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: UNSAT
+		(ab core: 15 -> 3)
+	(25 + 15 -> 25 + 3)
+	(15 -> 3 -> 3)
+		(added cond. from num.)	(\X$next != $add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y$next)
+	(15 -> 3 -> 4 -> 3)
+
+		[MUS(s)]:
+
+		[1] w8	((\Y != \X) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && (\X != $add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y))
+	SAT_a ? [ F[4] & T & C+ ]: UNSAT
+		(ab core: 9 -> 5)
+	(13 + 9 -> 13 + 5)
+	(9 -> 5 -> 5)
+		(added cond. from num.)	(\X$next != $add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y$next)
+	(9 -> 5 -> 6 -> 5)
+
+		[MUS(s)]:
+
+		[1] w8	((\Y != \X) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && \LoneHot && \L5 && (\X != $add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y))
+[RES_1]       2	: 5	: 0 2 2 3 3 1 s: 11
+[RES_0]    L  5 : 0 2 2 4 9 5 s: 22, mem: 16, time: 0.036843
+---------------------------------------------------------------------------------------------
+Loop_5_1_2
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #6
+	(adding from pre_c to cc. cube) #6
+	(bad cube [in !P+]) sz: 2
+	(abstract cube) 7	(6 + 1 + 0 + 0 + 0)
+	(concrete cube) 7	(6 + 1 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #13
+	(adding from pre_c to cc. cube) #13
+	(abstract cube) 13	(13 + 0 + 0 + 0 + 0)
+	(concrete cube) 13	(13 + 0 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #2
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #2
+	(abstract cube) 14	(14 + 0 + 0 + 0 + 0)
+	(concrete cube) 14	(14 + 0 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 13	(13 + 0 + 0 + 0 + 0)
+	(concrete cube) 13	(13 + 0 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: UNSAT
+		(ab core: 13 -> 2)
+	(41 + 13 -> 41 + 2)
+	(13 -> 2 -> 1)
+	(13 -> 2 -> 1)
+
+		[MUS(s)]:
+
+		[1] w8	(\X == 8'd4)
+	SAT_a ? [ F[2] & T & C+ ]: UNSAT
+		(ab core: 14 -> 3)
+	(36 + 14 -> 36 + 3)
+	(14 -> 3 -> 1)
+	(14 -> 3 -> 1)
+
+		[MUS(s)]:
+
+		[1] w8	(\X == 8'd4)
+	SAT_a ? [ F[3] & T & C+ ]: UNSAT
+		(ab core: 13 -> 3)
+	(28 + 13 -> 28 + 3)
+	(13 -> 3 -> 1)
+	(13 -> 3 -> 1)
+
+		[MUS(s)]:
+
+		[1] w8	(\X == 8'd4)
+	SAT_a ? [ F[4] & T & C+ ]: UNSAT
+		(ab core: 7 -> 3)
+	(15 + 7 -> 15 + 3)
+	(7 -> 3 -> 1)
+	(7 -> 3 -> 1)
+
+		[MUS(s)]:
+
+		[1] w8	(\X == 8'd4)
+[RES_1]       2	: 5	: 0 2 2 3 3 2 s: 12
+[RES_0]    L  5 : 0 2 2 4 9 6 s: 23, mem: 16, time: 0.039929
+---------------------------------------------------------------------------------------------
+Loop_5_2_2
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[5] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #6
+	(adding from pre_c to cc. cube) #6
+	(bad cube [in !P+]) sz: 2
+	(abstract cube) 7	(6 + 1 + 0 + 0 + 0)
+	(concrete cube) 7	(6 + 1 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #13
+	(adding from pre_c to cc. cube) #13
+	(abstract cube) 13	(13 + 0 + 0 + 0 + 0)
+	(concrete cube) 13	(13 + 0 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #2
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #2
+	(abstract cube) 14	(14 + 0 + 0 + 0 + 0)
+	(concrete cube) 14	(14 + 0 + 0 + 0)
+	SAT_a ? [ F[2] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #12
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #12
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 13	(13 + 0 + 0 + 0 + 0)
+	(concrete cube) 13	(13 + 0 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: UNSAT
+		(ab core: 13 -> 2)
+	(45 + 13 -> 45 + 2)
+	(13 -> 2 -> 1)
+	(13 -> 2 -> 1)
+
+		[MUS(s)]:
+
+		[1] w8	(\X == 8'd2)
+	SAT_a ? [ F[2] & T & C+ ]: UNSAT
+		(ab core: 14 -> 3)
+	(40 + 14 -> 40 + 3)
+	(14 -> 3 -> 1)
+	(14 -> 3 -> 1)
+
+		[MUS(s)]:
+
+		[1] w8	(\X == 8'd2)
+	SAT_a ? [ F[3] & T & C+ ]: UNSAT
+		(ab core: 13 -> 4)
+	(31 + 13 -> 31 + 4)
+	(13 -> 4 -> 1)
+	(13 -> 4 -> 1)
+
+		[MUS(s)]:
+
+		   (forcing elimination of initial states from original mus)
+		[0] (orig) ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4)
+		[1] w8	(($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && !((\L0 && !(\L1) && !(\L2) && !(\L3) && !(\L4) && !(\L5) && !(\L6) && !(\L7) && \LoneHot && (\X == 8'd0) && (\Y == 8'd0) && (\Z == 8'd0))))
+	SAT_a ? [ F[4] & T & C+ ]: UNSAT
+		(ab core: 7 -> 3)
+	(17 + 7 -> 17 + 3)
+	(7 -> 3 -> 3)
+	(7 -> 3 -> 3)
+
+		[MUS(s)]:
+
+		[1] w8	(($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && \LoneHot && \L5)
+[RES_1]       2	: 5	: 0 2 2 3 2 2 s: 11
+[RES_0]    L  5 : 0 2 2 3 5 4 s: 16, mem: 16, time: 0.043136
+---------------------------------------------------------------------------------------------
+Loop_5_3_2
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[5] & T & !P+ ]: UNSAT
+[RES_1]       2	: 5	: 0 2 2 3 2 2 s: 11
+[RES_0]    L  5 : 0 2 2 3 5 4 s: 16, mem: 16, time: 0.043228
+	[Forward propagation]:
+	(F1 about to converge: #2)
+		(\Y != \X)
+		\L2
+	(F2 about to converge: #2)
+		\L5
+		\L3
+	(F3 about to converge: #2)
+		(\Y != 8'd0)
+		\L4
+	(F4 about to converge: #2)
+		((\Y != \X) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && (\X != $add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y))
+		(($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && !((\L0 && !(\L1) && !(\L2) && !(\L3) && !(\L4) && !(\L5) && !(\L6) && !(\L7) && \LoneHot && (\X == 8'd0) && (\Y == 8'd0) && (\Z == 8'd0))))
+	(F5 about to converge: #1)
+		(($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && \LoneHot && \L5)
+[RES_1]       2	: 6	: 0 2 2 2 2 1 2 s: 11
+[RES_0]    L  6 : 0 2 2 2 5 3 2 s: 16, mem: 16, time: 0.044444
+---------------------------------------------------------------------------------------------
+Loop_6_0_2
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[6] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #8
+	(adding from pre_c to cc. cube) #8
+	(bad cube [in !P+]) sz: 2
+	(abstract cube) 9	(8 + 1 + 0 + 0 + 0)
+	(concrete cube) 9	(8 + 1 + 0 + 0)
+	SAT_a ? [ F[5] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #15
+	(adding from pre_c to cc. cube) #15
+	(abstract cube) 15	(15 + 0 + 0 + 0 + 0)
+	(concrete cube) 15	(15 + 0 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: UNSAT
+		(ab core: 15 -> 5)
+	(21 + 15 -> 21 + 5)
+	(15 -> 5 -> 3)
+	(15 -> 5 -> 3)
+
+		[MUS(s)]:
+
+		   (forcing elimination of initial states from original mus)
+		[0] (orig) (!(\L2) && !(\L4) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4))
+		[1] w8	(!(\L2) && !(\L4) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && !((\L0 && !(\L1) && !(\L2) && !(\L3) && !(\L4) && !(\L5) && !(\L6) && !(\L7) && \LoneHot && (\X == 8'd0) && (\Y == 8'd0) && (\Z == 8'd0))))
+	SAT_a ? [ F[5] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #15
+	(adding from pre_c to cc. cube) #15
+	(abstract cube) 15	(15 + 0 + 0 + 0 + 0)
+	(concrete cube) 15	(15 + 0 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #14
+	(adding required pred. from inp_c to ab. cube) #2
+	(adding from pre_c to cc. cube) #14
+	(adding pred. from inp_c to cc. cube) #2
+	(abstract cube) 17	(16 + 1 + 0 + 0 + 0)
+	(concrete cube) 17	(16 + 1 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: UNSAT
+		(ab core: 17 -> 3)
+	(24 + 17 -> 24 + 3)
+	(17 -> 3 -> 2)
+	(17 -> 3 -> 2)
+
+		[MUS(s)]:
+
+		[1] w8	((\X == \Y) && (\X != 8'd0))
+	SAT_a ? [ F[4] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #17
+	(adding required pred. from inp_c to ab. cube) #2
+	(adding from pre_c to cc. cube) #17
+	(adding pred. from inp_c to cc. cube) #2
+	(abstract cube) 19	(19 + 0 + 0 + 0 + 0)
+	(concrete cube) 19	(19 + 0 + 0 + 0)
+	SAT_a ? [ F[3] & T & C+ ]: UNSAT
+		(ab core: 19 -> 2)
+	(25 + 19 -> 25 + 2)
+	(19 -> 2 -> 2)
+	(19 -> 2 -> 2)
+
+		[MUS(s)]:
+
+		[1] w8	(!(\L4) && (\Y != 8'd0))
+	SAT_a ? [ F[4] & T & C+ ]: UNSAT
+		(ab core: 15 -> 4)
+	(24 + 15 -> 24 + 4)
+	(15 -> 4 -> 2)
+	(15 -> 4 -> 2)
+
+		[MUS(s)]:
+
+		   (forcing elimination of initial states from original mus)
+		[0] (orig) (\LoneHot && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4))
+		[1] w8	(\LoneHot && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && !((\L0 && !(\L1) && !(\L2) && !(\L3) && !(\L4) && !(\L5) && !(\L6) && !(\L7) && \LoneHot && (\X == 8'd0) && (\Y == 8'd0) && (\Z == 8'd0))))
+	SAT_a ? [ F[5] & T & C+ ]: UNSAT
+		(ab core: 9 -> 3)
+	(15 + 9 -> 15 + 3)
+	(9 -> 3 -> 3)
+	(9 -> 3 -> 3)
+
+		[MUS(s)]:
+
+		[1] w8	(\L5 && \LoneHot && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4))
+[RES_1]       2	: 6	: 0 2 2 2 4 2 3 s: 15
+[RES_0]    L  6 : 0 2 2 2 9 7 5 s: 27, mem: 16, time: 0.05025
+---------------------------------------------------------------------------------------------
+Loop_6_1_2
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[6] & T & !P+ ]: UNSAT
+[RES_1]       2	: 6	: 0 2 2 2 4 2 3 s: 15
+[RES_0]    L  6 : 0 2 2 2 9 7 5 s: 27, mem: 16, time: 0.050328
+	[Forward propagation]:
+	(F1 about to converge: #2)
+		(\Y != \X)
+		\L2
+	(F2 about to converge: #2)
+		\L5
+		\L3
+	(F3 about to converge: #2)
+		(\Y != 8'd0)
+		\L4
+	(F5 about to converge: #1)
+		(\LoneHot && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && !((\L0 && !(\L1) && !(\L2) && !(\L3) && !(\L4) && !(\L5) && !(\L6) && !(\L7) && \LoneHot && (\X == 8'd0) && (\Y == 8'd0) && (\Z == 8'd0))))
+	(F6 about to converge: #2)
+		(\L5 && \LoneHot && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4))
+		(!(\L2) && !(\L4) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && !((\L0 && !(\L1) && !(\L2) && !(\L3) && !(\L4) && !(\L5) && !(\L6) && !(\L7) && \LoneHot && (\X == 8'd0) && (\Y == 8'd0) && (\Z == 8'd0))))
+[RES_1]       2	: 7	: 0 2 2 2 4 1 2 2 s: 15
+[RES_0]    L  7 : 0 2 2 2 9 3 7 2 s: 27, mem: 16, time: 0.051752
+---------------------------------------------------------------------------------------------
+Loop_7_0_2
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[7] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #8
+	(adding from pre_c to cc. cube) #8
+	(bad cube [in !P+]) sz: 2
+	(abstract cube) 9	(8 + 1 + 0 + 0 + 0)
+	(concrete cube) 9	(8 + 1 + 0 + 0)
+	SAT_a ? [ F[6] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #15
+	(adding from pre_c to cc. cube) #15
+	(abstract cube) 15	(15 + 0 + 0 + 0 + 0)
+	(concrete cube) 15	(15 + 0 + 0 + 0)
+	SAT_a ? [ F[5] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #17
+	(adding required pred. from inp_c to ab. cube) #2
+	(adding from pre_c to cc. cube) #17
+	(adding pred. from inp_c to cc. cube) #2
+	(abstract cube) 19	(19 + 0 + 0 + 0 + 0)
+	(concrete cube) 19	(19 + 0 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: UNSAT
+		(ab core: 19 -> 4)
+	(29 + 19 -> 29 + 4)
+	(19 -> 4 -> 3)
+	(19 -> 4 -> 3)
+
+		[MUS(s)]:
+
+		[1] w8	(\L3 && (\Y != 8'd0) && \LoneHot)
+	SAT_a ? [ F[5] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #15
+	(adding from pre_c to cc. cube) #15
+	(abstract cube) 15	(15 + 0 + 0 + 0 + 0)
+	(concrete cube) 15	(15 + 0 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: UNSAT
+		(ab core: 15 -> 4)
+	(30 + 15 -> 30 + 4)
+	(15 -> 4 -> 2)
+	(15 -> 4 -> 2)
+
+		[MUS(s)]:
+
+		[1] w8	(\L4 && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4))
+	SAT_a ? [ F[5] & T & C+ ]: UNSAT
+		(ab core: 15 -> 4)
+	(27 + 15 -> 27 + 4)
+	(15 -> 4 -> 2)
+	(15 -> 4 -> 2)
+
+		[MUS(s)]:
+
+		[1] w8	(\L4 && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4))
+	SAT_a ? [ F[6] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #17
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #17
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(18 + 0 + 0 + 0 + 0)
+	(concrete cube) 18	(18 + 0 + 0 + 0)
+	SAT_a ? [ F[5] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #17
+	(adding from pre_c to cc. cube) #17
+	(abstract cube) 17	(17 + 0 + 0 + 0 + 0)
+	(concrete cube) 17	(17 + 0 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: UNSAT
+		(ab core: 17 -> 5)
+	(32 + 17 -> 32 + 5)
+	(17 -> 5 -> 2)
+	(17 -> 5 -> 2)
+
+		[MUS(s)]:
+
+		   (forcing elimination of initial states from original mus)
+		[0] (orig) (!(\L5) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4))
+		[1] w8	(!(\L5) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && !((\L0 && !(\L1) && !(\L2) && !(\L3) && !(\L4) && !(\L5) && !(\L6) && !(\L7) && \LoneHot && (\X == 8'd0) && (\Y == 8'd0) && (\Z == 8'd0))))
+	SAT_a ? [ F[5] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #13
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #13
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 14	(14 + 0 + 0 + 0 + 0)
+	(concrete cube) 14	(14 + 0 + 0 + 0)
+	SAT_a ? [ F[4] & T & C+ ]: UNSAT
+		(ab core: 14 -> 3)
+	(33 + 14 -> 33 + 3)
+	(14 -> 3 -> 3)
+	(14 -> 3 -> 3)
+
+		[MUS(s)]:
+
+		[1] w8	(!(\L5) && !(\L4) && (\Y != 8'd0))
+	SAT_a ? [ F[5] & T & C+ ]: UNSAT
+		(ab core: 18 -> 7)
+	(30 + 18 -> 30 + 7)
+	(18 -> 7 -> 2)
+	(18 -> 7 -> 2)
+
+		[MUS(s)]:
+
+		   (forcing elimination of initial states from original mus)
+		[0] (orig) (\LoneHot && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4))
+		[1] w8	(\LoneHot && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && !((\L0 && !(\L1) && !(\L2) && !(\L3) && !(\L4) && !(\L5) && !(\L6) && !(\L7) && \LoneHot && (\X == 8'd0) && (\Y == 8'd0) && (\Z == 8'd0))))
+	SAT_a ? [ F[6] & T & C+ ]: UNSAT
+		(ab core: 9 -> 3)
+	(18 + 9 -> 18 + 3)
+	(9 -> 3 -> 3)
+	(9 -> 3 -> 3)
+
+		[MUS(s)]:
+
+		[1] w8	(\L5 && \LoneHot && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4))
+[RES_1]       2	: 7	: 0 2 2 2 4 3 3 3 s: 19
+[RES_0]    L  7 : 0 2 2 2 9 9 9 5 s: 38, mem: 16, time: 0.059593
+---------------------------------------------------------------------------------------------
+Loop_7_1_2
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[7] & T & !P+ ]: UNSAT
+[RES_1]       2	: 7	: 0 2 2 2 4 3 3 3 s: 19
+[RES_0]    L  7 : 0 2 2 2 9 9 9 5 s: 38, mem: 16, time: 0.059667
+	[Forward propagation]:
+	(F1 about to converge: #2)
+		(\Y != \X)
+		\L2
+	(F2 about to converge: #2)
+		\L5
+		\L3
+	(F3 about to converge: #2)
+		(\Y != 8'd0)
+		\L4
+	(F5 about to converge: #2)
+		(!(\L5) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && !((\L0 && !(\L1) && !(\L2) && !(\L3) && !(\L4) && !(\L5) && !(\L6) && !(\L7) && \LoneHot && (\X == 8'd0) && (\Y == 8'd0) && (\Z == 8'd0))))
+		(!(\L5) && !(\L4) && (\Y != 8'd0))
+	(F6 about to converge: #2)
+		(\LoneHot && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && !((\L0 && !(\L1) && !(\L2) && !(\L3) && !(\L4) && !(\L5) && !(\L6) && !(\L7) && \LoneHot && (\X == 8'd0) && (\Y == 8'd0) && (\Z == 8'd0))))
+		(\L3 && (\Y != 8'd0) && \LoneHot)
+[RES_1]       2	: 8	: 0 2 2 2 4 2 2 3 2 s: 19
+[RES_0]    L  8 : 0 2 2 2 9 6 6 9 2 s: 38, mem: 16, time: 0.061473
+---------------------------------------------------------------------------------------------
+Loop_8_0_2
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[8] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #8
+	(adding from pre_c to cc. cube) #8
+	(bad cube [in !P+]) sz: 2
+	(abstract cube) 9	(8 + 1 + 0 + 0 + 0)
+	(concrete cube) 9	(8 + 1 + 0 + 0)
+	SAT_a ? [ F[7] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #17
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #17
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 18	(18 + 0 + 0 + 0 + 0)
+	(concrete cube) 18	(18 + 0 + 0 + 0)
+	SAT_a ? [ F[6] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #17
+	(adding from pre_c to cc. cube) #17
+	(abstract cube) 17	(17 + 0 + 0 + 0 + 0)
+	(concrete cube) 17	(17 + 0 + 0 + 0)
+	SAT_a ? [ F[5] & T & C+ ]: UNSAT
+		(ab core: 17 -> 6)
+	(37 + 17 -> 37 + 6)
+	(17 -> 6 -> 3)
+	(17 -> 6 -> 3)
+
+		[MUS(s)]:
+
+		   (forcing elimination of initial states from original mus)
+		[0] (orig) (!(\L6) && !(\L5) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4))
+		[1] w8	(!(\L6) && !(\L5) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && !((\L0 && !(\L1) && !(\L2) && !(\L3) && !(\L4) && !(\L5) && !(\L6) && !(\L7) && \LoneHot && (\X == 8'd0) && (\Y == 8'd0) && (\Z == 8'd0))))
+	SAT_a ? [ F[6] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #13
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #13
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 14	(14 + 0 + 0 + 0 + 0)
+	(concrete cube) 14	(14 + 0 + 0 + 0)
+	SAT_a ? [ F[5] & T & C+ ]: UNSAT
+		(ab core: 14 -> 4)
+	(38 + 14 -> 38 + 4)
+	(14 -> 4 -> 4)
+	(14 -> 4 -> 4)
+
+		[MUS(s)]:
+
+		[1] w8	(!(\L6) && !(\L5) && !(\L4) && (\Y != 8'd0))
+	SAT_a ? [ F[6] & T & C+ ]: UNSAT
+		(ab core: 18 -> 6)
+	(32 + 18 -> 32 + 6)
+	(18 -> 6 -> 3)
+	(18 -> 6 -> 3)
+
+		[MUS(s)]:
+
+		   (forcing elimination of initial states from original mus)
+		[0] (orig) (!(\L6) && !(\L5) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4))
+		[1] w8	(!(\L6) && !(\L5) && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4) && !((\L0 && !(\L1) && !(\L2) && !(\L3) && !(\L4) && !(\L5) && !(\L6) && !(\L7) && \LoneHot && (\X == 8'd0) && (\Y == 8'd0) && (\Z == 8'd0))))
+	SAT_a ? [ F[7] & T & C+ ]: UNSAT
+		(ab core: 9 -> 3)
+	(18 + 9 -> 18 + 3)
+	(9 -> 3 -> 3)
+	(9 -> 3 -> 3)
+
+		[MUS(s)]:
+
+		[1] w8	(\L5 && \LoneHot && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y == 8'd4))
+[RES_1]       2	: 8	: 0 2 2 2 4 2 3 3 3 s: 21
+[RES_0]    L  8 : 0 2 2 2 9 6 10 10 5 s: 46, mem: 17, time: 0.06555
+---------------------------------------------------------------------------------------------
+Loop_8_1_2
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[8] & T & !P+ ]: UNSAT
+[RES_1]       2	: 8	: 0 2 2 2 4 2 3 3 3 s: 21
+[RES_0]    L  8 : 0 2 2 2 9 6 10 10 5 s: 46, mem: 17, time: 0.065616
+	[Forward propagation]:
+		Property holds
+[RES_1]       2	: 8	: 0 2 2 2 4 2 0 6 3 s: 21
+[RES_0]    L  8 : 0 2 2 2 9 6 0 20 5 s: 46, mem: 17, time: 0.067079
+
+-----------
+Refinements
+-----------
+[1]	!((((\Y == 8'd0) || (\Y != 8'd0)) && (\Y == 8'd0) && (\L3 || !(\L3)) && $logic_not$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:35$111_Y && ($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y$next == 8'd4) && (\X$next != 8'd4) && (\Y$next == \Y$next_rhs) && (\X$next == \X$next_rhs)))
+[2]	!((($add$/workspaces/avr_modification/experiment/avr_output/work_sw_sym_ex_sw_sym_ex/sw_sym_ex.v:50$140_Y$next == 8'd4) && (\Y$next != \X$next) && (\X$next != 8'd4) && (\Y == 8'd0) && (\Y$next == \Y$next_rhs)))
+-----------
+[RES_0]    refinement-lemmas-check successful!
+F[0]	c#0
+F[1]	c#2
+F[2]	c#2
+F[3]	c#2
+F[4]	c#4
+F[5]	c#2
+F[6]	c#0
+F[7]	c#6
+F[8]	c#3
+F[9]	c#0
+
+
+[RES_0]    initial-state-check successful!
+[RES_0]    property-check successful!
+[RES_0]    inductive-invariant-check successful!
+ s: 46, mem: 17, time: 0.07
+Frames explored (2 datapath refinements) : 
+3 5 
+CEXT lengths (2 feasibility checks) : 
+4 6 
+DP lemmas (2 feasibility checks) : 
+1 1 
+Block= 16 BlockT= 24 BlockS= 16 BlockU= 8 Oblig= 80 ObligT= 80 ObligS= 37 ObligU= 43 FPT= 93 FPS= 72 FPU= 21 CallT= 649 CallS= 430 CallU= 219 MUST= 62 MUSS= 15 MUSU= 47 sMUST= 6 sMUSS= 4 sMUSU= 2 dMUST= 13 dMUSS= 11 dMUSU= 2 rMUST= 238 rMUSS= 106 rMUSU= 132 All_clauses= 43 All_literals= 112 Clauses= 21 Literals= 46 DPLemmas= 2 DPrefsNoDPL= 0 DPRefs= 2
+
+pme_fail: 0, pme_succ: 0, lit_before: 0, lit_after: 0
+coi_before: 0, coi_after: 0
+mus_before: 530 mus_lit: 94 mus_cls: 43 mus_cnt: 43
+S+M	Call = 711 (sat=445, 62.59%)
+SAT	Call = 649 (sat=430, 66.26%)
+MUS	Call = 62 (sat=15, 24.19%)
+
+Detailed Stats:
+
+  (reachability)
+	#Frame Restrictions:	43
+	#TB                :	53
+	#cubes-subsumed    :	22
+	#context reset     :	0
+	#Y2 reset          :	0
+	#frame solver reset:	8
+	avg-sz-frame-restriction:  	2.40
+
+	avg-sz-ab-cube:  	12.21
+		%t1-ab-cube:   	100.00%	[sel: 100.00% ]
+		%t2-ab-cube:   	0.00%	[sel: 0.00% ]
+		%t3-ab-cube:   	0.00%	[sel: 0.00% ]
+		%t4-ab-cube:   	0.00%	[sel: 0.00% ]
+
+		ab-cube info:	
+			s == s:	1.08%	[sel: 0.97% ]
+			s == n:	5.10%	[sel: 5.83% ]
+			s == o:	0.00%	[sel: 0.00% ]
+			n == o:	4.64%	[sel: 18.45% ]
+			o == o:	0.00%	[sel: 0.00% ]
+			s != s:	3.86%	[sel: 3.88% ]
+			s != n:	24.73%	[sel: 11.65% ]
+			s != o:	0.00%	[sel: 2.91% ]
+			n != o:	1.08%	[sel: 0.00% ]
+			o != o:	0.00%	[sel: 0.00% ]
+			s bool:	58.11%	[sel: 47.57% ]
+			up    :	1.39%	[sel: 8.74% ]
+			oth   :	0.00%	[sel: 0.00% ]
+
+		%coi-ab-cube  :	98.15%	[sel: 100.00% ]
+			s (==):	1.08%	[sel: 0.97% ]
+			s (!=):	3.86%	[sel: 6.80% ]
+			n (==):	9.74%	[sel: 24.27% ]
+			n (!=):	25.66%	[sel: 11.65% ]
+			other :	57.81%	[sel: 56.31% ]
+		%pred-ab-cube :	1.85%	[sel: 0.00% ]
+		%fproj-ab-cube:	0.00%	[sel: 0.00% ]
+			s (==):	0.00%	[sel: 0.00% ]
+			s (!=):	0.00%	[sel: 0.00% ]
+			n (==):	0.00%	[sel: 0.00% ]
+			n (!=):	0.00%	[sel: 0.00% ]
+		%proj-ab-cube :	0.00%	[sel: 0.00% ]
+			s (==):	0.00%	[sel: 0.00% ]
+			s (!=):	0.00%	[sel: 0.00% ]
+			n (==):	0.00%	[sel: 0.00% ]
+			n (!=):	0.00%	[sel: 0.00% ]
+		%subs-ab-cube :	0.00%	[sel: 0.00% ]
+	avg-#sv-ab-cube:  	8.00
+	avg-tsb-ab-cube:  	20.00
+	relevancy:       	99.27%
+
+	avg-sz-cc-cube:  	12.00
+		%coi-cc-cube  :	98.15%
+		%pred-cc-cube :	1.85%
+		%fproj-cc-cube:	0.00%
+			s (==):	0.00%
+			s (!=):	0.00%
+			n (==):	0.00%
+			n (!=):	0.00%
+		%proj-cc-cube :	0.00%
+			s (==):	0.00%
+			s (!=):	0.00%
+			n (==):	0.00%
+			n (!=):	0.00%
+
+	tb_cube_time:     	0.01 (15.55%)
+		cube_eval_time: 	0.00 (5.55%)
+		cube_pred_time: 	0.00 (0.16%)
+		cube_fproj_time:	0.00 (0.00%)
+		cube_proj_time: 	0.00 (0.00%)
+		cube _subs_time:	0.00 (0.06%)
+		sum:            	0.00 (37.11% of tb_cube_time)
+
+	tb_ct_time:      	0.00 (5.16%)
+		ct isblocked_time:  	0.00 (0.00%)
+		ct isinitial_time:  	0.00 (1.59%)
+		ct containment_time:	0.00 (0.09%)
+		ct fastforward_time:	0.00 (0.00%)
+		sum:                	0.00 (32.67% of tb_ct_time)
+
+	setcontain_time:	0.00 (0.00%)
+
+	updatesolver_time:	0.00 (2.41%)
+
+	tb_time:	0.04 (58.06%)
+		tb_reach_time:    	0.01 (9.02%)
+		tb_val_time:    	0.00 (1.18%) [ cti_val_time: 137740198.12 (200644143572.66%) ]
+		tb_cube_time:      	0.01 (15.55%)
+		tb_mus_time:      	0.01 (15.90%)
+			tb_mus_core_time:      	0.00 (5.74%)
+			tb_mus_min_time:      	0.00 (7.27%)
+		tb_ct_time:       	0.00 (5.16%)
+		tb_extra_time:    	0.00 (0.00%)
+		sum:           	0.03 (78.62% of tb_time)
+
+
+  (refinement)
+	sim_time:		0.00 (5.67%) 	 [33.02% of dpr_time]
+
+  pre_time:	0.00 (1.54%)
+  cti_time:	0.00 (2.37%)	[cti_i_time:	0.00 (1.00%) ]
+  tb_time:	0.04 (58.06%)
+  fp_time:	0.01 (9.70%)	[fp_extra_time:	0.00 (0.00%) ]
+  refine_time:	0.01 (17.16%)
+  sol_set_time:	0.00 (3.05%)
+  inv_time:	0.00 (2.03%)	[induct_time:	0.00 (0.00%) ]
+  draw_time:	0.00 (0.00%)
+  sum:		0.06 (93.92%)
+
+  extra_time:	0.00 (0.00%)
+
+  timeout_time:	0.00 (0.00%)
+
+[simplified] 0 (ex), 0 (cc), 0 (ot)
+
+===     HOLD     ===
+
+Averroes finished.
+
+br-#mus          43           
+        hard        soft         out           
+           
+       24.95       12.33        3.12               (br-core)           
+       24.95        3.12        2.19                (br-min)          
+
+         sat       unsat           
+                                          #Calls           
+           0          43   (br-core)           
+           0           0  (br-core2)           
+         106          89    (br-min)           
+                                      Time (sec)           
+        0.00        0.00   (br-core)           
+        0.00        0.00  (br-core2)           
+        0.00        0.00    (br-min)           
+                                    Avg. Time (microsec)           
+           0          33   (br-core)           
+           0           0  (br-core2)           
+          16          17    (br-min)           
+                                    Max Time (microsec)           
+        1439         121   (br-core)           
+           0           0  (br-core2)           
+          55          52    (br-min)          
+
+                      ab                      bv           
+         sat       unsat         sat       unsat           
+                                                      #Calls           
+          38          16           2           3   (oneshot)           
+         375         153           0           0       (inc)           
+           0          43          15           4    (assume)           
+                       0                       0   (timeout)          
+
+                                                  Time (sec)           
+        0.00        0.00        0.00        0.00   (oneshot)           
+        0.00        0.00        0.00        0.00       (inc)           
+        0.00        0.00        0.01        0.00    (assume)           
+                    0.00                    0.00   (timeout)          
+
+                                                Avg. Time (microsec)
+           8           8         448         138   (oneshot)           
+          11          11           0           0       (inc)           
+           0          22         434          67    (assume)           
+                       0                       0   (timeout)           
+           
+      Result        Time        Mem.       #Refs           
+                     sec          MB                       
+           h        0.07          17           2

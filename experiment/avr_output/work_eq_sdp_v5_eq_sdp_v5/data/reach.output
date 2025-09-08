@@ -1,0 +1,1009 @@
+Timeout: 1, Memory_limit: 118000
+	10000.000000 (abstract query)
+	10000.000000 (concrete query)
+
+Config:
+	(concrete bit-width limit: 0)
+	(fineness: 2)
+	(interpret-ex-cc-level: 2)
+	(forward-check:	0)
+	(full projection)
+	(prioritization:	single)
+
+#STAT# num_bits= 2 num_regs= 9 num_total_bits= 74
+1  2
+8  9
+
+System
+  int : 63
+  bool : 31
+  sum : 94
+  bool_op : 30
+  int_op : 9
+    &&  2
+    &_8_8  1
+    +_8_8  3
+    -_8_8  4
+    ==  3
+    ==_int  11
+    ?:  2
+    ?:_int  12
+    []  1
+
+
+Property
+  int : 2
+  bool : 4
+  sum : 6
+  bool_op : 2
+  int_op : 0
+    ==  1
+    ==_int  1
+
+Partial interpretation info:
+  depth: 0
+  count: 0
+  count (d=0): 0
+
+  depth (prop): 0
+  count (prop): 0
+  count (d=0) (prop): 0
+
+	# of Inst.                  : 144	(864 bytes each)
+	  ExInst::hm_ExInst.size()  : 1	(984 bytes each)
+	  SigInst::hm_SigInst.size(): 36	(904 bytes each)
+	  NumInst::hm_NumInst.size(): 4	(888 bytes each)
+	  OpInst::hm_OpInst.size()  : 61	(944 bytes each)
+	  OpInst::hm_ITEInst.size() : 14	(944 bytes each)
+	  OpInst::hm_ETCInst.size() : 2	(944 bytes each)
+	Total                       : 118
+
+	Memory (est.)               : 0.118652 MB
+	  ExInst                    : 0.000938 MB
+	  SigInst                   : 0.031036 MB
+	  NumInst                   : 0.003387 MB
+	  OpInst::OP                : 0.054916 MB
+	  OpInst::ITE               : 0.012604 MB
+	  OpInst::ETC               : 0.001801 MB
+
+	(maximum function composition in T: 2)
+
+---------------------------------------------------------------------------------------------
+ Reachability Analysis Begins
+---------------------------------------------------------------------------------------------
+Loop_FrameNumber_#ReachabilityIterations_#RefinementIterations
+---------------------------------------------------------------------------------------------
+Loop_0_0_0
+---------------------------------------------------------------------------------------------
+[Basis Step]:
+	F[0] = I
+	SAT_a ? [ F[0] && !P ]: UNSAT
+
+[First Step]:
+	SAT_a ? [ F[0] & T & !P ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #2
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #2
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 3	(3 + 0 + 0 + 0 + 0)
+	(concrete cube) 3	(3 + 0 + 0 + 0)
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 1)
+		SAT_c ? [ F[0] & T & !P+ ]: 		(bv input core size: 21)
+		(cc core: 21 -> 8)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\im.p2_m == \s2) && (\im.p2_c == \s2) && (\s3$next == \s3$next_rhs) && (\s3$next != \im.p3_n$next) && (\s2 == 8'd0) && (\im.p3_n$next == \im.p3_n$next_rhs))
+
+	[Lemmas]: 
+		[1] !(((\im.p2_m == \s2) && (\im.p2_c == \s2) && (\s3$next == \s3$next_rhs) && (\s3$next != \im.p3_n$next) && (\s2 == 8'd0) && (\im.p3_n$next == \im.p3_n$next_rhs)))
+#160
+[RES_1]       1	: 0	: 0 s: 0
+[RES_0]    L  0 : 0 s: 0, mem: 14, time: 0.004886
+---------------------------------------------------------------------------------------------
+Loop_0_0_1
+---------------------------------------------------------------------------------------------
+[First Step]:
+	SAT_a ? [ F[0] & T & !P ]: UNSAT
+
+[RES_1]       1	: 0	: 0 s: 0
+[RES_0]    L  0 : 0 s: 0, mem: 14, time: 0.00506
+[RES_1]       1	: 1	: 0 0 s: 0
+[RES_0]    L  1 : 0 0 s: 0, mem: 14, time: 0.005168
+---------------------------------------------------------------------------------------------
+Loop_1_0_1
+---------------------------------------------------------------------------------------------
+	F[1] = P
+	SAT_a ? [ F[1] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #3
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #3
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 4	(4 + 0 + 0 + 0 + 0)
+	(concrete cube) 4	(4 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: UNSAT
+		(ab core: 4 -> 1)
+	(19 + 4 -> 19 + 1)
+	(4 -> 1 -> 1)
+	(4 -> 1 -> 1)
+
+		[MUS(s)]:
+
+		[1] w8	(\im.p2_c != \s2)
+[RES_1]       1	: 1	: 0 1 s: 1
+[RES_0]    L  1 : 0 1 s: 1, mem: 15, time: 0.006141
+---------------------------------------------------------------------------------------------
+Loop_1_1_1
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[1] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #2
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #2
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 3	(3 + 0 + 0 + 0 + 0)
+	(concrete cube) 3	(3 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #1
+	(abstract cube) 6	(6 + 0 + 0 + 0 + 0)
+	(concrete cube) 6	(6 + 0 + 0 + 0)
+		(Next: ((\s2$next == \s2$next_rhs) && (\im.p2_m$next == \im.p2_m$next_rhs) && (\im.p2_c$next == \im.p2_c$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 2)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 9)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 12)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[1]
+[1] Cube to CubeNext+ is UNSAT
+
+		(cc core: 21 -> 5)
+resMusBv: 1
+		ACEXT is infeasible
+			(unsat: A[1] to A[0] )
+[Sim_1]    Adding lemma to ensure following never happens: 
+	(\im.p1_b == 8'd0)
+	(\im.p1_a == \s1)
+	(\im.p2_c$next != \im.p2_m$next)
+	(\im.p1_c == 8'd0)
+	(\s1 == 8'd0)
+	(\im.p2_m$next == \im.p2_m$next_rhs)
+	(\im.p2_c$next == \im.p2_c$next_rhs)
+
+[Sim_1]    Processing failure condition: 
+	(\im.p1_b == 8'd0)
+	(\im.p1_a == \s1)
+	(\im.p2_c$next != \im.p2_m$next)
+	(\im.p1_c == 8'd0)
+	(\s1 == 8'd0)
+	(\im.p2_m$next == \im.p2_m$next_rhs)
+	(\im.p2_c$next == \im.p2_c$next_rhs)
+
+			(adding predicate (absent)   (\im.p1_b == 8'd0) )
+			(finding parent expressions)	(\im.p1_b == 8'd0)
+				(number value parent)	8'd0	:=	\s3
+				(parent expression)
+					(\im.p1_b == 8'd0) := (\im.p1_b == \s3)
+				(adding predicate (from parent)   (\im.p1_b == \s3) )
+						(learning signal    \im.p1_b )
+						(learning signal    \s3 )
+						(learning constant  8'd0 )
+			(adding predicate (absent)   (\im.p1_c == 8'd0) )
+			(finding parent expressions)	(\im.p1_c == 8'd0)
+				(number value parent)	8'd0	:=	\s3
+				(parent expression)
+					(\im.p1_c == 8'd0) := (\im.p1_c == \s3)
+				(adding predicate (from parent)   (\im.p1_c == \s3) )
+						(learning signal    \im.p1_c )
+			(adding predicate (absent)   (\s1 == 8'd0) )
+			(finding parent expressions)	(\s1 == 8'd0)
+				(number value parent)	8'd0	:=	\s3
+				(parent expression)
+					(\s1 == 8'd0) := (\s1 == \s3)
+				(adding predicate (from parent)   (\s1 == \s3) )
+						(learning signal    \s1 )
+			(skipping predicate (present)  (\im.p1_a == \s1) )
+[Sim_1]    =========== Simulation Ends ===============
+
+	[Lemmas]: 
+		[1] !(((\im.p1_a == \s1) && ((\s1 == \s3) || (\s1 != \s3)) && (\s1 == \s3) && ((\s1 == 8'd0) || (\s1 != 8'd0)) && (\s1 == 8'd0) && ((\im.p1_c == \s3) || (\im.p1_c != \s3)) && (\im.p1_c == \s3) && ((\im.p1_c == 8'd0) || (\im.p1_c != 8'd0)) && (\im.p1_c == 8'd0) && ((\im.p1_b == \s3) || (\im.p1_b != \s3)) && (\im.p1_b == \s3) && ((\im.p1_b == 8'd0) || (\im.p1_b != 8'd0)) && (\im.p1_b == 8'd0) && (\im.p2_c$next != \im.p2_m$next) && (\im.p2_m$next == \im.p2_m$next_rhs) && (\im.p2_c$next == \im.p2_c$next_rhs)))
+#224
+#Lemmas = 2
+[RES_1]       2	: 1	: 0 1 s: 1
+[RES_0]    L  1 : 0 1 s: 1, mem: 15, time: 0.011243
+---------------------------------------------------------------------------------------------
+Loop_1_0_2
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[1] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #22
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #22
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 23	(23 + 0 + 0 + 0 + 0)
+	(concrete cube) 23	(23 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: UNSAT
+		(ab core: 23 -> 1)
+	(24 + 23 -> 24 + 1)
+	(23 -> 1 -> 1)
+	(23 -> 1 -> 1)
+
+		[MUS(s)]:
+
+		[1] w8	(\im.p2_c != \im.p2_m)
+[RES_1]       2	: 1	: 0 2 s: 2
+[RES_0]    L  1 : 0 2 s: 2, mem: 16, time: 0.012205
+---------------------------------------------------------------------------------------------
+Loop_1_1_2
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[1] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #17
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #17
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 18	(18 + 0 + 0 + 0 + 0)
+	(concrete cube) 18	(18 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: UNSAT
+		(ab core: 18 -> 1)
+	(24 + 18 -> 24 + 1)
+	(18 -> 1 -> 1)
+	(18 -> 1 -> 1)
+
+		[MUS(s)]:
+
+		[1] w8	(\s3 != \im.p2_c)
+[RES_1]       2	: 1	: 0 3 s: 3
+[RES_0]    L  1 : 0 3 s: 3, mem: 16, time: 0.01298
+---------------------------------------------------------------------------------------------
+Loop_1_2_2
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[1] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #13
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #13
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 17	(14 + 3 + 0 + 0 + 0)
+	(concrete cube) 17	(14 + 3 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: UNSAT
+		(ab core: 17 -> 1)
+	(24 + 17 -> 24 + 1)
+	(17 -> 1 -> 1)
+	(17 -> 1 -> 1)
+
+		[MUS(s)]:
+
+		[1] w8	(\im.p2_c != 8'd0)
+[RES_1]       2	: 1	: 0 4 s: 4
+[RES_0]    L  1 : 0 4 s: 4, mem: 16, time: 0.013601
+---------------------------------------------------------------------------------------------
+Loop_1_3_2
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[1] & T & !P+ ]: UNSAT
+[RES_1]       2	: 1	: 0 4 s: 4
+[RES_0]    L  1 : 0 4 s: 4, mem: 16, time: 0.013699
+	[Forward propagation]:
+[RES_1]       2	: 2	: 0 4 0 s: 4
+[RES_0]    L  2 : 0 4 0 s: 4, mem: 16, time: 0.014001
+---------------------------------------------------------------------------------------------
+Loop_2_0_2
+---------------------------------------------------------------------------------------------
+	F[2] = P
+	SAT_a ? [ F[2] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #28
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #28
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 29	(29 + 0 + 0 + 0 + 0)
+	(concrete cube) 29	(29 + 0 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: UNSAT
+		(ab core: 29 -> 1)
+	(16 + 29 -> 16 + 1)
+	(29 -> 1 -> 1)
+	(29 -> 1 -> 1)
+
+		[MUS(s)]:
+
+		[1] w8	(\s3 != 8'd0)
+[RES_1]       2	: 2	: 0 4 1 s: 5
+[RES_0]    L  2 : 0 4 1 s: 5, mem: 16, time: 0.015015
+---------------------------------------------------------------------------------------------
+Loop_2_1_2
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[2] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #22
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #22
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 26	(23 + 3 + 0 + 0 + 0)
+	(concrete cube) 26	(23 + 3 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #17
+	(adding required pred. from inp_c to ab. cube) #3
+	(adding from pre_c to cc. cube) #17
+	(adding pred. from inp_c to cc. cube) #3
+	(abstract cube) 23	(20 + 3 + 0 + 0 + 0)
+	(concrete cube) 23	(20 + 3 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #5
+	(adding required pred. from inp_c to ab. cube) #3
+	(adding from pre_c to cc. cube) #5
+	(adding pred. from inp_c to cc. cube) #3
+	(abstract cube) 11	(8 + 3 + 0 + 0 + 0)
+	(concrete cube) 11	(8 + 3 + 0 + 0)
+		(Next: ((\s1$next == \s1$next_rhs) && (\s2$next == \s2$next_rhs) && (\s3$next == \s3$next_rhs) && (\im.p1_a$next == \im.p1_a$next_rhs) && (\im.p1_b$next == \im.p1_b$next_rhs) && (\im.p1_c$next == \im.p1_c$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 3)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 32)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 56)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 40)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[2]
+			(creating wire l$1 for port Sub_8_8_8(bv8_8'd*_2, bv8_8'd*_3))
+			(creating wire l$2 for port Sub_8_8_8(l$1, bv8_8'd*_4))
+			(creating wire l$3 for port Sub_8_8_8(8'd0, 8'd0))
+
+	2: A[1]
+			(creating wire l$4 for port Sub_8_8_8(bv8_8'd*_7, bv8_8'd*_8))
+			(creating wire l$5 for port Sub_8_8_8(l$4, bv8_8'd*_9))
+			(creating wire l$6 for port Sub_8_8_8(l$3, 8'd0))
+
+	3: A[0]
+[0] Cube to CubeNext+ is UNSAT
+
+		(cc core: 70 -> 9)
+resMusBv: 1
+		ACEXT is infeasible
+			(unsat: A[0] to A[End]
+[Sim_1]    Adding lemma to ensure following never happens: 
+	(\im.p2_c == bv8_8'd*_4)
+	(\s2 == l$2)
+	(\im.p2_m == l$1)
+	(\s3$next != \im.p3_n$next)
+	(\s3$next == \s3$next_rhs)
+	(\im.p3_n$next == \im.p3_n$next_rhs)
+
+[Sim_1]    Processing failure condition: 
+	(\im.p2_c == bv8_8'd*_4)
+	(\s2 == l$2)
+	(\im.p2_m == l$1)
+	(\s3$next != \im.p3_n$next)
+	(\s3$next == \s3$next_rhs)
+	(\im.p3_n$next == \im.p3_n$next_rhs)
+
+			(trying instantiating symbolic expression)	(\im.p2_c == bv8_8'd*_4)
+				(instantiating symbolic value)	bv8_8'd*_4	:=	8'd190
+			(symbolic expression instance)
+				(\im.p2_c == bv8_8'd*_4) := (\im.p2_c == 8'd190)
+			(adding predicate (absent)   (\im.p2_c == 8'd190) )
+			(finding parent expressions)	(\im.p2_c == bv8_8'd*_4)
+				(symbolic value parent) @1	bv8_8'd*_4	:=	\im.p1_c
+				(parent expression) @1
+					(\im.p2_c == bv8_8'd*_4) := (\im.p2_c == \im.p1_c)
+				(adding predicate (from parent)   (\im.p2_c == \im.p1_c) )
+						(learning signal    \im.p2_c )
+				(symbolic value parent)	bv8_8'd*_4	:=	\c
+				(parent expression: main)
+					(\im.p2_c == bv8_8'd*_4) := (\im.p2_c == \c)
+				(adding predicate (from parent main)   (\im.p2_c == \c) )
+						(learning signal    \c )
+			(adding predicate (absent)   (\s2 == $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y) )
+						(learning signal    \s2 )
+						(learning signal    \im.p2_m )
+						(learning uf type   Sub_8_8_8 )
+						(learning uf        Sub_8_8_8(\im.p2_m, \im.p2_c) )
+			(trying instantiating symbolic expression)	(\s2 == l$2)
+				(instantiating symbolic value)	bv8_8'd*_2	:=	8'd254
+				(instantiating symbolic value)	bv8_8'd*_3	:=	8'd128
+				(instantiating symbolic value)	bv8_8'd*_4	:=	8'd190
+			(symbolic expression instance)
+				(\s2 == l$2) := (\s2 == Sub_8_8_8(Sub_8_8_8(8'd254, 8'd128), 8'd190))
+			(creating wire l$7 for port Sub_8_8_8(8'd254, 8'd128))
+			(creating wire l$8 for port Sub_8_8_8(l$7, 8'd190))
+			(adding predicate (absent)   (\s2 == l$8) )
+			(finding parent expressions)	(\s2 == l$2)
+				(symbolic value parent) @1	bv8_8'd*_2	:=	\im.p1_a
+				(symbolic value parent) @1	bv8_8'd*_3	:=	\im.p1_b
+				(symbolic value parent) @1	bv8_8'd*_4	:=	\im.p1_c
+				(parent expression) @1
+					(\s2 == l$2) := (\s2 == Sub_8_8_8($techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$12_Y, \im.p1_c))
+			(creating wire l$9 for port Sub_8_8_8($techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$12_Y, \im.p1_c))
+				(adding predicate (from parent)   (\s2 == l$9) )
+						(learning signal    \im.p1_a )
+						(learning uf        Sub_8_8_8(\im.p1_a, \im.p1_b) )
+						(learning uf        Sub_8_8_8($techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$12_Y, \im.p1_c) )
+				(symbolic value parent) @1	Sub_8_8_8(bv8_8'd*_2, bv8_8'd*_3)	:=	$techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$12_Y
+				(symbolic value parent)	bv8_8'd*_2	:=	\a
+				(symbolic value parent)	bv8_8'd*_3	:=	\b
+				(symbolic value parent)	bv8_8'd*_4	:=	\c
+				(parent expression: main)
+					(\s2 == l$2) := (\s2 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c))
+				(adding predicate (from parent main)   (\s2 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c)) )
+						(learning signal    \a )
+						(learning signal    \b )
+						(learning uf        Sub_8_8_8(\a, \b) )
+						(learning uf        Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c) )
+			(trying instantiating symbolic expression)	(\im.p2_m == l$1)
+				(instantiating symbolic value)	bv8_8'd*_2	:=	8'd254
+				(instantiating symbolic value)	bv8_8'd*_3	:=	8'd128
+			(symbolic expression instance)
+				(\im.p2_m == l$1) := (\im.p2_m == Sub_8_8_8(8'd254, 8'd128))
+			(adding predicate (absent)   (\im.p2_m == l$7) )
+			(finding parent expressions)	(\im.p2_m == l$1)
+				(symbolic value parent) @1	bv8_8'd*_2	:=	\im.p1_a
+				(symbolic value parent) @1	bv8_8'd*_3	:=	\im.p1_b
+				(parent expression) @1
+					(\im.p2_m == l$1) := (\im.p2_m == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$12_Y)
+				(adding predicate (from parent)   (\im.p2_m == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$12_Y) )
+				(symbolic value parent) @1	Sub_8_8_8(bv8_8'd*_2, bv8_8'd*_3)	:=	$techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$12_Y
+				(parent expression) @1
+					(\im.p2_m == l$1) := (\im.p2_m == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$12_Y)
+				(symbolic value parent) @2	Sub_8_8_8(bv8_8'd*_2, bv8_8'd*_3)	:=	$techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y
+				(parent expression) @2
+					(\im.p2_m == l$1) := (\im.p2_m == $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y)
+				(adding predicate (from parent)   (\im.p2_m == $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y) )
+				(symbolic value parent)	bv8_8'd*_2	:=	\a
+				(symbolic value parent)	bv8_8'd*_3	:=	\b
+				(parent expression: main)
+					(\im.p2_m == l$1) := (\im.p2_m == $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y)
+[Sim_1]    =========== Simulation Ends ===============
+
+	[Lemmas]: 
+		[1] !(((\im.p2_m == $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y) && ((\im.p2_m == $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y) || (\im.p2_m != $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y)) && ((\im.p2_m == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$12_Y) || (\im.p2_m != $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$12_Y)) && ((\im.p2_m == l$7) || (\im.p2_m != l$7)) && (\im.p2_m == l$7) && ((\s2 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c)) || (\s2 != Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c))) && (\s2 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c)) && ((\s2 == l$9) || (\s2 != l$9)) && ((\s2 == l$8) || (\s2 != l$8)) && (\s2 == l$8) && ((\s2 == $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y) || (\s2 != $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y)) && (\s2 == $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y) && ((\im.p2_c == \c) || (\im.p2_c != \c)) && (\im.p2_c == \c) && ((\im.p2_c == \im.p1_c) || (\im.p1_c != \im.p2_c)) && ((\im.p2_c == 8'd190) || (\im.p2_c != 8'd190)) && (\im.p2_c == 8'd190) && (\s3$next != \im.p3_n$next) && (\s3$next == \s3$next_rhs) && (\im.p3_n$next == \im.p3_n$next_rhs)))
+#507
+		(redundant lemma)
+#Lemmas = 3
+[RES_1]       3	: 2	: 0 4 1 s: 5
+[RES_0]    L  2 : 0 4 1 s: 5, mem: 17, time: 0.031018
+---------------------------------------------------------------------------------------------
+Loop_2_0_3
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[2] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #29
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #29
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 42	(30 + 12 + 0 + 0 + 0)
+	(concrete cube) 42	(30 + 12 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #31
+	(adding required pred. from inp_c to ab. cube) #3
+	(adding from pre_c to cc. cube) #31
+	(adding pred. from inp_c to cc. cube) #3
+	(abstract cube) 46	(34 + 12 + 0 + 0 + 0)
+	(concrete cube) 46	(34 + 12 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #3
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #3
+	(abstract cube) 24	(12 + 12 + 0 + 0 + 0)
+	(concrete cube) 24	(12 + 12 + 0 + 0)
+		(Next: ((\s1$next == \s1$next_rhs) && (\s2$next == \s2$next_rhs) && (\s3$next == \s3$next_rhs) && (\im.p1_a$next == \im.p1_a$next_rhs) && (\im.p1_b$next == \im.p1_b$next_rhs) && (\im.p1_c$next == \im.p1_c$next_rhs) && (\im.p2_m$next == \im.p2_m$next_rhs) && (\im.p2_c$next == \im.p2_c$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 3)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 48)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 96)
+		(cc core: 96 -> 6)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\s3$next == 8'd0) && (\s3$next == \s3$next_rhs) && (\s2 != $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y) && (\im.p2_c == 8'd0) && !(\im.reset) && (\im.p2_m == 8'd0))
+
+	[Lemmas]: 
+		[1] !(((\s3$next == 8'd0) && (\s3$next == \s3$next_rhs) && (\s2 != $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y) && (\im.p2_c == 8'd0) && !(\im.reset) && (\im.p2_m == 8'd0)))
+#575
+#Lemmas = 4
+[RES_1]       4	: 2	: 0 4 1 s: 5
+[RES_0]    L  2 : 0 4 1 s: 5, mem: 18, time: 0.04199
+---------------------------------------------------------------------------------------------
+Loop_2_0_4
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[2] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #32
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #32
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 42	(33 + 9 + 0 + 0 + 0)
+	(concrete cube) 42	(33 + 9 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #31
+	(adding required pred. from inp_c to ab. cube) #3
+	(adding from pre_c to cc. cube) #31
+	(adding pred. from inp_c to cc. cube) #3
+	(abstract cube) 46	(34 + 12 + 0 + 0 + 0)
+	(concrete cube) 46	(34 + 12 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #3
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #3
+	(abstract cube) 24	(12 + 12 + 0 + 0 + 0)
+	(concrete cube) 24	(12 + 12 + 0 + 0)
+		(Next: ((\s1$next == \s1$next_rhs) && (\s2$next == \s2$next_rhs) && (\s3$next == \s3$next_rhs) && (\im.p1_a$next == \im.p1_a$next_rhs) && (\im.p1_b$next == \im.p1_b$next_rhs) && (\im.p1_c$next == \im.p1_c$next_rhs) && (\im.p2_m$next == \im.p2_m$next_rhs) && (\im.p2_c$next == \im.p2_c$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 3)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 48)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 96)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 78)
+		(cc core: 78 -> 2)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\im.p1_a == 8'd0) && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$9_Y == 8'd1))
+
+	[Lemmas]: 
+		[1] !(((\im.p1_a == 8'd0) && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$9_Y == 8'd1)))
+#592
+		[2] !(((\im.p1_a$next == 8'd0) && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$9_Y$next == 8'd1)))
+#594
+#Lemmas = 6
+[RES_1]       6	: 2	: 0 4 1 s: 5
+[RES_0]    L  2 : 0 4 1 s: 5, mem: 18, time: 0.04869
+---------------------------------------------------------------------------------------------
+Loop_2_0_5
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[2] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #32
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #32
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 42	(33 + 9 + 0 + 0 + 0)
+	(concrete cube) 42	(33 + 9 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #31
+	(adding required pred. from inp_c to ab. cube) #3
+	(adding from pre_c to cc. cube) #31
+	(adding pred. from inp_c to cc. cube) #3
+	(abstract cube) 46	(34 + 12 + 0 + 0 + 0)
+	(concrete cube) 46	(34 + 12 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #3
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #3
+	(abstract cube) 24	(12 + 12 + 0 + 0 + 0)
+	(concrete cube) 24	(12 + 12 + 0 + 0)
+		(Next: ((\s1$next == \s1$next_rhs) && (\s2$next == \s2$next_rhs) && (\s3$next == \s3$next_rhs) && (\im.p1_a$next == \im.p1_a$next_rhs) && (\im.p1_b$next == \im.p1_b$next_rhs) && (\im.p1_c$next == \im.p1_c$next_rhs) && (\im.p2_m$next == \im.p2_m$next_rhs) && (\im.p2_c$next == \im.p2_c$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 3)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 48)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 96)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 78)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[2]
+			(creating wire l$10 for port Sub_8_8_8(bv8_8'd*_12, bv8_8'd*_13))
+			(creating wire l$11 for port Sub_8_8_8(l$10, bv8_8'd*_14))
+
+	2: A[1]
+[1] Cube to CubeNext+ is UNSAT
+
+		(cc core: 109 -> 12)
+resMusBv: 1
+		ACEXT is infeasible
+			(unsat: A[1] to A[0] )
+[Sim_1]    Adding lemma to ensure following never happens: 
+	(\s1 == l$11)
+	(\im.p1_b == bv8_8'd*_13)
+	(\im.p1_a == bv8_8'd*_12)
+	($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$9_Y != 8'd1)
+	(\s2$next != $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y$next)
+	(\im.p1_c == bv8_8'd*_14)
+	(\s2$next == \s2$next_rhs)
+	(\im.p2_m$next == \im.p2_m$next_rhs)
+	(\im.p2_c$next == \im.p2_c$next_rhs)
+
+[Sim_1]    Processing failure condition: 
+	(\s1 == l$11)
+	(\im.p1_b == bv8_8'd*_13)
+	(\im.p1_a == bv8_8'd*_12)
+	($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$9_Y != 8'd1)
+	(\s2$next != $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y$next)
+	(\im.p1_c == bv8_8'd*_14)
+	(\s2$next == \s2$next_rhs)
+	(\im.p2_m$next == \im.p2_m$next_rhs)
+	(\im.p2_c$next == \im.p2_c$next_rhs)
+
+			(skipping predicate (present)  ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$9_Y != 8'd1) )
+			(adding predicate (absent)   (\s1 == l$9) )
+			(trying instantiating symbolic expression)	(\s1 == l$11)
+				(instantiating symbolic value)	bv8_8'd*_12	:=	8'd110
+				(instantiating symbolic value)	bv8_8'd*_13	:=	8'd184
+				(instantiating symbolic value)	bv8_8'd*_14	:=	8'd188
+			(symbolic expression instance)
+				(\s1 == l$11) := (\s1 == Sub_8_8_8(Sub_8_8_8(8'd110, 8'd184), 8'd188))
+			(creating wire l$12 for port Sub_8_8_8(8'd110, 8'd184))
+			(creating wire l$13 for port Sub_8_8_8(l$12, 8'd188))
+			(adding predicate (absent)   (\s1 == l$13) )
+			(finding parent expressions)	(\s1 == l$11)
+				(symbolic value parent) @2	Sub_8_8_8(bv8_8'd*_12, bv8_8'd*_13)	:=	$techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y
+				(symbolic value parent)	bv8_8'd*_12	:=	\a
+				(symbolic value parent)	bv8_8'd*_13	:=	\b
+				(symbolic value parent)	bv8_8'd*_14	:=	\c
+				(parent expression: main)
+					(\s1 == l$11) := (\s1 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c))
+				(adding predicate (from parent main)   (\s1 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c)) )
+			(trying instantiating symbolic expression)	(\im.p1_b == bv8_8'd*_13)
+				(instantiating symbolic value)	bv8_8'd*_13	:=	8'd184
+			(symbolic expression instance)
+				(\im.p1_b == bv8_8'd*_13) := (\im.p1_b == 8'd184)
+			(adding predicate (absent)   (\im.p1_b == 8'd184) )
+			(finding parent expressions)	(\im.p1_b == bv8_8'd*_13)
+				(symbolic value parent)	bv8_8'd*_13	:=	\b
+				(parent expression: main)
+					(\im.p1_b == bv8_8'd*_13) := (\im.p1_b == \b)
+				(adding predicate (from parent main)   (\im.p1_b == \b) )
+			(trying instantiating symbolic expression)	(\im.p1_a == bv8_8'd*_12)
+				(instantiating symbolic value)	bv8_8'd*_12	:=	8'd110
+			(symbolic expression instance)
+				(\im.p1_a == bv8_8'd*_12) := (\im.p1_a == 8'd110)
+			(adding predicate (absent)   (\im.p1_a == 8'd110) )
+			(finding parent expressions)	(\im.p1_a == bv8_8'd*_12)
+				(symbolic value parent)	bv8_8'd*_12	:=	\a
+				(parent expression: main)
+					(\im.p1_a == bv8_8'd*_12) := (\im.p1_a == \a)
+				(adding predicate (from parent main)   (\im.p1_a == \a) )
+			(trying instantiating symbolic expression)	(\im.p1_c == bv8_8'd*_14)
+				(instantiating symbolic value)	bv8_8'd*_14	:=	8'd188
+			(symbolic expression instance)
+				(\im.p1_c == bv8_8'd*_14) := (\im.p1_c == 8'd188)
+			(adding predicate (absent)   (\im.p1_c == 8'd188) )
+			(finding parent expressions)	(\im.p1_c == bv8_8'd*_14)
+				(symbolic value parent)	bv8_8'd*_14	:=	\c
+				(parent expression: main)
+					(\im.p1_c == bv8_8'd*_14) := (\im.p1_c == \c)
+				(adding predicate (from parent main)   (\im.p1_c == \c) )
+[Sim_1]    =========== Simulation Ends ===============
+
+	[Lemmas]: 
+		[1] !((((\im.p1_c == \c) || (\im.p1_c != \c)) && (\im.p1_c == \c) && ((\im.p1_c == 8'd188) || (\im.p1_c != 8'd188)) && (\im.p1_c == 8'd188) && ((\im.p1_a == \a) || (\im.p1_a != \a)) && (\im.p1_a == \a) && ((\im.p1_a == 8'd110) || (\im.p1_a != 8'd110)) && (\im.p1_a == 8'd110) && ((\im.p1_b == \b) || (\im.p1_b != \b)) && (\im.p1_b == \b) && ((\im.p1_b == 8'd184) || (\im.p1_b != 8'd184)) && (\im.p1_b == 8'd184) && ((\s1 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c)) || (\s1 != Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c))) && (\s1 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c)) && ((\s1 == l$13) || (\s1 != l$13)) && (\s1 == l$13) && ((\s1 == l$9) || (\s1 != l$9)) && (\s1 == l$9) && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$9_Y != 8'd1) && (\s2$next != $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y$next) && (\s2$next == \s2$next_rhs) && (\im.p2_m$next == \im.p2_m$next_rhs) && (\im.p2_c$next == \im.p2_c$next_rhs)))
+#691
+#Lemmas = 7
+[RES_1]       7	: 2	: 0 4 1 s: 5
+[RES_0]    L  2 : 0 4 1 s: 5, mem: 19, time: 0.07459
+---------------------------------------------------------------------------------------------
+Loop_2_0_6
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[2] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #32
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #32
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 51	(33 + 18 + 0 + 0 + 0)
+	(concrete cube) 51	(33 + 18 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #44
+	(adding required pred. from inp_c to ab. cube) #3
+	(adding from pre_c to cc. cube) #44
+	(adding pred. from inp_c to cc. cube) #3
+	(abstract cube) 64	(47 + 17 + 0 + 0 + 0)
+	(concrete cube) 64	(47 + 17 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #3
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #3
+	(abstract cube) 30	(12 + 18 + 0 + 0 + 0)
+	(concrete cube) 30	(12 + 18 + 0 + 0)
+		(Next: ((\s1$next == \s1$next_rhs) && (\s2$next == \s2$next_rhs) && (\s3$next == \s3$next_rhs) && (\im.p1_a$next == \im.p1_a$next_rhs) && (\im.p1_b$next == \im.p1_b$next_rhs) && (\im.p1_c$next == \im.p1_c$next_rhs) && (\im.p2_m$next == \im.p2_m$next_rhs) && (\im.p2_c$next == \im.p2_c$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 3)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 57)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 123)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 102)
+		(cc core: 102 -> 4)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\im.p1_a$next == \im.p1_a$next_rhs) && !(\im.reset) && \a[0:0] && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$9_Y$next != 8'd1))
+
+	[Lemmas]: 
+		[1] !(((\im.p1_a$next == \im.p1_a$next_rhs) && !(\im.reset) && \a[0:0] && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$9_Y$next != 8'd1)))
+#733
+#Lemmas = 8
+[RES_1]       8	: 2	: 0 4 1 s: 5
+[RES_0]    L  2 : 0 4 1 s: 5, mem: 19, time: 0.092131
+---------------------------------------------------------------------------------------------
+Loop_2_0_7
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[2] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #33
+	(adding required pred. from inp_c to ab. cube) #1
+	(adding from pre_c to cc. cube) #33
+	(adding pred. from inp_c to cc. cube) #1
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 51	(34 + 17 + 0 + 0 + 0)
+	(concrete cube) 51	(34 + 17 + 0 + 0)
+	SAT_a ? [ F[1] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #44
+	(adding required pred. from inp_c to ab. cube) #3
+	(adding from pre_c to cc. cube) #44
+	(adding pred. from inp_c to cc. cube) #3
+	(abstract cube) 64	(47 + 17 + 0 + 0 + 0)
+	(concrete cube) 64	(47 + 17 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: SAT
+	(adding from pre_c to ab. cube) #9
+	(adding required pred. from inp_c to ab. cube) #3
+	(adding from pre_c to cc. cube) #9
+	(adding pred. from inp_c to cc. cube) #3
+	(abstract cube) 30	(12 + 18 + 0 + 0 + 0)
+	(concrete cube) 30	(12 + 18 + 0 + 0)
+		(Next: ((\s1$next == \s1$next_rhs) && (\s2$next == \s2$next_rhs) && (\s3$next == \s3$next_rhs) && (\im.p1_a$next == \im.p1_a$next_rhs) && (\im.p1_b$next == \im.p1_b$next_rhs) && (\im.p1_c$next == \im.p1_c$next_rhs) && (\im.p2_m$next == \im.p2_m$next_rhs) && (\im.p2_c$next == \im.p2_c$next_rhs)))
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 3)
+[Concrete check]:
+		SAT_c ? [ A[0] & T[0] & A[End]+ ]: 		(bv input core size: 57)
+		SAT_c ? [ A[1] & T[1] & A[0]+ ]: 		(bv input core size: 123)
+		SAT_c ? [ A[2] & T[2] & A[1]+ ]: 		(bv input core size: 102)
+
+	[Simulation check]: 
+[Sim_1]    =========== Simulation Begins ===============
+	1: A[2]
+			(creating wire l$14 for port Sub_8_8_8(bv8_8'd*_17, bv8_8'd*_18))
+			(creating wire l$15 for port Add_8_8_8(l$14, bv8_8'd*_19))
+
+	2: A[1]
+			(creating wire l$16 for port Add_8_8_8(bv8_8'd*_22, bv8_8'd*_23))
+			(creating wire l$17 for port Sub_8_8_8(l$16, bv8_8'd*_24))
+
+	3: A[0]
+			(creating wire l$18 for port Sub_8_8_8(l$14, bv8_8'd*_19))
+			(creating wire l$19 for port Add_8_8_8(bv8_8'd*_27, bv8_8'd*_28))
+			(creating wire l$20 for port Sub_8_8_8(l$19, bv8_8'd*_29))
+
+		ACEXT is feasible
+[Sim_1]    =========== Simulation Ends ===============
+[RES_1]       8	: 2	: 0 4 1 s: 5
+[RES_0]    L  2 : 0 4 1 s: 5, mem: 20, time: 0.111184
+
+-----------
+Refinements
+-----------
+[1]	!(((\im.p2_m == \s2) && (\im.p2_c == \s2) && (\s3$next == \s3$next_rhs) && (\s3$next != \im.p3_n$next) && (\s2 == 8'd0) && (\im.p3_n$next == \im.p3_n$next_rhs)))
+[2]	!(((\im.p1_a == \s1) && ((\s1 == \s3) || (\s1 != \s3)) && (\s1 == \s3) && ((\s1 == 8'd0) || (\s1 != 8'd0)) && (\s1 == 8'd0) && ((\im.p1_c == \s3) || (\im.p1_c != \s3)) && (\im.p1_c == \s3) && ((\im.p1_c == 8'd0) || (\im.p1_c != 8'd0)) && (\im.p1_c == 8'd0) && ((\im.p1_b == \s3) || (\im.p1_b != \s3)) && (\im.p1_b == \s3) && ((\im.p1_b == 8'd0) || (\im.p1_b != 8'd0)) && (\im.p1_b == 8'd0) && (\im.p2_c$next != \im.p2_m$next) && (\im.p2_m$next == \im.p2_m$next_rhs) && (\im.p2_c$next == \im.p2_c$next_rhs)))
+[3]	!(((\im.p2_m == $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y) && ((\im.p2_m == $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y) || (\im.p2_m != $techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y)) && ((\im.p2_m == $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$12_Y) || (\im.p2_m != $techmap\im.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$12_Y)) && ((\im.p2_m == l$7) || (\im.p2_m != l$7)) && (\im.p2_m == l$7) && ((\s2 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c)) || (\s2 != Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c))) && (\s2 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c)) && ((\s2 == l$9) || (\s2 != l$9)) && ((\s2 == l$8) || (\s2 != l$8)) && (\s2 == l$8) && ((\s2 == $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y) || (\s2 != $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y)) && (\s2 == $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y) && ((\im.p2_c == \c) || (\im.p2_c != \c)) && (\im.p2_c == \c) && ((\im.p2_c == \im.p1_c) || (\im.p1_c != \im.p2_c)) && ((\im.p2_c == 8'd190) || (\im.p2_c != 8'd190)) && (\im.p2_c == 8'd190) && (\s3$next != \im.p3_n$next) && (\s3$next == \s3$next_rhs) && (\im.p3_n$next == \im.p3_n$next_rhs)))
+[4]	!(((\s3$next == 8'd0) && (\s3$next == \s3$next_rhs) && (\s2 != $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y) && (\im.p2_c == 8'd0) && !(\im.reset) && (\im.p2_m == 8'd0)))
+[5]	!(((\im.p1_a == 8'd0) && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$9_Y == 8'd1)))
+[6]	!(((\im.p1_a$next == 8'd0) && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$9_Y$next == 8'd1)))
+[7]	!((((\im.p1_c == \c) || (\im.p1_c != \c)) && (\im.p1_c == \c) && ((\im.p1_c == 8'd188) || (\im.p1_c != 8'd188)) && (\im.p1_c == 8'd188) && ((\im.p1_a == \a) || (\im.p1_a != \a)) && (\im.p1_a == \a) && ((\im.p1_a == 8'd110) || (\im.p1_a != 8'd110)) && (\im.p1_a == 8'd110) && ((\im.p1_b == \b) || (\im.p1_b != \b)) && (\im.p1_b == \b) && ((\im.p1_b == 8'd184) || (\im.p1_b != 8'd184)) && (\im.p1_b == 8'd184) && ((\s1 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c)) || (\s1 != Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c))) && (\s1 == Sub_8_8_8($techmap\sp.$sub$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/spec.v:9$2_Y, \c)) && ((\s1 == l$13) || (\s1 != l$13)) && (\s1 == l$13) && ((\s1 == l$9) || (\s1 != l$9)) && (\s1 == l$9) && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$9_Y != 8'd1) && (\s2$next != $techmap\im.$ternary$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:52$16_Y$next) && (\s2$next == \s2$next_rhs) && (\im.p2_m$next == \im.p2_m$next_rhs) && (\im.p2_c$next == \im.p2_c$next_rhs)))
+[8]	!(((\im.p1_a$next == \im.p1_a$next_rhs) && !(\im.reset) && \a[0:0] && ($techmap\im.$and$/workspaces/avr_modification/tests/crafted/eq_sdp_v5/impl.v:49$9_Y$next != 8'd1)))
+-----------
+[RES_0]    refinement-lemmas-check successful!
+ s: 5, mem: 20, time: 0.11
+Frames explored (7 datapath refinements) : 
+0 1 2 2 2 2 2 
+CEXT lengths (8 feasibility checks) : 
+1 2 3 3 3 3 3 3 
+DP lemmas (7 feasibility checks) : 
+1 1 1 1 2 1 1 
+Block= 12 BlockT= 13 BlockS= 12 BlockU= 1 Oblig= 18 ObligT= 18 ObligS= 13 ObligU= 5 FPT= 4 FPS= 4 FPU= 0 CallT= 170 CallS= 118 CallU= 52 MUST= 71 MUSS= 49 MUSU= 22 sMUST= 24 sMUSS= 15 sMUSU= 9 dMUST= 42 dMUSS= 34 dMUSU= 8 rMUST= 15 rMUSS= 5 rMUSU= 10 All_clauses= 5 All_literals= 10 Clauses= 5 Literals= 5 DPLemmas= 8 DPrefsNoDPL= 0 DPRefs= 7
+
+pme_fail: 0, pme_succ: 0, lit_before: 0, lit_after: 0
+coi_before: 0, coi_after: 0
+mus_before: 91 mus_lit: 5 mus_cls: 5 mus_cnt: 5
+S+M	Call = 241 (sat=167, 69.29%)
+SAT	Call = 170 (sat=118, 69.41%)
+MUS	Call = 71 (sat=49, 69.01%)
+
+Detailed Stats:
+
+  (reachability)
+	#Frame Restrictions:	5
+	#TB                :	26
+	#cubes-subsumed    :	0
+	#context reset     :	0
+	#Y2 reset          :	0
+	#frame solver reset:	1
+	avg-sz-frame-restriction:  	1.00
+
+	avg-sz-ab-cube:  	30.35
+		%t1-ab-cube:   	100.00%	[sel: 100.00% ]
+		%t2-ab-cube:   	0.00%	[sel: 0.00% ]
+		%t3-ab-cube:   	0.00%	[sel: 0.00% ]
+		%t4-ab-cube:   	0.00%	[sel: 0.00% ]
+
+		ab-cube info:	
+			s == s:	4.44%	[sel: 0.00% ]
+			s == n:	9.25%	[sel: 0.00% ]
+			s == o:	2.41%	[sel: 0.00% ]
+			n == o:	0.25%	[sel: 0.00% ]
+			o == o:	0.00%	[sel: 0.00% ]
+			s != s:	36.63%	[sel: 60.00% ]
+			s != n:	26.24%	[sel: 40.00% ]
+			s != o:	13.18%	[sel: 0.00% ]
+			n != o:	1.27%	[sel: 0.00% ]
+			o != o:	0.00%	[sel: 0.00% ]
+			s bool:	4.82%	[sel: 0.00% ]
+			up    :	1.52%	[sel: 0.00% ]
+			oth   :	0.00%	[sel: 0.00% ]
+
+		%coi-ab-cube  :	72.24%	[sel: 100.00% ]
+			s (==):	1.52%	[sel: 0.00% ]
+			s (!=):	28.77%	[sel: 60.00% ]
+			n (==):	9.51%	[sel: 0.00% ]
+			n (!=):	26.11%	[sel: 40.00% ]
+			other :	6.34%	[sel: 0.00% ]
+		%pred-ab-cube :	27.76%	[sel: 0.00% ]
+		%fproj-ab-cube:	0.00%	[sel: 0.00% ]
+			s (==):	0.00%	[sel: 0.00% ]
+			s (!=):	0.00%	[sel: 0.00% ]
+			n (==):	0.00%	[sel: 0.00% ]
+			n (!=):	0.00%	[sel: 0.00% ]
+		%proj-ab-cube :	0.00%	[sel: 0.00% ]
+			s (==):	0.00%	[sel: 0.00% ]
+			s (!=):	0.00%	[sel: 0.00% ]
+			n (==):	0.00%	[sel: 0.00% ]
+			n (!=):	0.00%	[sel: 0.00% ]
+		%subs-ab-cube :	0.00%	[sel: 0.00% ]
+	avg-#sv-ab-cube:  	3.00
+	avg-tsb-ab-cube:  	30.00
+	relevancy:       	98.45%
+
+	avg-sz-cc-cube:  	30.00
+		%coi-cc-cube  :	72.24%
+		%pred-cc-cube :	27.76%
+		%fproj-cc-cube:	0.00%
+			s (==):	0.00%
+			s (!=):	0.00%
+			n (==):	0.00%
+			n (!=):	0.00%
+		%proj-cc-cube :	0.00%
+			s (==):	0.00%
+			s (!=):	0.00%
+			n (==):	0.00%
+			n (!=):	0.00%
+
+	tb_cube_time:     	0.01 (6.63%)
+		cube_eval_time: 	0.00 (1.54%)
+		cube_pred_time: 	0.00 (0.35%)
+		cube_fproj_time:	0.00 (0.00%)
+		cube_proj_time: 	0.00 (0.00%)
+		cube _subs_time:	0.00 (0.02%)
+		sum:            	0.00 (28.76% of tb_cube_time)
+
+	tb_ct_time:      	0.00 (0.61%)
+		ct isblocked_time:  	0.00 (0.00%)
+		ct isinitial_time:  	0.00 (0.44%)
+		ct containment_time:	0.00 (0.01%)
+		ct fastforward_time:	0.00 (0.00%)
+		sum:                	0.00 (74.38% of tb_ct_time)
+
+	setcontain_time:	0.00 (0.00%)
+
+	updatesolver_time:	0.00 (0.06%)
+
+	tb_time:	0.02 (14.24%)
+		tb_reach_time:    	0.00 (1.69%)
+		tb_val_time:    	0.00 (0.39%) [ cti_val_time: 136888681.43 (121689644792.18%) ]
+		tb_cube_time:      	0.01 (6.63%)
+		tb_mus_time:      	0.00 (0.91%)
+			tb_mus_core_time:      	0.00 (0.57%)
+			tb_mus_min_time:      	0.00 (0.13%)
+		tb_ct_time:       	0.00 (0.61%)
+		tb_extra_time:    	0.00 (0.00%)
+		sum:           	0.01 (69.13% of tb_time)
+
+
+  (refinement)
+	sim_time:		0.04 (39.86%) 	 [49.91% of dpr_time]
+
+  pre_time:	0.00 (0.89%)
+  cti_time:	0.00 (1.17%)	[cti_i_time:	0.00 (0.18%) ]
+  tb_time:	0.02 (14.24%)
+  fp_time:	0.00 (0.12%)	[fp_extra_time:	0.00 (0.00%) ]
+  refine_time:	0.09 (79.85%)
+  sol_set_time:	0.00 (0.29%)
+  inv_time:	0.00 (0.81%)	[induct_time:	0.00 (0.00%) ]
+  draw_time:	0.00 (0.00%)
+  sum:		0.11 (97.37%)
+
+  extra_time:	0.00 (0.00%)
+
+  timeout_time:	0.00 (0.00%)
+
+[simplified] 0 (ex), 0 (cc), 4 (ot)
+
+===   VIOLATED   ===
+
+Averroes finished.
+
+br-#mus           5           
+        hard        soft         out           
+           
+       21.40       18.20        1.00               (br-core)           
+       21.40        1.00        1.00                (br-min)          
+
+         sat       unsat           
+                                          #Calls           
+           0           5   (br-core)           
+           0           0  (br-core2)           
+           5           5    (br-min)           
+                                      Time (sec)           
+        0.02        0.00   (br-core)           
+        0.00        0.00  (br-core2)           
+        0.00        0.00    (br-min)           
+                                    Avg. Time (microsec)           
+           0         606   (br-core)           
+           0           0  (br-core2)           
+           9           5    (br-min)           
+                                    Max Time (microsec)           
+        2205        1145   (br-core)           
+           0           0  (br-core2)           
+          11           6    (br-min)          
+
+                      ab                      bv           
+         sat       unsat         sat       unsat           
+                                                      #Calls           
+          21           9           6          11   (oneshot)           
+          42          10           0           0       (inc)           
+           0           5          49          17    (assume)           
+                       0                       0   (timeout)          
+
+                                                  Time (sec)           
+        0.00        0.00        0.01        0.01   (oneshot)           
+        0.00        0.00        0.00        0.00       (inc)           
+        0.00        0.00        0.05        0.00    (assume)           
+                    0.00                    0.00   (timeout)          
+
+                                                Avg. Time (microsec)
+          10           2        1855        1236   (oneshot)           
+           9           1           0           0       (inc)           
+           0          20         938         196    (assume)           
+                       0                       0   (timeout)           
+           
+      Result        Time        Mem.       #Refs           
+                     sec          MB                       
+           v        0.11          20           8

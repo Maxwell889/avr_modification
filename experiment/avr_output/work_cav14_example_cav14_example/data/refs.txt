@@ -1,0 +1,64 @@
+(benchmark) cav14_example_cav14_example
+
+(#0)		!(((\Y == 3'd0) && GT_1_3_3(\Y, \X)))
+	(id)	63
+	(#UF )	1
+	(#UFt)	1
+	      	GT_1_3_3	#1
+	(#K  )	1
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	3
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#1)		!(((\Y$next == 3'd0) && GT_1_3_3(\Y$next, \X$next)))
+	(id)	64
+	(#UF )	1
+	(#UFt)	1
+	      	GT_1_3_3	#1
+	(#K  )	1
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	3
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#2)		!(((\Y$next == \Y$next_rhs) && (\Y == \X) && (\X$next == \X$next_rhs) && GT_1_3_3(\Y$next, \X$next)))
+	(id)	78
+	(#UF )	4
+	(#UFt)	2
+	      	Add_3_3_3	#2
+	      	GT_1_3_3	#2
+	(#K  )	2
+	(#reg)	4
+	(#inp)	0
+	(#ite)	4
+	(#CF )	12
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+
+(local equalities) #0
+
+(learned predicates) #0
+
+(learned constants)  #0
+
+(learned signals)    #0
+
+(learned UFs)        #0
+
+(#sim. iterations) 0
+(#ref. iterations) 2
+(#refs) 3
+(#assump. lemmas)  0
+(#lemmas)          3

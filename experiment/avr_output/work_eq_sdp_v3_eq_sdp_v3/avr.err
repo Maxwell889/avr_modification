@@ -1,0 +1,9 @@
+	(property: all (1 assertions))
+	(problem size: 75 bits)
+	(abstraction: sa+uf)
+   1	: 0	: 0 s: 0    0s                     1	: 0	: 0 s: 0    0s                  
+   1	: 1	: 0 0 s: 0    0s                     1	: 1	: 0 1 s: 1    0s                     2	: 1	: 0 1 s: 1    0s                     2	: 1	: 0 2 s: 2    0s                     2	: 1	: 0 3 s: 3    0s                     2	: 1	: 0 4 s: 4    0s                     2	: 1	: 0 4 s: 4    0s                  
+   2	: 2	: 0 4 0 s: 4    0s                     2	: 2	: 0 4 1 s: 5    0s                     2	: 2	: 0 4 1 s: 5    0s                  
+      Result        Time        Mem.       #Refs           
+                     sec          MB                       
+           v        0.03          17           2

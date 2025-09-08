@@ -1,0 +1,64 @@
+(benchmark) paper_v3_paper_v3
+
+(#0)		!(((\y == 8'd0) && GT_1_8_8(\y, \x)))
+	(id)	63
+	(#UF )	1
+	(#UFt)	1
+	      	GT_1_8_8	#1
+	(#K  )	1
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	3
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#1)		!(((\y$next == 8'd0) && GT_1_8_8(\y$next, \x$next)))
+	(id)	64
+	(#UF )	1
+	(#UFt)	1
+	      	GT_1_8_8	#1
+	(#K  )	1
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	3
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#2)		!((GT_1_8_8(\y$next, \x$next) && (\y$next == \y$next_rhs) && (\x$next == \x$next_rhs) && (\y == \x)))
+	(id)	78
+	(#UF )	4
+	(#UFt)	2
+	      	Add_8_8_8	#2
+	      	GT_1_8_8	#2
+	(#K  )	2
+	(#reg)	4
+	(#inp)	0
+	(#ite)	4
+	(#CF )	12
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+
+(local equalities) #0
+
+(learned predicates) #0
+
+(learned constants)  #0
+
+(learned signals)    #0
+
+(learned UFs)        #0
+
+(#sim. iterations) 0
+(#ref. iterations) 2
+(#refs) 3
+(#assump. lemmas)  0
+(#lemmas)          3

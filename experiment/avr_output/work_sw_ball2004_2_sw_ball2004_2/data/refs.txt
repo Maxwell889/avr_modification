@@ -1,0 +1,122 @@
+(benchmark) sw_ball2004_2_sw_ball2004_2
+
+(#0)		!(((\Z == \B) && ((\Z == \B) || (\B != \Z)) && ((\Z == 8'd254) || (\Z != 8'd254)) && (\Z == 8'd254) && ((\X == 8'd0) || (\X != 8'd0)) && (\X == 8'd0) && (LT_1_8_8(\X, \A) || !(LT_1_8_8(\X, \A))) && l$2 && (LT_1_8_8(\A, \Z) || !(LT_1_8_8(\A, \Z))) && l$1 && (\L12 || !(\L12)) && $logic_not$/workspaces/avr_modification/experiment/avr_output/work_sw_ball2004_2_sw_ball2004_2/sw_ball2004_2.v:37$149_Y && !(LT_1_8_8(\X$next, \Z$next)) && (\X$next == \X) && (\Z$next == \Z$next_rhs)))
+	(id)	526
+	(#UF )	3
+	(#UFt)	1
+	      	LT_1_8_8	#3
+	(#K  )	2
+	(#reg)	8
+	(#inp)	0
+	(#ite)	2
+	(#CF )	22
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#1)		!((((\X == 8'd4) || (\X != 8'd4)) && (\X == 8'd4) && ((\Y == 8'd5) || (\Y != 8'd5)) && (\Y == 8'd5) && (LT_1_8_8(\X, \Y) || !(LT_1_8_8(\X, \Y))) && $lt$/workspaces/avr_modification/experiment/avr_output/work_sw_ball2004_2_sw_ball2004_2/sw_ball2004_2.v:53$162_Y && \L2 && !(\L2$next) && !(LT_1_8_8(\X$next, \A$next)) && (\A$next == \A$next_rhs) && (\X$next == \X) && (\L2$next == \L2$next_rhs)))
+	(id)	644
+	(comment)	ab
+	(#UF )	2
+	(#UFt)	1
+	      	LT_1_8_8	#2
+	(#K  )	2
+	(#reg)	9
+	(#inp)	0
+	(#ite)	3
+	(#CF )	19
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#2)		!(((\Y == \A) && ((\Y == \A) || (\A != \Y)) && ((\A == 8'd39) || (\A != 8'd39)) && (\A == 8'd39) && (LT_1_8_8(\A, \B) || !(LT_1_8_8(\A, \B))) && $lt$/workspaces/avr_modification/experiment/avr_output/work_sw_ball2004_2_sw_ball2004_2/sw_ball2004_2.v:57$177_Y && ((\B == 8'd57) || (\B != 8'd57)) && (\B == 8'd57) && (\t1 || !(\t1)) && $logic_not$/workspaces/avr_modification/experiment/avr_output/work_sw_ball2004_2_sw_ball2004_2/sw_ball2004_2.v:55$174_Y && (\L2 || !(\L2)) && $logic_not$/workspaces/avr_modification/experiment/avr_output/work_sw_ball2004_2_sw_ball2004_2/sw_ball2004_2.v:37$138_Y && \t1$next && !(LT_1_8_8(\A$next, \Z$next)) && (\A$next == \A$next_rhs) && (\Z$next == \Z$next_rhs) && (\t1$next == \t1$next_rhs)))
+	(id)	798
+	(comment)	ab
+	(#UF )	2
+	(#UFt)	1
+	      	LT_1_8_8	#2
+	(#K  )	3
+	(#reg)	11
+	(#inp)	0
+	(#ite)	6
+	(#CF )	27
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#3)		!((!(LT_1_8_8(\X, \Z)) && LT_1_8_8(\A, \B) && (\Z == \B) && LT_1_8_8(\X, \A)))
+	(id)	878
+	(#UF )	3
+	(#UFt)	1
+	      	LT_1_8_8	#3
+	(#K  )	0
+	(#reg)	4
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#4)		!((!(LT_1_8_8(\X$next, \Z$next)) && LT_1_8_8(\A$next, \B$next) && (\Z$next == \B$next) && LT_1_8_8(\X$next, \A$next)))
+	(id)	880
+	(#UF )	3
+	(#UFt)	1
+	      	LT_1_8_8	#3
+	(#K  )	0
+	(#reg)	4
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+
+(local equalities) #0
+
+(learned predicates) #15
+            \L12
+            \L2
+            \t1
+            LT_1_8_8(\X, \Y)
+            LT_1_8_8(\A, \B)
+            LT_1_8_8(\A, \Z)
+            LT_1_8_8(\X, \A)
+            (\X == 8'd0)
+            (\Z == 8'd254)
+            (\Z == \B)
+            (\Y == 8'd5)
+            (\X == 8'd4)
+            (\Y == \A)
+            (\B == 8'd57)
+            (\A == 8'd39)
+
+(learned constants)  #0
+
+(learned signals)    #8
+            \L12
+            \L2
+            \t1
+            \Y
+            \A
+            \B
+            \X
+            \Z
+
+(learned UFs)        #4
+            LT_1_8_8(\X, \Y)	:= $lt$/workspaces/avr_modification/experiment/avr_output/work_sw_ball2004_2_sw_ball2004_2/sw_ball2004_2.v:53$162_Y
+            LT_1_8_8(\A, \B)	:= $lt$/workspaces/avr_modification/experiment/avr_output/work_sw_ball2004_2_sw_ball2004_2/sw_ball2004_2.v:57$177_Y
+            LT_1_8_8(\A, \Z)	:= l$1
+            LT_1_8_8(\X, \A)	:= l$2
+
+(#sim. iterations) 3
+(#ref. iterations) 4
+(#refs) 5
+(#assump. lemmas)  0
+(#lemmas)          5

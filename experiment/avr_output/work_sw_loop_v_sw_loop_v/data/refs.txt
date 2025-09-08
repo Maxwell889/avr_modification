@@ -1,0 +1,162 @@
+(benchmark) sw_loop_v_sw_loop_v
+
+(#0)		!((((\X == 6'd1) || (\X != 6'd1)) && (\X == 6'd1) && !(LT_1_6_6(\X$next, 6'd19)) && (\X$next == \X$next_rhs)))
+	(id)	235
+	(#UF )	3
+	(#UFt)	2
+	      	Add_6_6_6	#1
+	      	LT_1_6_6	#2
+	(#K  )	3
+	(#reg)	4
+	(#inp)	0
+	(#ite)	3
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#1)		!(((\X$next == \X$next_rhs) && !(LT_1_6_6(\X$next, 6'd19)) && !(\L0) && (\L1$next == \L1$next_rhs) && \L1$next && !(\L1)))
+	(id)	317
+	(#UF )	4
+	(#UFt)	2
+	      	Add_6_6_6	#1
+	      	LT_1_6_6	#3
+	(#K  )	3
+	(#reg)	7
+	(#inp)	0
+	(#ite)	4
+	(#CF )	13
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#2)		!((((\X == l$1) || (\X != l$1)) && (\X == l$1) && !(LT_1_6_6(\X$next, 6'd17)) && (\X$next == \X$next_rhs)))
+	(id)	356
+	(#UF )	4
+	(#UFt)	2
+	      	Add_6_6_6	#2
+	      	LT_1_6_6	#2
+	(#K  )	4
+	(#reg)	4
+	(#inp)	0
+	(#ite)	3
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#3)		!((((\X == l$2) || (\X != l$2)) && (\X == l$2) && !(LT_1_6_6(\X$next, 6'd17)) && (\X$next == \X$next_rhs)))
+	(id)	558
+	(#UF )	5
+	(#UFt)	2
+	      	Add_6_6_6	#3
+	      	LT_1_6_6	#2
+	(#K  )	4
+	(#reg)	4
+	(#inp)	0
+	(#ite)	3
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#4)		!((((\X == l$3) || (\X != l$3)) && (\X == l$3) && !(LT_1_6_6(\X$next, 6'd17)) && (\X$next == \X$next_rhs)))
+	(id)	690
+	(#UF )	6
+	(#UFt)	2
+	      	Add_6_6_6	#4
+	      	LT_1_6_6	#2
+	(#K  )	4
+	(#reg)	4
+	(#inp)	0
+	(#ite)	3
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#5)		!((((\X == l$4) || (\X != l$4)) && (\X == l$4) && !(LT_1_6_6(\X$next, 6'd17)) && (\X$next == \X$next_rhs)))
+	(id)	845
+	(#UF )	7
+	(#UFt)	2
+	      	Add_6_6_6	#5
+	      	LT_1_6_6	#2
+	(#K  )	4
+	(#reg)	4
+	(#inp)	0
+	(#ite)	3
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#6)		!((((\X == l$5) || (\X != l$5)) && (\X == l$5) && (\L1 || !(\L1)) && $logic_not$/workspaces/avr_modification/experiment/avr_output/work_sw_loop_v_sw_loop_v/sw_loop_v.v:35$80_Y && !(LT_1_6_6(\X$next, 6'd17)) && (\X$next == \X$next_rhs)))
+	(id)	1036
+	(#UF )	8
+	(#UFt)	2
+	      	Add_6_6_6	#6
+	      	LT_1_6_6	#2
+	(#K  )	4
+	(#reg)	4
+	(#inp)	0
+	(#ite)	3
+	(#CF )	12
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#7)		!(((\X$next == \X$next_rhs) && (\X == l$5) && \L1 && (\X$next != 6'd19) && \LoneHot))
+	(id)	1149
+	(#UF )	7
+	(#UFt)	2
+	      	Add_6_6_6	#6
+	      	LT_1_6_6	#1
+	(#K  )	3
+	(#reg)	4
+	(#inp)	0
+	(#ite)	3
+	(#CF )	8
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+
+(local equalities) #0
+
+(learned predicates) #7
+            \L1
+            (\X == 6'd1)
+            (\X == l$1)
+            (\X == l$2)
+            (\X == l$3)
+            (\X == l$4)
+            (\X == l$5)
+
+(learned constants)  #2
+            6'd1
+            6'd3
+
+(learned signals)    #2
+            \L1
+            \X
+
+(learned UFs)        #5
+            Add_6_6_6(6'd1, 6'd3)	:= l$1
+            Add_6_6_6(l$1, 6'd3)	:= l$2
+            Add_6_6_6(l$2, 6'd3)	:= l$3
+            Add_6_6_6(l$3, 6'd3)	:= l$4
+            Add_6_6_6(l$4, 6'd3)	:= l$5
+
+(#sim. iterations) 7
+(#ref. iterations) 8
+(#refs) 8
+(#assump. lemmas)  0
+(#lemmas)          8

@@ -1,0 +1,130 @@
+------------
+Size Summary
+------------
+
+State variables (#20)
+	(1-bit)	5
+	(8-bit)	15
+
+Inputs (#9)
+	(1-bit)	6
+	(8-bit)	3
+
+Constants (#3)
+	(1-bit)	1
+	(8-bit)	2
+
+---------------
+State Variables
+---------------
+\im.p2_ctl_2                    (1-bit)
+\im.p1_ctl_2                    (1-bit)
+\ctl_b3                         (1-bit)
+\ctl_b2                         (1-bit)
+\ctl_b1                         (1-bit)
+\rc3                            (8-bit)
+\rc2                            (8-bit)
+\rc1                            (8-bit)
+\rb3                            (8-bit)
+\rb2                            (8-bit)
+\rb1                            (8-bit)
+\ra3                            (8-bit)
+\ra2                            (8-bit)
+\ra1                            (8-bit)
+\im.p3_n                        (8-bit)
+\im.p2_m                        (8-bit)
+\im.p2_c                        (8-bit)
+\im.p1_c                        (8-bit)
+\im.p1_b                        (8-bit)
+\im.p1_a                        (8-bit)
+
+------
+Inputs
+------
+\ctl_b                          (1-bit)
+\im.reset                       (1-bit)
+\im.p1_ctl_1                    (1-bit)
+\ctl_a3                         (1-bit)
+\ctl_a2                         (1-bit)
+\ctl_a1                         (1-bit)
+\b                              (8-bit)
+\a                              (8-bit)
+\c                              (8-bit)
+
+---------
+Constants
+---------
+1'd0
+8'd1
+8'd0
+
+-----------------------------
+Uninterpreted Functions (UFs)
+-----------------------------
+Add_8_8_8	#3
+BitWiseAnd_8_8_8	#1
+Sub_8_8_8	#4
+
+------------------
+Initial Conditions
+------------------
+
+	!\ctl_a1
+	!\ctl_a2
+	!\ctl_a3
+	!\ctl_b1
+	!\ctl_b2
+	!\ctl_b3
+	(\im.p1_a == 8'd0)
+	(\im.p1_b == 8'd0)
+	(\im.p1_c == 8'd0)
+	!\im.p1_ctl_1
+	!\im.p1_ctl_2
+	(\im.p2_c == 8'd0)
+	!\im.p2_ctl_2
+	(\im.p2_m == 8'd0)
+	(\im.p3_n == 8'd0)
+	(\ra1 == 8'd0)
+	(\ra2 == 8'd0)
+	(\ra3 == 8'd0)
+	(\rb1 == 8'd0)
+	(\rb2 == 8'd0)
+	(\rb3 == 8'd0)
+	(\rc1 == 8'd0)
+	(\rc2 == 8'd0)
+	(\rc3 == 8'd0)
+
+
+
+-----------------
+Dependency List
+-----------------
+
+Depth: 0
+	(1-bit) #5	n0	u4	c0	e1	property	<= \ctl_b3, \im.p3_n, \ra3, \rb3, \rc3, 
+
+Depth: 1
+	(1-bit) #1	n1	u0	c0	e0	\ctl_b3$next	<= \ctl_b2, 
+	(8-bit) #1	n1	u0	c0	e0	\rc3$next	<= \rc2, 
+	(8-bit) #1	n1	u0	c0	e0	\rb3$next	<= \rb2, 
+	(8-bit) #1	n1	u0	c0	e0	\ra3$next	<= \ra2, 
+	(8-bit) #2	n1	u1	c0	e0	\im.p3_n$next	<= \im.p2_c, \im.p2_m, 
+
+Depth: 2
+	(1-bit) #1	n1	u0	c0	e0	\ctl_b2$next	<= \ctl_b1, 
+	(8-bit) #1	n1	u0	c0	e0	\rc2$next	<= \rc1, 
+	(8-bit) #1	n1	u0	c0	e0	\rb2$next	<= \rb1, 
+	(8-bit) #1	n1	u0	c0	e0	\ra2$next	<= \ra1, 
+	(8-bit) #2	n2	u3	c0	e0	\im.p2_m$next	<= \im.p1_a, \im.p1_b, 
+	(8-bit) #1	n1	u0	c0	e0	\im.p2_c$next	<= \im.p1_c, 
+
+Depth: 3
+	(1-bit) #0	n1	u0	c0	e0	\ctl_b1$next	<= 
+	(8-bit) #0	n1	u0	c0	e0	\rc1$next	<= 
+	(8-bit) #0	n1	u0	c0	e0	\rb1$next	<= 
+	(8-bit) #0	n1	u0	c0	e0	\ra1$next	<= 
+	(8-bit) #0	n1	u0	c0	e0	\im.p1_c$next	<= 
+	(8-bit) #0	n1	u0	c0	e0	\im.p1_b$next	<= 
+	(8-bit) #0	n1	u0	c0	e0	\im.p1_a$next	<= 
+
+-----------------

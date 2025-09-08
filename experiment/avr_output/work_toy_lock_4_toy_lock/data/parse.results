@@ -1,0 +1,118 @@
+------------
+Size Summary
+------------
+
+State variables (#16)
+	(1-bit)	4
+	(8-bit)	12
+
+Inputs (#6)
+	(1-bit)	1
+	(2-bit)	3
+	(8-bit)	2
+
+Constants (#8)
+	(1-bit)	2
+	(2-bit)	4
+	(8-bit)	2
+
+---------------
+State Variables
+---------------
+\held_3                         (1-bit)
+\held_2                         (1-bit)
+\held_1                         (1-bit)
+\held_0                         (1-bit)
+\transfer_3                     (8-bit)
+\transfer_2                     (8-bit)
+\transfer_1                     (8-bit)
+\transfer_0                     (8-bit)
+\locked_3                       (8-bit)
+\locked_2                       (8-bit)
+\locked_1                       (8-bit)
+\locked_0                       (8-bit)
+\ep_3                           (8-bit)
+\ep_2                           (8-bit)
+\ep_1                           (8-bit)
+\ep_0                           (8-bit)
+
+------
+Inputs
+------
+\unknown                        (1-bit)
+\grantN2                        (2-bit)
+\grantN1                        (2-bit)
+\acceptN                        (2-bit)
+\grantE                         (8-bit)
+\acceptE                        (8-bit)
+
+---------
+Constants
+---------
+1'd1
+1'd0
+2'd3
+2'd2
+2'd1
+2'd0
+8'd0
+8'd1
+
+-----------------------------
+Uninterpreted Functions (UFs)
+-----------------------------
+LE_1_8_8	#8
+
+------------------
+Initial Conditions
+------------------
+
+	(\ep_0 == 8'd1)
+	(\ep_1 == 8'd0)
+	(\ep_2 == 8'd0)
+	(\ep_3 == 8'd0)
+	\held_0
+	!\held_1
+	!\held_2
+	!\held_3
+	(\locked_0 == 8'd0)
+	(\locked_1 == 8'd0)
+	(\locked_2 == 8'd0)
+	(\locked_3 == 8'd0)
+	(\transfer_0 == 8'd0)
+	(\transfer_1 == 8'd0)
+	(\transfer_2 == 8'd0)
+	(\transfer_3 == 8'd0)
+
+
+
+-----------------
+Dependency List
+-----------------
+
+Depth: 0
+	(1-bit) #4	n1	u0	c0	e0	property	<= \locked_0, \locked_1, \locked_2, \locked_3, 
+
+Depth: 1
+	(8-bit) #3	n1	u1	c0	e0	\locked_3$next	<= \ep_3, \transfer_3, 
+	(8-bit) #3	n1	u1	c0	e0	\locked_2$next	<= \ep_2, \transfer_2, 
+	(8-bit) #3	n1	u1	c0	e0	\locked_1$next	<= \ep_1, \transfer_1, 
+	(8-bit) #3	n1	u1	c0	e0	\locked_0$next	<= \ep_0, \transfer_0, 
+
+Depth: 2
+	(8-bit) #9	n5	u4	c0	e0	\transfer_3$next	<= \held_0, \held_1, \held_2, \held_3, 
+	(8-bit) #9	n5	u4	c0	e0	\transfer_2$next	<= \held_0, \held_1, \held_2, \held_3, 
+	(8-bit) #9	n5	u4	c0	e0	\transfer_1$next	<= \held_0, \held_1, \held_2, \held_3, 
+	(8-bit) #9	n5	u4	c0	e0	\transfer_0$next	<= \held_0, \held_1, \held_2, \held_3, 
+	(8-bit) #2	n1	u1	c0	e0	\ep_3$next	<= 
+	(8-bit) #2	n1	u1	c0	e0	\ep_2$next	<= 
+	(8-bit) #2	n1	u1	c0	e0	\ep_1$next	<= 
+	(8-bit) #2	n1	u1	c0	e0	\ep_0$next	<= 
+
+Depth: 3
+	(1-bit) #3	n3	u2	c0	e0	\held_3$next	<= 
+	(1-bit) #3	n3	u2	c0	e0	\held_2$next	<= 
+	(1-bit) #3	n3	u2	c0	e0	\held_1$next	<= 
+	(1-bit) #3	n3	u2	c0	e0	\held_0$next	<= 
+
+-----------------

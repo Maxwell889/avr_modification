@@ -1,0 +1,834 @@
+(benchmark) toy_lock_4_toy_lock
+
+(#0)		!(((\transfer_1 == 8'd0) && (\transfer_1 == \acceptE) && !(LE_1_8_8(\acceptE, \ep_1))))
+	(id)	809
+	(#UF )	1
+	(#UFt)	1
+	      	LE_1_8_8	#1
+	(#K  )	1
+	(#reg)	2
+	(#inp)	1
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#1)		!(((\ep_0$next == 8'd0) && !(LE_1_8_8(\acceptE, \ep_0)) && (\ep_0$next == \ep_0$next_rhs) && (\acceptN == 2'd0) && (\transfer_0 == \acceptE)))
+	(id)	896
+	(#UF )	1
+	(#UFt)	1
+	      	LE_1_8_8	#1
+	(#K  )	2
+	(#reg)	3
+	(#inp)	2
+	(#ite)	3
+	(#CF )	11
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#2)		!(((\transfer_3$next != 8'd0) && (\locked_0$next == \transfer_3$next) && (\acceptN == 2'd3) && (\transfer_3$next == \transfer_3$next_rhs) && (\ep_0 == \locked_0) && (\grantN1 == 2'd0) && (\locked_0$next == \locked_0$next_rhs) && (\transfer_3 == 8'd0)))
+	(id)	1171
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#3)		!((!(LE_1_8_8(\grantE, \ep_0)) && \held_0 && (\grantN2 == 2'd3) && (\transfer_3$next == \transfer_3$next_rhs) && (\acceptN != 2'd0) && (\locked_0$next == \transfer_3$next) && (\grantN1 == 2'd0) && (\ep_0 == \locked_0) && (\locked_0$next == \locked_0$next_rhs) && (\acceptN != 2'd3)))
+	(id)	1226
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	45
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#4)		!((!(LE_1_8_8(\acceptE, \ep_0)) && (\ep_0 == \transfer_0) && (\transfer_0 == \acceptE)))
+	(id)	1252
+	(#UF )	1
+	(#UFt)	1
+	      	LE_1_8_8	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	1
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#5)		!(((\ep_0 == \locked_0) && !(LE_1_8_8(\grantE, \ep_0)) && (\grantN2 == 2'd3) && (\locked_0$next == \locked_0$next_rhs) && (\acceptN == 2'd0) && (\transfer_0 != \acceptE) && (\locked_0$next == \transfer_3$next) && (\transfer_3$next == \transfer_3$next_rhs) && (\grantN1 == 2'd0) && \held_0))
+	(id)	1264
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#6)		!(((\ep_0 == \locked_0) && (\grantN1 == 2'd0) && !(LE_1_8_8(\grantE, \ep_0)) && (\grantN2 == 2'd3) && \held_0 && (\acceptN == 2'd0) && (\locked_0$next == \transfer_3$next) && (\locked_0$next == \locked_0$next_rhs) && LE_1_8_8(\acceptE, \ep_0) && (\transfer_3$next == \transfer_3$next_rhs)))
+	(id)	1277
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	43
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#7)		!(((\grantN1 != 2'd3) && (\grantN1 != 2'd1) && (\grantN1 != 2'd0) && (\grantN1 != 2'd2)))
+	(id)	1293
+	(#UF )	0
+	(#UFt)	0
+	(#K  )	4
+	(#reg)	0
+	(#inp)	1
+	(#ite)	0
+	(#CF )	6
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#8)		!(((\transfer_3 == 8'd0) && (\transfer_3 == \acceptE) && !(LE_1_8_8(\acceptE, \ep_3))))
+	(id)	1307
+	(#UF )	1
+	(#UFt)	1
+	      	LE_1_8_8	#1
+	(#K  )	1
+	(#reg)	2
+	(#inp)	1
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#9)		!((!(LE_1_8_8(\acceptE, \ep_2)) && (\transfer_2 == \acceptE) && (\transfer_2 == 8'd0)))
+	(id)	1410
+	(#UF )	1
+	(#UFt)	1
+	      	LE_1_8_8	#1
+	(#K  )	1
+	(#reg)	2
+	(#inp)	1
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#10)		!(((\locked_1$next == \transfer_3$next) && (\transfer_1 != \acceptE) && (\transfer_3$next == \transfer_3$next_rhs) && \held_1 && (\acceptN == 2'd1) && (\locked_1$next == \locked_1$next_rhs) && (\grantN2 == 2'd3) && !(LE_1_8_8(\grantE, \ep_1)) && (\grantN1 == 2'd1) && (\ep_1 == \locked_1)))
+	(id)	1466
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#11)		!(((\transfer_3$next == \transfer_3$next_rhs) && (\grantN2 == 2'd3) && (\locked_1$next == \locked_1$next_rhs) && (\acceptN == 2'd1) && (\ep_1 == \locked_1) && (\locked_1$next == \transfer_3$next) && LE_1_8_8(\acceptE, \ep_1) && (\grantN1 == 2'd1) && \held_1 && !(LE_1_8_8(\grantE, \ep_1))))
+	(id)	1478
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	43
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#12)		!(((\ep_1 == \transfer_1) && !(LE_1_8_8(\acceptE, \ep_1)) && (\transfer_1 == \acceptE)))
+	(id)	1489
+	(#UF )	1
+	(#UFt)	1
+	      	LE_1_8_8	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	1
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#13)		!(((\transfer_3$next == \transfer_3$next_rhs) && (\locked_1$next == \locked_1$next_rhs) && (\locked_1$next == \transfer_3$next) && (\acceptN != 2'd3) && !(LE_1_8_8(\grantE, \ep_1)) && (\grantN1 == 2'd1) && (\acceptN != 2'd1) && \held_1 && (\ep_1 == \locked_1) && (\grantN2 == 2'd3)))
+	(id)	1502
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	45
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#14)		!(((\acceptN == 2'd3) && !(LE_1_8_8(\grantE, \ep_1)) && (\transfer_3 != \acceptE) && (\transfer_3$next == \transfer_3$next_rhs) && (\locked_1$next == \transfer_3$next) && \held_1 && (\ep_1 == \locked_1) && (\grantN2 == 2'd3) && (\locked_1$next == \locked_1$next_rhs) && (\grantN1 == 2'd1)))
+	(id)	1547
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#15)		!((!(LE_1_8_8(\acceptE, \ep_2)) && (\transfer_2 == \acceptE) && (\ep_2 == \transfer_2)))
+	(id)	1660
+	(#UF )	1
+	(#UFt)	1
+	      	LE_1_8_8	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	1
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#16)		!(((\grantN1 == 2'd2) && \held_2 && LE_1_8_8(\acceptE, \ep_2) && !(LE_1_8_8(\grantE, \ep_2)) && (\locked_2$next == \locked_2$next_rhs) && (\grantN2 == 2'd3) && (\transfer_3$next == \transfer_3$next_rhs) && (\locked_2$next == \transfer_3$next) && (\acceptN == 2'd2) && (\ep_2 == \locked_2)))
+	(id)	1712
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	43
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#17)		!(((\grantN1 == 2'd2) && (\acceptN == 2'd2) && (\ep_2 == \locked_2) && (\transfer_2 != \acceptE) && (\grantN2 == 2'd3) && !(LE_1_8_8(\grantE, \ep_2)) && (\locked_2$next == \locked_2$next_rhs) && \held_2 && (\transfer_3$next == \transfer_3$next_rhs) && (\locked_2$next == \transfer_3$next)))
+	(id)	1722
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#18)		!(((\locked_2$next == \locked_2$next_rhs) && (\acceptN != 2'd2) && !(LE_1_8_8(\grantE, \ep_2)) && (\grantN1 == 2'd2) && (\acceptN != 2'd3) && (\grantN2 == 2'd3) && (\transfer_3$next == \transfer_3$next_rhs) && (\ep_2 == \locked_2) && \held_2 && (\locked_2$next == \transfer_3$next)))
+	(id)	1735
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	45
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#19)		!(((\locked_2$next == \transfer_3$next) && (\grantN1 == 2'd2) && (\locked_2$next == \locked_2$next_rhs) && (\transfer_3$next == \transfer_3$next_rhs) && (\ep_2 == \locked_2) && !(LE_1_8_8(\grantE, \ep_2)) && \held_2 && (\transfer_3 != \acceptE) && (\grantN2 == 2'd3) && (\acceptN == 2'd3)))
+	(id)	1759
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#20)		!((!(LE_1_8_8(\grantE, \ep_3)) && LE_1_8_8(\acceptE, \ep_3) && (\grantN2 == 2'd1) && (\locked_3$next == \transfer_1$next) && \held_3 && (\ep_3 == \locked_3) && (\transfer_1$next == \transfer_1$next_rhs) && (\grantN1 == 2'd3) && (\locked_3$next == \locked_3$next_rhs)))
+	(id)	1808
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	43
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#21)		!(((\transfer_3 == \acceptE) && (\ep_3 == \transfer_3) && !(LE_1_8_8(\acceptE, \ep_3))))
+	(id)	1828
+	(#UF )	1
+	(#UFt)	1
+	      	LE_1_8_8	#1
+	(#K  )	0
+	(#reg)	2
+	(#inp)	1
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#22)		!((\held_3 && (\locked_3$next == \locked_3$next_rhs) && (\ep_3 == \locked_3) && (\transfer_1$next == \transfer_1$next_rhs) && (\grantN2 == 2'd1) && (\transfer_3 != \acceptE) && (\locked_3$next == \transfer_1$next) && !(LE_1_8_8(\grantE, \ep_3)) && (\grantN1 == 2'd3)))
+	(id)	1838
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#23)		!(((\grantN2 == 2'd1) && (\grantN1 == 2'd0) && (\locked_0$next == \transfer_1$next) && !(LE_1_8_8(\grantE, \ep_0)) && (\transfer_1$next == \transfer_1$next_rhs) && (\acceptN == 2'd1) && \held_0 && (\transfer_1 != \acceptE) && (\ep_0 == \locked_0) && (\locked_0$next == \locked_0$next_rhs)))
+	(id)	1865
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#24)		!(((\transfer_1$next == \transfer_1$next_rhs) && (\acceptN != 2'd0) && (\acceptN != 2'd1) && (\ep_0 == \locked_0) && (\locked_0$next == \transfer_1$next) && \held_0 && (\grantN1 == 2'd0) && !(LE_1_8_8(\grantE, \ep_0)) && (\locked_0$next == \locked_0$next_rhs) && (\grantN2 == 2'd1)))
+	(id)	1881
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	45
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#25)		!(((\grantN1 == 2'd0) && (\grantN2 == 2'd1) && (\transfer_1$next == \transfer_1$next_rhs) && (\ep_0 == \locked_0) && (\transfer_0 != \acceptE) && (\acceptN == 2'd0) && \held_0 && !(LE_1_8_8(\grantE, \ep_0)) && (\locked_0$next == \locked_0$next_rhs) && (\locked_0$next == \transfer_1$next)))
+	(id)	1897
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#26)		!(((\ep_0 == \locked_0) && (\grantN1 == 2'd0) && \held_0 && !(LE_1_8_8(\grantE, \ep_0)) && LE_1_8_8(\acceptE, \ep_0) && (\grantN2 == 2'd1) && (\locked_0$next == \locked_0$next_rhs) && (\acceptN == 2'd0) && (\locked_0$next == \transfer_1$next) && (\transfer_1$next == \transfer_1$next_rhs)))
+	(id)	1910
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	43
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#27)		!((!(LE_1_8_8(\grantE, \ep_2)) && (\grantN2 == 2'd1) && (\grantN1 == 2'd2) && (\transfer_1$next == \transfer_1$next_rhs) && \held_2 && (\locked_2$next == \locked_2$next_rhs) && (\acceptN != 2'd2) && (\ep_2 == \locked_2) && (\locked_2$next == \transfer_1$next)))
+	(id)	1935
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#28)		!(((\locked_2$next == \locked_2$next_rhs) && (\transfer_2 == 8'd0) && (\grantN2 == 2'd1) && (\grantN1 == 2'd2) && \held_2 && !(LE_1_8_8(\grantE, \ep_2)) && (\ep_2 == \locked_2) && (\transfer_1$next == \transfer_1$next_rhs) && (\locked_2$next == \transfer_1$next)))
+	(id)	1948
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#29)		!((\held_2 && (\transfer_2 != \acceptE) && (\ep_2 == \locked_2) && (\locked_2$next == \locked_2$next_rhs) && (\grantN1 == 2'd2) && (\transfer_1$next == \transfer_1$next_rhs) && !(LE_1_8_8(\grantE, \ep_2)) && (\locked_2$next == \transfer_1$next) && (\grantN2 == 2'd1)))
+	(id)	1960
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#30)		!(((\grantN1 == 2'd1) && (\grantN2 == 2'd2) && (\ep_1 == \locked_1) && !(LE_1_8_8(\grantE, \ep_1)) && (\transfer_2$next == \transfer_2$next_rhs) && (\acceptN == 2'd1) && (\locked_1$next == \locked_1$next_rhs) && (\locked_1$next == \transfer_2$next) && (\transfer_1 != \acceptE) && \held_1))
+	(id)	1983
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#31)		!(((\acceptN == 2'd1) && (\grantN2 == 2'd2) && (\locked_1$next == \locked_1$next_rhs) && LE_1_8_8(\acceptE, \ep_1) && (\locked_1$next == \transfer_2$next) && (\transfer_2$next == \transfer_2$next_rhs) && \held_1 && (\ep_1 == \locked_1) && (\grantN1 == 2'd1) && !(LE_1_8_8(\grantE, \ep_1))))
+	(id)	1993
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	43
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#32)		!(((\ep_1 == \locked_1) && \held_1 && (\grantN1 == 2'd1) && (\transfer_2$next == \transfer_2$next_rhs) && (\grantN2 == 2'd2) && (\locked_1$next == \transfer_2$next) && (\acceptN != 2'd2) && (\acceptN != 2'd1) && (\locked_1$next == \locked_1$next_rhs) && !(LE_1_8_8(\grantE, \ep_1))))
+	(id)	2006
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	45
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#33)		!(((\grantN1 == 2'd1) && !(LE_1_8_8(\grantE, \ep_1)) && (\ep_1 == \locked_1) && \held_1 && (\grantN2 == 2'd2) && (\acceptN == 2'd2) && (\locked_1$next == \transfer_2$next) && (\locked_1$next == \locked_1$next_rhs) && (\transfer_2 != \acceptE) && (\transfer_2$next == \transfer_2$next_rhs)))
+	(id)	2021
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#34)		!(((\grantN2 == 2'd2) && (\ep_3 == \locked_3) && \held_3 && (\locked_3$next == \locked_3$next_rhs) && !(LE_1_8_8(\grantE, \ep_3)) && (\locked_3$next == \transfer_2$next) && (\transfer_2$next == \transfer_2$next_rhs) && LE_1_8_8(\acceptE, \ep_3) && (\grantN1 == 2'd3)))
+	(id)	2044
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	43
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#35)		!((\held_3 && (\locked_3$next == \transfer_2$next) && (\transfer_3 != \acceptE) && (\grantN1 == 2'd3) && !(LE_1_8_8(\grantE, \ep_3)) && (\transfer_2$next == \transfer_2$next_rhs) && (\locked_3$next == \locked_3$next_rhs) && (\grantN2 == 2'd2) && (\ep_3 == \locked_3)))
+	(id)	2054
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#36)		!(((\ep_0 == \locked_0) && (\transfer_2 == 8'd0) && (\transfer_2$next == \transfer_2$next_rhs) && (\locked_0$next == \locked_0$next_rhs) && (\transfer_2$next != 8'd0) && (\locked_0$next == \transfer_2$next) && !(LE_1_8_8(\grantE, \ep_0)) && (\acceptN == 2'd2)))
+	(id)	2074
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	45
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#37)		!(((\grantN1 == 2'd0) && !(LE_1_8_8(\grantE, \ep_0)) && (\ep_0 == \locked_0) && (\locked_0$next == \locked_0$next_rhs) && (\acceptN != 2'd2) && (\locked_0$next == \transfer_2$next) && (\acceptN != 2'd0) && (\grantN2 == 2'd2) && (\transfer_2$next == \transfer_2$next_rhs) && \held_0))
+	(id)	2090
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	45
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#38)		!((\held_0 && (\locked_0$next == \locked_0$next_rhs) && (\ep_0 == \locked_0) && (\transfer_2$next == \transfer_2$next_rhs) && (\grantN2 == 2'd2) && (\acceptN == 2'd0) && (\grantN1 == 2'd0) && !(LE_1_8_8(\grantE, \ep_0)) && (\transfer_0 != \acceptE) && (\locked_0$next == \transfer_2$next)))
+	(id)	2106
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#39)		!(((\grantN2 == 2'd2) && (\grantN1 == 2'd0) && (\locked_0$next == \locked_0$next_rhs) && \held_0 && (\ep_0 == \locked_0) && (\acceptN == 2'd0) && (\transfer_2$next == \transfer_2$next_rhs) && !(LE_1_8_8(\grantE, \ep_0)) && (\locked_0$next == \transfer_2$next) && LE_1_8_8(\acceptE, \ep_0)))
+	(id)	2119
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	43
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#40)		!(((\transfer_2 == 8'd0) && (\locked_2$next == \locked_2$next_rhs) && (\transfer_0$next == \transfer_0$next_rhs) && (\grantN2 == 2'd0) && \held_2 && (\grantN1 == 2'd2) && (\locked_2$next == \transfer_0$next) && (\ep_2 == \locked_2) && !(LE_1_8_8(\grantE, \ep_2))))
+	(id)	2138
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#41)		!(((\grantN1 == 2'd2) && (\locked_2$next == \locked_2$next_rhs) && (\grantN2 == 2'd0) && !(LE_1_8_8(\grantE, \ep_2)) && (\transfer_2 != \acceptE) && (\ep_2 == \locked_2) && \held_2 && (\locked_2$next == \transfer_0$next) && (\transfer_0$next == \transfer_0$next_rhs)))
+	(id)	2150
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#42)		!(((\ep_3 == \locked_3) && (\transfer_0$next == \transfer_0$next_rhs) && (\locked_3$next == \transfer_0$next) && \held_3 && (\acceptN != 2'd3) && !(LE_1_8_8(\grantE, \ep_3)) && (\locked_3$next == \locked_3$next_rhs) && (\grantN1 == 2'd3) && (\grantN2 == 2'd0)))
+	(id)	2169
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#43)		!(((\locked_3$next == \transfer_0$next) && (\locked_3$next == \locked_3$next_rhs) && (\grantN1 == 2'd3) && \held_3 && (\ep_3 == \locked_3) && !(LE_1_8_8(\grantE, \ep_3)) && LE_1_8_8(\acceptE, \ep_3) && (\grantN2 == 2'd0) && (\transfer_0$next == \transfer_0$next_rhs)))
+	(id)	2182
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	43
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#44)		!(((\locked_3$next == \transfer_0$next) && (\ep_3 == \locked_3) && (\transfer_3 != \acceptE) && (\locked_3$next == \locked_3$next_rhs) && \held_3 && (\grantN1 == 2'd3) && (\transfer_0$next == \transfer_0$next_rhs) && !(LE_1_8_8(\grantE, \ep_3)) && (\grantN2 == 2'd0)))
+	(id)	2194
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#45)		!(((\ep_1 == \locked_1) && !(LE_1_8_8(\grantE, \ep_1)) && (\locked_1$next == \transfer_0$next) && (\locked_1$next == \locked_1$next_rhs) && \held_1 && (\grantN1 == 2'd1) && (\grantN2 == 2'd0) && (\transfer_1 == 8'd0) && (\transfer_0$next == \transfer_0$next_rhs)))
+	(id)	2213
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#46)		!((!(LE_1_8_8(\grantE, \ep_1)) && (\grantN2 == 2'd0) && (\ep_1 == \locked_1) && (\locked_1$next == \transfer_0$next) && (\grantN1 == 2'd1) && (\transfer_1 != \acceptE) && \held_1 && (\locked_1$next == \locked_1$next_rhs) && (\transfer_0$next == \transfer_0$next_rhs)))
+	(id)	2225
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#47)		!(((\locked_0$next == \transfer_3$next) && !(LE_1_8_8(\grantE, \ep_0)) && (\ep_0 == \locked_0) && (\transfer_3 != \acceptE) && (\grantN1 == 2'd0) && (\locked_0$next == \locked_0$next_rhs) && \held_0 && (\acceptN == 2'd3) && (\grantN2 == 2'd3) && (\transfer_3$next == \transfer_3$next_rhs)))
+	(id)	2505
+	(#UF )	5
+	(#UFt)	1
+	      	LE_1_8_8	#5
+	(#K  )	5
+	(#reg)	13
+	(#inp)	6
+	(#ite)	22
+	(#CF )	44
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#48)		!((((\locked_0 == \acceptE) || (\locked_0 != \acceptE)) && (\locked_0 == \acceptE) && ((\locked_0 == 8'd126) || (\locked_0 != 8'd126)) && (\locked_0 == 8'd126) && (l$1 || !(l$1)) && !(l$1) && ((\ep_3 == \acceptE) || (\ep_3 != \acceptE)) && (\ep_3 == \acceptE) && ((\ep_3 == 8'd127) || (\ep_3 != 8'd127)) && (\ep_3 == 8'd127) && ((\locked_3 == \transfer_3) || (\locked_3 != \transfer_3)) && (\locked_3 == \transfer_3) && ((\ep_3 == \transfer_3) || (\ep_3 != \transfer_3)) && (\ep_3 == \transfer_3) && ((\ep_3 == \locked_3) || (\ep_3 != \locked_3)) && (\ep_3 == \locked_3) && (\transfer_0 == 8'd0) && (\locked_0$next == \transfer_3$next) && (\transfer_3$next == \acceptE$next) && !(LE_1_8_8(\acceptE$next, \ep_3$next)) && (\ep_3$next == \ep_3$next_rhs) && (\transfer_3$next == \transfer_3$next_rhs) && (\locked_0$next == \locked_0$next_rhs)))
+	(id)	2755
+	(comment)	ab
+	(#UF )	8
+	(#UFt)	1
+	      	LE_1_8_8	#8
+	(#K  )	7
+	(#reg)	15
+	(#inp)	7
+	(#ite)	25
+	(#CF )	72
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#49)		!((!(l$1) && (\locked_0 == \acceptE) && !(LE_1_8_8(\acceptE, \ep_3))))
+	(id)	2811
+	(#UF )	2
+	(#UFt)	1
+	      	LE_1_8_8	#2
+	(#K  )	0
+	(#reg)	2
+	(#inp)	1
+	(#ite)	0
+	(#CF )	5
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#50)		!((!(l$1) && (\ep_3 == 8'd0)))
+	(id)	2830
+	(#UF )	1
+	(#UFt)	1
+	      	LE_1_8_8	#1
+	(#K  )	1
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#51)		!((!(l$1$next) && (\ep_3$next == 8'd0)))
+	(id)	2832
+	(#UF )	1
+	(#UFt)	1
+	      	LE_1_8_8	#1
+	(#K  )	1
+	(#reg)	2
+	(#inp)	0
+	(#ite)	0
+	(#CF )	4
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#52)		!((((\transfer_3 == \grantE) || (\transfer_3 != \grantE)) && (\transfer_3 == \grantE) && ((\transfer_3 == 8'd160) || (\transfer_3 != 8'd160)) && (\transfer_3 == 8'd160) && (l$2 || !(l$2)) && !(l$2) && (\locked_0 == \acceptE) && ((\locked_0 == 8'd129) || (\locked_0 != 8'd129)) && (\locked_0 == 8'd129) && (\ep_3 == 8'd0) && (\ep_3$next != \acceptE$next) && l$1$next && (\transfer_0$next == \acceptE$next) && (\transfer_0$next == 8'd0) && (\ep_3$next == \ep_3$next_rhs) && (\transfer_0$next == \transfer_0$next_rhs) && (\locked_0$next == \locked_0$next_rhs)))
+	(id)	3008
+	(comment)	ab
+	(#UF )	8
+	(#UFt)	1
+	      	LE_1_8_8	#8
+	(#K  )	7
+	(#reg)	14
+	(#inp)	7
+	(#ite)	25
+	(#CF )	61
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+
+(local equalities) #0
+
+(learned predicates) #12
+            (\ep_3 == \transfer_3)
+            (\ep_3 == \locked_3)
+            (\locked_3 == \transfer_3)
+            (\ep_3 == 8'd127)
+            (\ep_3 == \acceptE)
+            l$1
+            (\locked_0 == 8'd126)
+            (\locked_0 == \acceptE)
+            (\locked_0 == 8'd129)
+            l$2
+            (\transfer_3 == 8'd160)
+            (\transfer_3 == \grantE)
+
+(learned constants)  #0
+
+(learned signals)    #6
+            \ep_3
+            \locked_0
+            \locked_3
+            \transfer_3
+            \acceptE
+            \grantE
+
+(learned UFs)        #2
+            LE_1_8_8(\ep_3, \locked_0)	:= l$1
+            LE_1_8_8(\transfer_3, \locked_0)	:= l$2
+
+(#sim. iterations) 2
+(#ref. iterations) 52
+(#refs) 53
+(#assump. lemmas)  0
+(#lemmas)          53

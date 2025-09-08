@@ -1,0 +1,99 @@
+------------
+Size Summary
+------------
+
+State variables (#12)
+	(1-bit)	3
+	(8-bit)	9
+
+Inputs (#6)
+	(1-bit)	3
+	(8-bit)	3
+
+Constants (#2)
+	(1-bit)	1
+	(8-bit)	1
+
+---------------
+State Variables
+---------------
+\im.p2_ctl_2                    (1-bit)
+\im.p1_ctl_2                    (1-bit)
+\im.p1_ctl_1                    (1-bit)
+\s3                             (8-bit)
+\s2                             (8-bit)
+\s1                             (8-bit)
+\im.p3_n                        (8-bit)
+\im.p2_m                        (8-bit)
+\im.p2_c                        (8-bit)
+\im.p1_c                        (8-bit)
+\im.p1_b                        (8-bit)
+\im.p1_a                        (8-bit)
+
+------
+Inputs
+------
+\ctl_1                          (1-bit)
+\ctl_2                          (1-bit)
+\im.reset                       (1-bit)
+\c                              (8-bit)
+\b                              (8-bit)
+\a                              (8-bit)
+
+---------
+Constants
+---------
+1'd0
+8'd0
+
+-----------------------------
+Uninterpreted Functions (UFs)
+-----------------------------
+Add_8_8_8	#4
+Sub_8_8_8	#4
+
+------------------
+Initial Conditions
+------------------
+
+	(\im.p1_a == 8'd0)
+	(\im.p1_b == 8'd0)
+	(\im.p1_c == 8'd0)
+	!\im.p1_ctl_1
+	!\im.p1_ctl_2
+	(\im.p2_c == 8'd0)
+	!\im.p2_ctl_2
+	(\im.p2_m == 8'd0)
+	(\im.p3_n == 8'd0)
+	(\s1 == 8'd0)
+	(\s2 == 8'd0)
+	(\s3 == 8'd0)
+
+
+
+-----------------
+Dependency List
+-----------------
+
+Depth: 0
+	(1-bit) #2	n0	u0	c0	e0	property	<= \im.p3_n, \s3, 
+
+Depth: 1
+	(8-bit) #1	n1	u0	c0	e0	\s3$next	<= \s2, 
+	(8-bit) #3	n1	u2	c0	e0	\im.p3_n$next	<= \im.p2_c, \im.p2_ctl_2, \im.p2_m, 
+
+Depth: 2
+	(1-bit) #1	n1	u0	c0	e0	\im.p2_ctl_2$next	<= \im.p1_ctl_2, 
+	(8-bit) #1	n1	u0	c0	e0	\s2$next	<= \s1, 
+	(8-bit) #3	n1	u2	c0	e0	\im.p2_m$next	<= \im.p1_a, \im.p1_b, \im.p1_ctl_1, 
+	(8-bit) #1	n1	u0	c0	e0	\im.p2_c$next	<= \im.p1_c, 
+
+Depth: 3
+	(1-bit) #0	n1	u0	c0	e0	\im.p1_ctl_2$next	<= 
+	(1-bit) #0	n1	u0	c0	e0	\im.p1_ctl_1$next	<= 
+	(8-bit) #0	n1	u4	c0	e0	\s1$next	<= 
+	(8-bit) #0	n1	u0	c0	e0	\im.p1_c$next	<= 
+	(8-bit) #0	n1	u0	c0	e0	\im.p1_b$next	<= 
+	(8-bit) #0	n1	u0	c0	e0	\im.p1_a$next	<= 
+
+-----------------

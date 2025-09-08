@@ -1,0 +1,60 @@
+------------
+Size Summary
+------------
+
+State variables (#2)
+	(4-bit)	2
+
+Inputs (#1)
+	(1-bit)	1
+
+Constants (#3)
+	(4-bit)	3
+
+---------------
+State Variables
+---------------
+\Y                              (4-bit)
+\X                              (4-bit)
+
+------
+Inputs
+------
+\reset                          (1-bit)
+
+---------
+Constants
+---------
+4'd15
+4'd0
+4'd1
+
+-----------------------------
+Uninterpreted Functions (UFs)
+-----------------------------
+Add_4_4_4	#3
+GT_1_4_4	#1
+LT_1_4_4	#1
+ShiftR_4_4_4	#2
+
+------------------
+Initial Conditions
+------------------
+
+	(\X == 4'd1)
+	(\Y == 4'd0)
+
+
+
+-----------------
+Dependency List
+-----------------
+
+Depth: 0
+	(1-bit) #2	n0	u1	c0	e0	property	<= \X, \Y, 
+
+Depth: 1
+	(4-bit) #2	n2	u2	c0	e0	\Y$next	<= 
+	(4-bit) #2	n2	u6	c0	e0	\X$next	<= 
+
+-----------------

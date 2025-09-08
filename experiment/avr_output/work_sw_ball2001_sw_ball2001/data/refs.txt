@@ -1,0 +1,33 @@
+(benchmark) sw_ball2001_sw_ball2001
+
+(#0)		!((!(\L1) && \LoneHot && (\Y$next == \Y) && \L2 && (\X$next == \Y$next) && (\L5$next == \L5$next_rhs) && !(\L5$next) && (\X$next == \X$next_rhs) && (\X == \Y)))
+	(id)	464
+	(#UF )	1
+	(#UFt)	1
+	      	Add_3_3_3	#1
+	(#K  )	2
+	(#reg)	11
+	(#inp)	0
+	(#ite)	5
+	(#CF )	18
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+
+(local equalities) #0
+
+(learned predicates) #0
+
+(learned constants)  #0
+
+(learned signals)    #0
+
+(learned UFs)        #0
+
+(#sim. iterations) 0
+(#ref. iterations) 1
+(#refs) 1
+(#assump. lemmas)  0
+(#lemmas)          1

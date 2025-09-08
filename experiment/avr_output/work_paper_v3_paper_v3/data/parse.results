@@ -1,0 +1,56 @@
+------------
+Size Summary
+------------
+
+State variables (#2)
+	(8-bit)	2
+
+Inputs (#0)
+
+Constants (#3)
+	(8-bit)	3
+
+---------------
+State Variables
+---------------
+\y                              (8-bit)
+\x                              (8-bit)
+
+------
+Inputs
+------
+
+---------
+Constants
+---------
+8'd1
+8'd255
+8'd0
+
+-----------------------------
+Uninterpreted Functions (UFs)
+-----------------------------
+Add_8_8_8	#2
+GT_1_8_8	#1
+
+------------------
+Initial Conditions
+------------------
+
+	(\x == 8'd0)
+	(\y == 8'd0)
+
+
+
+-----------------
+Dependency List
+-----------------
+
+Depth: 0
+	(1-bit) #2	n0	u1	c0	e0	property	<= \x, \y, 
+
+Depth: 1
+	(8-bit) #2	n2	u2	c0	e0	\y$next	<= 
+	(8-bit) #2	n2	u2	c0	e0	\x$next	<= 
+
+-----------------

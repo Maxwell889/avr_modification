@@ -1,0 +1,239 @@
+(benchmark) counter_v_counter_v
+
+(#0)		!(((\X$next == 4'd15) && (\X$next == \X$next_rhs) && (\X == 4'd1)))
+	(id)	44
+	(#UF )	1
+	(#UFt)	1
+	      	Add_4_4_4	#1
+	(#K  )	2
+	(#reg)	2
+	(#inp)	1
+	(#ite)	2
+	(#CF )	8
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#1)		!((((\X == l$1) || (\X != l$1)) && (\X == l$1) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	73
+	(#UF )	2
+	(#UFt)	1
+	      	Add_4_4_4	#2
+	(#K  )	2
+	(#reg)	2
+	(#inp)	1
+	(#ite)	2
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#2)		!((((\X == l$2) || (\X != l$2)) && (\X == l$2) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	117
+	(#UF )	3
+	(#UFt)	1
+	      	Add_4_4_4	#3
+	(#K  )	2
+	(#reg)	2
+	(#inp)	1
+	(#ite)	2
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#3)		!((((\X == l$3) || (\X != l$3)) && (\X == l$3) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	172
+	(#UF )	4
+	(#UFt)	1
+	      	Add_4_4_4	#4
+	(#K  )	2
+	(#reg)	2
+	(#inp)	1
+	(#ite)	2
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#4)		!((((\X == l$4) || (\X != l$4)) && (\X == l$4) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	236
+	(#UF )	5
+	(#UFt)	1
+	      	Add_4_4_4	#5
+	(#K  )	2
+	(#reg)	2
+	(#inp)	1
+	(#ite)	2
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#5)		!((((\X == l$5) || (\X != l$5)) && (\X == l$5) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	309
+	(#UF )	6
+	(#UFt)	1
+	      	Add_4_4_4	#6
+	(#K  )	2
+	(#reg)	2
+	(#inp)	1
+	(#ite)	2
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#6)		!((((\X == l$6) || (\X != l$6)) && (\X == l$6) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	397
+	(#UF )	7
+	(#UFt)	1
+	      	Add_4_4_4	#7
+	(#K  )	2
+	(#reg)	2
+	(#inp)	1
+	(#ite)	2
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#7)		!((((\X == l$7) || (\X != l$7)) && (\X == l$7) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	488
+	(#UF )	8
+	(#UFt)	1
+	      	Add_4_4_4	#8
+	(#K  )	2
+	(#reg)	2
+	(#inp)	1
+	(#ite)	2
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#8)		!((((\X == l$8) || (\X != l$8)) && (\X == l$8) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	588
+	(#UF )	9
+	(#UFt)	1
+	      	Add_4_4_4	#9
+	(#K  )	2
+	(#reg)	2
+	(#inp)	1
+	(#ite)	2
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#9)		!((((\X == l$9) || (\X != l$9)) && (\X == l$9) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	697
+	(#UF )	10
+	(#UFt)	1
+	      	Add_4_4_4	#10
+	(#K  )	2
+	(#reg)	2
+	(#inp)	1
+	(#ite)	2
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#10)		!((((\X == l$10) || (\X != l$10)) && (\X == l$10) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	815
+	(#UF )	11
+	(#UFt)	1
+	      	Add_4_4_4	#11
+	(#K  )	2
+	(#reg)	2
+	(#inp)	1
+	(#ite)	2
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#11)		!((((\X == l$11) || (\X != l$11)) && (\X == l$11) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	953
+	(#UF )	12
+	(#UFt)	1
+	      	Add_4_4_4	#12
+	(#K  )	2
+	(#reg)	2
+	(#inp)	1
+	(#ite)	2
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+(#12)		!((((\X == l$12) || (\X != l$12)) && (\X == l$12) && (\X$next == 4'd15) && (\X$next == \X$next_rhs)))
+	(id)	1089
+	(#UF )	13
+	(#UFt)	1
+	      	Add_4_4_4	#13
+	(#K  )	2
+	(#reg)	2
+	(#inp)	1
+	(#ite)	2
+	(#CF )	10
+	(#Cc )	0
+	(#Cct)	0
+	(#Ex )	0
+	(#Ext)	0
+
+
+(local equalities) #0
+
+(learned predicates) #12
+            (\X == l$1)
+            (\X == l$2)
+            (\X == l$3)
+            (\X == l$4)
+            (\X == l$5)
+            (\X == l$6)
+            (\X == l$7)
+            (\X == l$8)
+            (\X == l$9)
+            (\X == l$10)
+            (\X == l$11)
+            (\X == l$12)
+
+(learned constants)  #1
+            4'd1
+
+(learned signals)    #1
+            \X
+
+(learned UFs)        #12
+            Add_4_4_4(4'd1, 4'd1)	:= l$1
+            Add_4_4_4(l$1, 4'd1)	:= l$2
+            Add_4_4_4(l$2, 4'd1)	:= l$3
+            Add_4_4_4(l$3, 4'd1)	:= l$4
+            Add_4_4_4(l$4, 4'd1)	:= l$5
+            Add_4_4_4(l$5, 4'd1)	:= l$6
+            Add_4_4_4(l$6, 4'd1)	:= l$7
+            Add_4_4_4(l$7, 4'd1)	:= l$8
+            Add_4_4_4(l$8, 4'd1)	:= l$9
+            Add_4_4_4(l$9, 4'd1)	:= l$10
+            Add_4_4_4(l$10, 4'd1)	:= l$11
+            Add_4_4_4(l$11, 4'd1)	:= l$12
+
+(#sim. iterations) 13
+(#ref. iterations) 13
+(#refs) 13
+(#assump. lemmas)  0
+(#lemmas)          13

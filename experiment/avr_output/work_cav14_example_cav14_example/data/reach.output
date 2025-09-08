@@ -1,0 +1,374 @@
+Timeout: 1, Memory_limit: 118000
+	10000.000000 (abstract query)
+	10000.000000 (concrete query)
+
+Config:
+	(concrete bit-width limit: 0)
+	(fineness: 2)
+	(interpret-ex-cc-level: 2)
+	(forward-check:	0)
+	(full projection)
+	(prioritization:	single)
+
+#STAT# num_bits= 0 num_regs= 2 num_total_bits= 6
+3  2
+
+System
+  int : 18
+  bool : 18
+  sum : 36
+  bool_op : 14
+  int_op : 3
+    !  1
+    !=_int  1
+    &&  2
+    +_3_3  2
+    ==  1
+    ==_int  3
+    >_3_3  1
+    ?:_int  4
+    ||  2
+
+
+Property
+  int : 2
+  bool : 6
+  sum : 8
+  bool_op : 2
+  int_op : 1
+    !  1
+    ==  1
+    >_3_3  1
+
+Partial interpretation info:
+  depth: 0
+  count: 0
+  count (d=0): 0
+
+  depth (prop): 0
+  count (prop): 0
+  count (d=0) (prop): 0
+
+	# of Inst.                  : 57	(864 bytes each)
+	  ExInst::hm_ExInst.size()  : 0	(984 bytes each)
+	  SigInst::hm_SigInst.size(): 6	(904 bytes each)
+	  NumInst::hm_NumInst.size(): 5	(888 bytes each)
+	  OpInst::hm_OpInst.size()  : 28	(944 bytes each)
+	  OpInst::hm_ITEInst.size() : 4	(944 bytes each)
+	  OpInst::hm_ETCInst.size() : 0	(944 bytes each)
+	Total                       : 43
+
+	Memory (est.)               : 0.046967 MB
+	  ExInst                    : 0.000000 MB
+	  SigInst                   : 0.005173 MB
+	  NumInst                   : 0.004234 MB
+	  OpInst::OP                : 0.025208 MB
+	  OpInst::ITE               : 0.003601 MB
+	  OpInst::ETC               : 0.000000 MB
+
+	(maximum function composition in T: 1)
+
+---------------------------------------------------------------------------------------------
+ Reachability Analysis Begins
+---------------------------------------------------------------------------------------------
+Loop_FrameNumber_#ReachabilityIterations_#RefinementIterations
+---------------------------------------------------------------------------------------------
+Loop_0_0_0
+---------------------------------------------------------------------------------------------
+[Basis Step]:
+	F[0] = I
+	SAT_a ? [ F[0] && !P ]: SAT
+	(adding pred. from pre_c to ab. cube) #3
+	(adding pred. from pre_c to cc. cube) #3
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 1)
+		SAT_c ? [ F[0] & !P ]: 		(bv input core size: 4)
+		(cc core: 4 -> 2)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\Y == 3'd0) && GT_1_3_3(\Y, \X))
+
+	[Lemmas]: 
+		[1] !(((\Y == 3'd0) && GT_1_3_3(\Y, \X)))
+#63
+		[2] !(((\Y$next == 3'd0) && GT_1_3_3(\Y$next, \X$next)))
+#64
+[RES_1]       2	: 0	: 0 s: 0
+[RES_0]    L  0 : 0 s: 0, mem: 14, time: 0.003365
+---------------------------------------------------------------------------------------------
+Loop_0_0_1
+---------------------------------------------------------------------------------------------
+[Basis Step]:
+	SAT_a ? [ F[0] && !P ]: UNSAT
+
+[First Step]:
+	SAT_a ? [ F[0] & T & !P ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #3
+	(adding from pre_c to cc. cube) #3
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 3	(3 + 0 + 0 + 0 + 0)
+	(concrete cube) 3	(3 + 0 + 0 + 0)
+
+	[Concrete check]:
+
+[ ACEXT ]: (Length: 1)
+		SAT_c ? [ F[0] & T & !P+ ]: 		(bv input core size: 11)
+		(cc core: 11 -> 7)
+UNSAT
+
+		[MUS(s)]:
+		[1] ((\Y$next == \Y$next_rhs) && (\Y == \X) && (\X$next == \X$next_rhs) && GT_1_3_3(\Y$next, \X$next))
+
+	[Lemmas]: 
+		[1] !(((\Y$next == \Y$next_rhs) && (\Y == \X) && (\X$next == \X$next_rhs) && GT_1_3_3(\Y$next, \X$next)))
+#78
+[RES_1]       3	: 0	: 0 s: 0
+[RES_0]    L  0 : 0 s: 0, mem: 14, time: 0.005061
+---------------------------------------------------------------------------------------------
+Loop_0_0_2
+---------------------------------------------------------------------------------------------
+[First Step]:
+	SAT_a ? [ F[0] & T & !P ]: UNSAT
+
+[RES_1]       3	: 0	: 0 s: 0
+[RES_0]    L  0 : 0 s: 0, mem: 14, time: 0.005235
+[RES_1]       3	: 1	: 0 0 s: 0
+[RES_0]    L  1 : 0 0 s: 0, mem: 14, time: 0.005352
+---------------------------------------------------------------------------------------------
+Loop_1_0_2
+---------------------------------------------------------------------------------------------
+	F[1] = P
+	SAT_a ? [ F[1] & T & !P+ ]: SAT
+	(adding pred. from next_c to next) #1
+	(adding from pre_c to ab. cube) #6
+	(adding from pre_c to cc. cube) #6
+	(bad cube [in !P+]) sz: 3
+	(abstract cube) 6	(6 + 0 + 0 + 0 + 0)
+	(concrete cube) 6	(6 + 0 + 0 + 0)
+	SAT_a ? [ F[0] & T & C+ ]: UNSAT
+		(ab core: 6 -> 1)
+	(10 + 6 -> 10 + 1)
+	(6 -> 1 -> 1)
+	(6 -> 1 -> 1)
+
+		[MUS(s)]:
+
+		[1] w3	(\X != \Y)
+[RES_1]       3	: 1	: 0 1 s: 1
+[RES_0]    L  1 : 0 1 s: 1, mem: 15, time: 0.00637
+---------------------------------------------------------------------------------------------
+Loop_1_1_2
+---------------------------------------------------------------------------------------------
+	SAT_a ? [ F[1] & T & !P+ ]: UNSAT
+[RES_1]       3	: 1	: 0 1 s: 1
+[RES_0]    L  1 : 0 1 s: 1, mem: 15, time: 0.006466
+	[Forward propagation]:
+		Property holds
+[RES_1]       3	: 1	: 0 0 s: 0
+[RES_0]    L  1 : 0 0 s: 0, mem: 15, time: 0.006719
+
+-----------
+Refinements
+-----------
+[1]	!(((\Y == 3'd0) && GT_1_3_3(\Y, \X)))
+[2]	!(((\Y$next == 3'd0) && GT_1_3_3(\Y$next, \X$next)))
+[3]	!(((\Y$next == \Y$next_rhs) && (\Y == \X) && (\X$next == \X$next_rhs) && GT_1_3_3(\Y$next, \X$next)))
+-----------
+[RES_0]    refinement-lemmas-check successful!
+F[0]	c#0
+F[1]	c#0
+F[2]	c#1
+
+
+[RES_0]    initial-state-check successful!
+[RES_0]    property-check successful!
+[RES_0]    inductive-invariant-check successful!
+ s: 1, mem: 15, time: 0.01
+Frames explored (2 datapath refinements) : 
+0 0 
+CEXT lengths (2 feasibility checks) : 
+0 1 
+DP lemmas (2 feasibility checks) : 
+2 1 
+Block= 1 BlockT= 2 BlockS= 1 BlockU= 1 Oblig= 1 ObligT= 1 ObligS= 0 ObligU= 1 FPT= 1 FPS= 0 FPU= 1 CallT= 33 CallS= 13 CallU= 20 MUST= 12 MUSS= 6 MUSU= 6 sMUST= 0 sMUSS= 0 sMUSU= 0 dMUST= 11 dMUSS= 6 dMUSU= 5 rMUST= 3 rMUSS= 1 rMUSU= 2 All_clauses= 1 All_literals= 2 Clauses= 1 Literals= 1 DPLemmas= 3 DPrefsNoDPL= 0 DPRefs= 2
+
+pme_fail: 0, pme_succ: 0, lit_before: 0, lit_after: 0
+coi_before: 0, coi_after: 0
+mus_before: 6 mus_lit: 1 mus_cls: 1 mus_cnt: 1
+S+M	Call = 45 (sat=19, 42.22%)
+SAT	Call = 33 (sat=13, 39.39%)
+MUS	Call = 12 (sat=6, 50.00%)
+
+Detailed Stats:
+
+  (reachability)
+	#Frame Restrictions:	1
+	#TB                :	2
+	#cubes-subsumed    :	0
+	#context reset     :	0
+	#Y2 reset          :	0
+	#frame solver reset:	1
+	avg-sz-frame-restriction:  	1.00
+
+	avg-sz-ab-cube:  	4.50
+		%t1-ab-cube:   	100.00%	[sel: 100.00% ]
+		%t2-ab-cube:   	0.00%	[sel: 0.00% ]
+		%t3-ab-cube:   	0.00%	[sel: 0.00% ]
+		%t4-ab-cube:   	0.00%	[sel: 0.00% ]
+
+		ab-cube info:	
+			s == s:	11.11%	[sel: 0.00% ]
+			s == n:	0.00%	[sel: 0.00% ]
+			s == o:	0.00%	[sel: 0.00% ]
+			n == o:	0.00%	[sel: 0.00% ]
+			o == o:	0.00%	[sel: 0.00% ]
+			s != s:	11.11%	[sel: 100.00% ]
+			s != n:	55.56%	[sel: 0.00% ]
+			s != o:	0.00%	[sel: 0.00% ]
+			n != o:	0.00%	[sel: 0.00% ]
+			o != o:	0.00%	[sel: 0.00% ]
+			s bool:	0.00%	[sel: 0.00% ]
+			up    :	22.22%	[sel: 0.00% ]
+			oth   :	0.00%	[sel: 0.00% ]
+
+		%coi-ab-cube  :	100.00%	[sel: 100.00% ]
+			s (==):	11.11%	[sel: 0.00% ]
+			s (!=):	11.11%	[sel: 100.00% ]
+			n (==):	0.00%	[sel: 0.00% ]
+			n (!=):	55.56%	[sel: 0.00% ]
+			other :	22.22%	[sel: 0.00% ]
+		%pred-ab-cube :	0.00%	[sel: 0.00% ]
+		%fproj-ab-cube:	0.00%	[sel: 0.00% ]
+			s (==):	0.00%	[sel: 0.00% ]
+			s (!=):	0.00%	[sel: 0.00% ]
+			n (==):	0.00%	[sel: 0.00% ]
+			n (!=):	0.00%	[sel: 0.00% ]
+		%proj-ab-cube :	0.00%	[sel: 0.00% ]
+			s (==):	0.00%	[sel: 0.00% ]
+			s (!=):	0.00%	[sel: 0.00% ]
+			n (==):	0.00%	[sel: 0.00% ]
+			n (!=):	0.00%	[sel: 0.00% ]
+		%subs-ab-cube :	0.00%	[sel: 0.00% ]
+	avg-#sv-ab-cube:  	2.00
+	avg-tsb-ab-cube:  	6.00
+	relevancy:       	100.00%
+
+	avg-sz-cc-cube:  	4.00
+		%coi-cc-cube  :	100.00%
+		%pred-cc-cube :	0.00%
+		%fproj-cc-cube:	0.00%
+			s (==):	0.00%
+			s (!=):	0.00%
+			n (==):	0.00%
+			n (!=):	0.00%
+		%proj-cc-cube :	0.00%
+			s (==):	0.00%
+			s (!=):	0.00%
+			n (==):	0.00%
+			n (!=):	0.00%
+
+	tb_cube_time:     	0.00 (4.59%)
+		cube_eval_time: 	0.00 (1.17%)
+		cube_pred_time: 	0.00 (0.03%)
+		cube_fproj_time:	0.00 (0.00%)
+		cube_proj_time: 	0.00 (0.00%)
+		cube _subs_time:	0.00 (0.03%)
+		sum:            	0.00 (26.59% of tb_cube_time)
+
+	tb_ct_time:      	0.00 (2.63%)
+		ct isblocked_time:  	0.00 (0.00%)
+		ct isinitial_time:  	0.00 (2.30%)
+		ct containment_time:	0.00 (0.03%)
+		ct fastforward_time:	0.00 (0.00%)
+		sum:                	0.00 (88.38% of tb_ct_time)
+
+	setcontain_time:	0.00 (0.00%)
+
+	updatesolver_time:	0.00 (0.17%)
+
+	tb_time:	0.00 (8.95%)
+		tb_reach_time:    	0.00 (0.65%)
+		tb_val_time:    	0.00 (0.28%) [ cti_val_time: 134910617.61 (1791403765838.95%) ]
+		tb_cube_time:      	0.00 (4.59%)
+		tb_mus_time:      	0.00 (1.58%)
+			tb_mus_core_time:      	0.00 (0.86%)
+			tb_mus_min_time:      	0.00 (0.31%)
+		tb_ct_time:       	0.00 (2.63%)
+		tb_extra_time:    	0.00 (0.00%)
+		sum:           	0.00 (105.64% of tb_time)
+
+
+  (refinement)
+	sim_time:		0.00 (0.00%) 	 [0.00% of dpr_time]
+
+  pre_time:	0.00 (10.74%)
+  cti_time:	0.00 (9.89%)	[cti_i_time:	0.00 (1.71%) ]
+  tb_time:	0.00 (8.95%)
+  fp_time:	0.00 (1.01%)	[fp_extra_time:	0.00 (0.00%) ]
+  refine_time:	0.00 (25.11%)
+  sol_set_time:	0.00 (3.97%)
+  inv_time:	0.00 (8.88%)	[induct_time:	0.00 (0.00%) ]
+  draw_time:	0.00 (0.00%)
+  sum:		0.01 (68.56%)
+
+  extra_time:	0.00 (0.00%)
+
+  timeout_time:	0.00 (0.00%)
+
+[simplified] 0 (ex), 0 (cc), 0 (ot)
+
+===     HOLD     ===
+
+Averroes finished.
+
+br-#mus           1           
+        hard        soft         out           
+           
+       10.00        6.00        1.00               (br-core)           
+       10.00        1.00        1.00                (br-min)          
+
+         sat       unsat           
+                                          #Calls           
+           0           1   (br-core)           
+           0           0  (br-core2)           
+           1           1    (br-min)           
+                                      Time (sec)           
+        0.00        0.00   (br-core)           
+        0.00        0.00  (br-core2)           
+        0.00        0.00    (br-min)           
+                                    Avg. Time (microsec)           
+           0         600   (br-core)           
+           0           0  (br-core2)           
+           7           6    (br-min)           
+                                    Max Time (microsec)           
+           0         333   (br-core)           
+           0           0  (br-core2)           
+           7           6    (br-min)          
+
+                      ab                      bv           
+         sat       unsat         sat       unsat           
+                                                      #Calls           
+           6           8           0           3   (oneshot)           
+           1           3           0           0       (inc)           
+           0           1           6           5    (assume)           
+                       0                       0   (timeout)          
+
+                                                  Time (sec)           
+        0.00        0.00        0.00        0.00   (oneshot)           
+        0.00        0.00        0.00        0.00       (inc)           
+        0.00        0.00        0.00        0.00    (assume)           
+                    0.00                    0.00   (timeout)          
+
+                                                Avg. Time (microsec)
+           6           2           0          56   (oneshot)           
+           3           1           0           0       (inc)           
+           0           9          55         130    (assume)           
+                       0                       0   (timeout)           
+           
+      Result        Time        Mem.       #Refs           
+                     sec          MB                       
+           h        0.01          15           3

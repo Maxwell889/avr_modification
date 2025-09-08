@@ -1,0 +1,9 @@
+-------------------------------
+Function Blocks ( out = F(in) )
+-------------------------------
+(type: Add     )	$add$/workspaces/avr_modification/experiment/avr_output/work_counter_v_counter_v/counter_v.v:15$3_Y = Add_4_4_4(\X, 4'd1)
+(type: control )	$eq$/workspaces/avr_modification/experiment/avr_output/work_counter_v_counter_v/counter_v.v:15$2_Y = (\X == 4'd15)
+(type: control )	$ternary$/workspaces/avr_modification/experiment/avr_output/work_counter_v_counter_v/counter_v.v:15$4_Y = ($eq$/workspaces/avr_modification/experiment/avr_output/work_counter_v_counter_v/counter_v.v:15$2_Y?4'd1:$add$/workspaces/avr_modification/experiment/avr_output/work_counter_v_counter_v/counter_v.v:15$3_Y)
+(type: control )	\X$next_rhs = (\en?$ternary$/workspaces/avr_modification/experiment/avr_output/work_counter_v_counter_v/counter_v.v:15$4_Y:\X)
+(type: control )	property1 = (\X != 4'd15)
+

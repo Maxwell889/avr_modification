@@ -1,0 +1,85 @@
+------------
+Size Summary
+------------
+
+State variables (#9)
+	(1-bit)	8
+	(6-bit)	1
+
+Inputs (#0)
+
+Constants (#5)
+	(1-bit)	1
+	(6-bit)	4
+
+---------------
+State Variables
+---------------
+\LoneHot                        (1-bit)
+\L6                             (1-bit)
+\L5                             (1-bit)
+\L4                             (1-bit)
+\L3                             (1-bit)
+\L2                             (1-bit)
+\L1                             (1-bit)
+\L0                             (1-bit)
+\X                              (6-bit)
+
+------
+Inputs
+------
+
+---------
+Constants
+---------
+1'd0
+6'd17
+6'd3
+6'd19
+6'd1
+
+-----------------------------
+Uninterpreted Functions (UFs)
+-----------------------------
+Add_6_6_6	#1
+LT_1_6_6	#2
+
+------------------
+Initial Conditions
+------------------
+
+	\L0
+	!\L1
+	!\L2
+	!\L3
+	!\L4
+	!\L5
+	!\L6
+	\LoneHot
+	(\X == 6'd1)
+
+
+
+-----------------
+Dependency List
+-----------------
+
+Depth: 0
+	(1-bit) #1	n0	u0	c0	e0	property	<= \L6, 
+
+Depth: 1
+	(1-bit) #5	n1	u1	c0	e0	\L6$next	<= \L1, \L4, \LoneHot, \X, 
+
+Depth: 2
+	(1-bit) #7	n0	u0	c0	e0	\LoneHot$next	<= \L0, \L2, \L3, \L5, 
+	(1-bit) #4	n1	u1	c0	e0	\L4$next	<= \L3, 
+	(1-bit) #5	n1	u1	c0	e0	\L1$next	<= \L0, \L3, 
+	(6-bit) #3	n2	u2	c0	e0	\X$next	<= 
+
+Depth: 3
+	(1-bit) #4	n1	u1	c0	e0	\L5$next	<= 
+	(1-bit) #3	n0	u0	c0	e0	\L3$next	<= 
+	(1-bit) #4	n1	u1	c0	e0	\L2$next	<= 
+	(1-bit) #2	n1	u0	c0	e0	\L0$next	<= 
+
+-----------------
